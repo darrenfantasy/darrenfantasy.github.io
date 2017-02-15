@@ -65,6 +65,7 @@ pagination_dir: page
 ## Themes: https://hexo.io/themes/
 theme: typing
 
+duoshuo_shortname: darrenfantasy
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
