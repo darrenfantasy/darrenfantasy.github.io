@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  <title>bitmap | darrenfantasy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="整理了一些在学习和开发中遇到的关于bitmap相关的知识。
+
+—inBitmap（2016-09-13）最近公司需要开发一个可以播放动画的imageView,为了节约内存，每次内存里只存一个bitmap,但是发现memory波动还是比较大，后来研究发现inBitmap可以实现内存块的复用。以下为整理后的知识点。
+BitmapFactory.Options 里的inBitmap属性可以实现复用内存块">
+<meta property="og:type" content="article">
+<meta property="og:title" content="bitmap">
+<meta property="og:url" content="http://yoursite.com/2016/09/27/bitmap/index.html">
+<meta property="og:site_name" content="darrenfantasy">
+<meta property="og:description" content="整理了一些在学习和开发中遇到的关于bitmap相关的知识。
+
+—inBitmap（2016-09-13）最近公司需要开发一个可以播放动画的imageView,为了节约内存，每次内存里只存一个bitmap,但是发现memory波动还是比较大，后来研究发现inBitmap可以实现内存块的复用。以下为整理后的知识点。
+BitmapFactory.Options 里的inBitmap属性可以实现复用内存块">
+<meta property="og:updated_time" content="2017-02-15T07:46:05.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="bitmap">
+<meta name="twitter:description" content="整理了一些在学习和开发中遇到的关于bitmap相关的知识。
+
+—inBitmap（2016-09-13）最近公司需要开发一个可以播放动画的imageView,为了节约内存，每次内存里只存一个bitmap,但是发现memory波动还是比较大，后来研究发现inBitmap可以实现内存块的复用。以下为整理后的知识点。
+BitmapFactory.Options 里的inBitmap属性可以实现复用内存块">
+  
+    <link rel="alternate" href="/atom.xml" title="darrenfantasy" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/typing.css">
+</head>
+
+  
+    <body>
+  
+      <div id="container" class="container">
+        <article id="post-bitmap" class="article article-type-post" itemscope itemprop="blogPost">
+  <header id="header" class="header">
+  <nav id="main-nav" class="main-nav">
+    
+      <a class="main-nav-link" href="/">Home</a>
+    
+      <a class="main-nav-link" href="/archives">Archives</a>
+    
+      <a class="main-nav-link" href="/about">About</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+    
+  </nav>
+</header>
+
+  <hr/>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      bitmap
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry typo" itemprop="articleBody">
+      
+        <p>整理了一些在学习和开发中遇到的关于bitmap相关的知识。</p>
+<hr>
+<h2 id="—inBitmap（2016-09-13）"><a href="#—inBitmap（2016-09-13）" class="headerlink" title="—inBitmap（2016-09-13）"></a>—inBitmap（2016-09-13）</h2><p>最近公司需要开发一个可以播放动画的imageView,为了节约内存，每次内存里只存一个bitmap,但是发现memory波动还是比较大，后来研究发现inBitmap可以实现内存块的复用。以下为整理后的知识点。</p>
+<p>BitmapFactory.Options 里的inBitmap属性可以实现复用内存块，不需要给这个bitmap重新申请新的内存块，避免了一次内存的分配和回收，从而提高了运行效率。</p>
+<p>inBitmap只能在3.0以后使用。</p>
+<p>使用inBitmap,在4.4之前（SDK 11- 18），只能重用大小相同的bitmap内存区域。4.4之后可以重用任何bitmap区域内存，只要这个内存比将要分配的bitmap内存大即可。</p>
+<hr>
+<h2 id="—Bitmap占用内存计算（2016-09-27）"><a href="#—Bitmap占用内存计算（2016-09-27）" class="headerlink" title="—Bitmap占用内存计算（2016-09-27）"></a>—Bitmap占用内存计算（2016-09-27）</h2><p>Bitmap占用内存决定因素</p>
+<p>－图片的像素点个数</p>
+<p>－单位像素占用的字节数</p>
+<p>bitmap大小＝图片长度(像素)<em>图片宽度(像素)</em>单位像素占用的字节数</p>
+<p>单位像素所占的字节数与图片的解码方式有关。</p>
+<p>ALPHA_8 只存储透明度信息而无颜色值</p>
+<p>ARGB_8888 把每个像素点的透明度，R，G，B色值都用一个byte表示。所以需要4个字节的空间来存储一个像素点。</p>
+<p>RGB_565 不存储像素点的透明度，而且用5bit表示R值，6bit表示G值，5bit表示B值，即共16bit，也就是2个字节的空间来存储一个像素点。</p>
+<p>所以对同一张图片进行解码时，使用RGB_565的方式解码所占内存空间仅仅是ARGB_8888的50%。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/2016/09/27/bitmap/" class="article-date">
+  <time datetime="2016-09-27T07:44:20.000Z" itemprop="datePublished">2016-09-27</time>
+</a>
+
+        </li>
+        
+        
+        <hr/>
+      </ul>
+    </footer>
+  </div>
+  
+    
+
+  
+</article>
+
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      <hr/>
+      <div id="footerContent" class="footer-content">
+        <p>ipsum dolor sit amet, <strong>consectetur adipiscing elit.</strong> Fusce eget urna vitae velit <em>eleifend interdum at ac nisi. In nec ligula lacus. Cum sociis natoque</em> penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed eu cursus erat, ut dapibus quam. Post</p>
+
+
+      </div>
+    </footer>
+
+      
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/typing.js"></script>
+<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+
+
+
+
+
+
+
+    </div>
+  </body>
+</html>
