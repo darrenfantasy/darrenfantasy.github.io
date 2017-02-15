@@ -1,7 +1,7 @@
 ---
 title: 读《Android开发艺术探索》笔记
 date: 2017-01-12 16:07:03
-tags:
+tags: [Android]
 ---
 
 关于《Android开发艺术探索》学习的摘录

@@ -1,7 +1,7 @@
 ---
 title: so文件
 date: 2016-10-24 15:56:31
-tags:
+tags: [Android]
 ---
 .so not found cause crash
 

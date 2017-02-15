@@ -1,7 +1,7 @@
 ---
 title: SDK开发学习小结
 date: 2017-01-18 16:08:39
-tags:
+tags: [Android,Java]
 ---
 以下为做表情云SDK开发时的一些小结
  

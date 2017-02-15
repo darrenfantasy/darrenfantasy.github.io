@@ -1,7 +1,7 @@
 ---
 title: adb命令
 date: 2016-10-25 15:58:40
-tags:
+tags: [Android]
 ---
 
 adb(Android Debug Bridge)是android sdk里的一个工具。

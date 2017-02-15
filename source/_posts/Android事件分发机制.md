@@ -1,7 +1,7 @@
 ---
 title: Android事件分发机制
 date: 2016-11-08 16:02:42
-tags:
+tags: [Android]
 ---
 
 看了大神们的技术博客和安卓源码，总结如下

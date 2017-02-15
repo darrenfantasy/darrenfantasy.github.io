@@ -1,7 +1,7 @@
 ---
 title: git常用命令行
 date: 2016-10-25 15:59:54
-tags:
+tags: [git]
 ---
 ### 1.修改.gitignore为全局的方法
 

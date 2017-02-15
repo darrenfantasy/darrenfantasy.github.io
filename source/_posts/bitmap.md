@@ -1,7 +1,7 @@
 ---
 title: bitmap
 date: 2016-09-27 15:44:20
-tags:
+tags: [Android]
 ---
 整理了一些在学习和开发中遇到的关于bitmap相关的知识。
 

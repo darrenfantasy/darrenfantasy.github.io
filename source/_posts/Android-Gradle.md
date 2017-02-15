@@ -1,7 +1,7 @@
 ---
 title: Android-Gradle
 date: 2016-10-17 15:54:36
-tags:
+tags: [Android]
 ---
 Android build.gradle笔记
 

@@ -1,7 +1,7 @@
 ---
 title: canvas
 date: 2016-10-11 15:52:11
-tags:
+tags: [Android]
 ---
 
 Canvas有关知识笔记
