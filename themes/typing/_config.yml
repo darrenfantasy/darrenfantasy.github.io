@@ -23,7 +23,7 @@ fb_app_id:
 
 # Profile
 nickname: darrenFantasy
-description: Hello,I am an Android developer.
+description: Hello ,I am an Android developer.
 links:
   Blog: /archives
   GitHub: https://github.com/darrenfantasy
@@ -32,7 +32,7 @@ links:
   About: /about
 
 # Info
-archive_footer_content: **stay hungry ,stay foolish .**
-post_footer_content: **I am a slow walker, but I never walk backwards. **
+archive_footer_content: stay hungry ,stay foolish .
+post_footer_content: I am a slow walker, but I never walk backwards.
 
 duoshuo_shortname: darrenfantasy
