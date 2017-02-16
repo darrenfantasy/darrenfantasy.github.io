@@ -6,7 +6,7 @@ menu:
   Home: /
   Archives: /archives
   About: /about
-rss: /atom.xml
+rss:
 
 # Content
 fancybox: true
