@@ -23,4 +23,11 @@
   if ($.fancybox) {
     $('.fancybox').fancybox()
   }
+  $(window).resize(function(){
+    if($('home-body').officeWidth / $('home-body').officeHeight <= $(document).clientWidth / $(document).clientWidth){
+      $('home-body').css("backgroundSize","100% auto");
+    }else{
+      $('home-body').css("backgroundSize","auto 100%");
+    }
+  })
 })(jQuery)
