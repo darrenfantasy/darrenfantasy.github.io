@@ -27,8 +27,7 @@
     <div class="profile">
       <h1 class="nickname">darrenFantasy</h1>
       <div class="description">
-        <p><p>We’re here to put a dent in the universe. Otherwise why else even be here?</p>
-</p>
+        <p id="typed"></p>
       </div>
     </div>
     <hr/>
@@ -57,7 +56,45 @@
     </ul>
   </div>
 </div>
+<script type = "text/javascript">
+  var typedSpeed = 120;
+   var typeWriter = {
+      msg: function(msg){
+        return msg;
+      },
+      len: function(){
+        return this.msg.length;
+      },
+      seq: 0,
+      speed: typedSpeed,//打字时间(ms)
+      type: function(){
+         var _this = this;
+         document.getElementById("typed").innerHTML = _this.msg.substring(0, _this.seq);
+         if (_this.seq == _this.len()) {
+             _this.seq = 0;
+             _this.speed = typedSpeed;
+             clearTimeout(t);
+         }
+         else {
+            if(_this.seq < _this.len()/2){
+               _this.speed -=2;
+            }else{
+               _this.speed +=2;
+            }
+            _this.seq++;
+            var t = setTimeout(function(){_this.type()}, this.speed);
+         }
+      }
+   }
 
+   typeWriter.msg = "We’re here to put a dent in the universe. Otherwise why else even be here?";
+   var length = typeWriter.msg.length;
+   typeWriter.type();
+   var h = setInterval(function () {
+      typeWriter.msg = "We’re here to put a dent in the universe. Otherwise why else even be here?";
+      typeWriter.type();
+   }, typedSpeed*length+3000);
+  </script>
       </div>
       
   <footer id="footer" class="home-footer footer">
