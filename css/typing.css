@@ -1280,6 +1280,10 @@ pre .keyword {
 	body {
 		font-size: 18px
 	}
+	.home-body{
+		background: url(http://oic2oders.bkt.clouddn.com/darrenfantasy_mobile_bg.jpg);
+		background-size: 100% 100%;
+	}
 }
 
 @media (max-width:468px) {
