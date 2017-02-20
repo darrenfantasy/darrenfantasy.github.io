@@ -32,14 +32,13 @@
          document.getElementById("typed").innerHTML = _this.msg.substring(0, _this.seq);
          if (_this.seq == _this.len()) {
              _this.seq = 0;
-             _this.speed = typedSpeed;
              clearTimeout(t);
          }
          else {
             if(_this.seq < _this.len()/2){
-               _this.speed -=2;
+               _this.speed -=1;
             }else{
-               _this.speed +=2;
+               _this.speed +=1;
             }
             _this.seq++;
             var t = setTimeout(function(){_this.type()}, this.speed);
@@ -50,8 +49,4 @@
    typeWriter.msg = "<%- (theme.description) %>";
    var length = typeWriter.msg.length;
    typeWriter.type();
-   var h = setInterval(function () {
-      typeWriter.msg = "<%- (theme.description) %>";
-      typeWriter.type();
-   }, typedSpeed*length+3000);
   </script>
