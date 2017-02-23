@@ -10,7 +10,136 @@ tags: [python,crawler]
 
 - Python基础知识的学习
 
-  整理中。。。
+  这里就简单整理了我爬虫中使用到的，并且与Java语法不同的地方。
+
+  1. 首先，python文件开头都会有一个
+
+     ```
+     #!/usr/bin/python
+     ```
+
+     这是用来指定用什么解释器运行脚步以及解释器所在的位置。
+
+  ​
+
+  2. Python2.X中默认编码是ASSCII格式，在没有修改编码格式时读取中文会出错。需要在头部指定编码。
+
+     ```
+     #coding:utf-8
+     ```
+
+     Python3.X源码文件默认使用utf-8编码，所以可以正常解析中文，无需指定utf-8。
+
+     ​
+
+  3. Python中变量赋值不需要类型声明
+
+     ```
+     name = "darrenFantasy"
+     ```
+
+     ​
+
+  4. Python字符串
+
+     ```
+     #!/usr/bin/python
+     #coding:utf-8
+     name = "darrenFantasy"
+     print name[0] #输出字符串中第一个字符
+     print name[2:5] #输出字符串中第三个至第五个之间的字符串
+     print name[6:] #输出从第七个字符开始的字符串
+     print name * 2 #输出字符串两次
+     ```
+
+     结果：
+
+     ```
+     d
+     rre
+     Fantasy
+     darrenFantasydarrenFantasy
+     ```
+
+     Java里可以直接String+int
+
+     ```
+     int i = 1;
+     String name = "darrenFantasy";
+     System.out.print(name + i);
+     ```
+
+     但是Python不能这样，Python必须使用str()函数把int转成String，才能拼接字符串。
+
+     ​
+
+  5. Python条件语句
+
+     ```
+     if 判断条件:
+     	pass #do something
+     else:
+         pass #do something
+     ```
+
+     ​
+
+  6. Python循环语句
+
+     ```
+     for iterating_var in sequence:
+        statements(s)
+
+
+     for x in range(1,10):
+     	pass #do something
+     ```
+
+     ​
+
+  7. Python函数
+
+     ```
+     def function(parameters):
+     	pass #do something
+     ```
+
+     ​
+
+  8. Python文件操作
+
+     创建文件：
+
+     ```
+     file = open('f.txt','w') #直接打开一个文件，如果文件不存在则创建文件
+     ```
+
+     通常，文件使用模式 'r','w','a' 来打开，分别代表，读取，写入，追加。
+
+     'r' 模式打开已经存在的文件。
+
+     'w' 模式打开的文件若存在则首先清空，再加入内容。
+
+     'a' 这个模式是追加内容到文件中。
+
+     另一种创建文件的方法
+
+     ```
+     import os
+     os.system("touch test.txt") 
+     ```
+
+     读取文件：
+
+     read() 一次读取全部的文件内容。
+
+     readline() 每次读取文件的一行。
+
+     readlines() 读取文件的所有行，返回一个字符串列表。
+
+     最后，使用完记得关闭文件 file.close();
+
+     ​
 
 - urllib2库的基本使用
 
@@ -63,4 +192,12 @@ tags: [python,crawler]
 
   <a href="http://beautifulsoup.readthedocs.io/zh_CN/latest/">官方文档</a>
 
-  ​
+  通常用来处理网页抓取数据，如下是获取一个网页里的全部 *图片标签*
+
+  ```
+  from bs4 import BeautifulSoup
+  def getImageTagsFromHtml(html):
+      soup = BeautifulSoup(html, "html.parser")
+      imageTagsList = soup.find_all('img'):
+      return imageTagsList
+  ```
