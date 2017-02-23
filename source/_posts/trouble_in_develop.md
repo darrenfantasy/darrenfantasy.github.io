@@ -70,4 +70,4 @@ Binder事务缓冲区具有有限的固定大小，目前为1Mb，由进程正�
 
 5.想监听一个父布局的ontouch事件时，发现用手触摸时只打印出Action.move和up.如果点击父布局里的子控件时，什么事件都无法打印出来。
 回想了下之前View的事件分发机制，不能在重写OnTouchEvent方法里监听到事件，因为onTouch事件优先与OnTouchEvent执行，如果onTouch返回true将事件消费了,则onTouchEvent将不会执行。
-详见 （ <a href="http://darrenfantasy.com/2016/11/08/Android%E4%BA%8B%E4%BB%B6%E5%88%86%E5%8F%91%E6%9C%BA%E5%88%B6/">Android事件分发机制</a>）
+详见 （ <a href="http://darrenfantasy.com/2016/11/08/android_event_dispatch/">Android事件分发机制</a>）
