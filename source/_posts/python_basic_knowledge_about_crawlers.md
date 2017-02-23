@@ -198,6 +198,6 @@ tags: [python,crawler]
   from bs4 import BeautifulSoup
   def getImageTagsFromHtml(html):
       soup = BeautifulSoup(html, "html.parser")
-      imageTagsList = soup.find_all('img'):
+      imageTagsList = soup.find_all('img')
       return imageTagsList
   ```
