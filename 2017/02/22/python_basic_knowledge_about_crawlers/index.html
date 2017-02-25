@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  <title>用Python实现爬虫需要掌握的基本知识 | darrenfantasy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="最近在用python爬取一些网站的图片，学习期间遇到一些问题，也收获了一些知识，现在整理下有关内容。
+
+Python基础知识的学习
+这里就简单整理了我爬虫中使用到的，并且与Java语法不同的地方。
+
+首先，python文件开头都会有一个
+1#!/usr/bin/python
+这是用来指定用什么解释器运行脚步以及解释器所在的位置。
+
+
+​
+
+Python2.X中默认编码是ASSCII格式，在没有修改">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用Python实现爬虫需要掌握的基本知识">
+<meta property="og:url" content="http://yoursite.com/2017/02/22/python_basic_knowledge_about_crawlers/index.html">
+<meta property="og:site_name" content="darrenfantasy">
+<meta property="og:description" content="最近在用python爬取一些网站的图片，学习期间遇到一些问题，也收获了一些知识，现在整理下有关内容。
+
+Python基础知识的学习
+这里就简单整理了我爬虫中使用到的，并且与Java语法不同的地方。
+
+首先，python文件开头都会有一个
+1#!/usr/bin/python
+这是用来指定用什么解释器运行脚步以及解释器所在的位置。
+
+
+​
+
+Python2.X中默认编码是ASSCII格式，在没有修改">
+<meta property="og:updated_time" content="2017-02-25T06:45:34.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="用Python实现爬虫需要掌握的基本知识">
+<meta name="twitter:description" content="最近在用python爬取一些网站的图片，学习期间遇到一些问题，也收获了一些知识，现在整理下有关内容。
+
+Python基础知识的学习
+这里就简单整理了我爬虫中使用到的，并且与Java语法不同的地方。
+
+首先，python文件开头都会有一个
+1#!/usr/bin/python
+这是用来指定用什么解释器运行脚步以及解释器所在的位置。
+
+
+​
+
+Python2.X中默认编码是ASSCII格式，在没有修改">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/typing.css">
+</head>
+
+
+<a href="https://github.com/darrenfantasy"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+
+  
+    <body>
+  
+      <div id="container" class="container">
+        <article id="post-python_basic_knowledge_about_crawlers" class="article article-type-post" itemscope itemprop="blogPost">
+  <header id="header" class="header">
+  <nav id="main-nav" class="main-nav">
+    
+      <a class="main-nav-link" href="/">Home</a>
+    
+      <a class="main-nav-link" href="/archives">Archives</a>
+    
+      <a class="main-nav-link" href="/about">About</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    
+  </nav>
+</header>
+
+  <hr/>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      用Python实现爬虫需要掌握的基本知识
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry typo" itemprop="articleBody">
+      
+        <p>最近在用python爬取一些网站的图片，学习期间遇到一些问题，也收获了一些知识，现在整理下有关内容。</p>
+<ul>
+<li><p>Python基础知识的学习</p>
+<p>这里就简单整理了我爬虫中使用到的，并且与Java语法不同的地方。</p>
+<ol>
+<li><p>首先，python文件开头都会有一个</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/python</div></pre></td></tr></table></figure>
+<p>这是用来指定用什么解释器运行脚步以及解释器所在的位置。</p>
+</li>
+</ol>
+<p>​</p>
+<ol>
+<li><p>Python2.X中默认编码是ASSCII格式，在没有修改编码格式时读取中文会出错。需要在头部指定编码。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#coding:utf-8</div></pre></td></tr></table></figure>
+<p>Python3.X源码文件默认使用utf-8编码，所以可以正常解析中文，无需指定utf-8。</p>
+<p>​</p>
+</li>
+<li><p>Python中变量赋值不需要类型声明</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">name = &quot;darrenFantasy&quot;</div></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+<li><p>Python字符串</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/python</div><div class="line">#coding:utf-8</div><div class="line">name = &quot;darrenFantasy&quot;</div><div class="line">print name[0] #输出字符串中第一个字符</div><div class="line">print name[2:5] #输出字符串中第三个至第五个之间的字符串</div><div class="line">print name[6:] #输出从第七个字符开始的字符串</div><div class="line">print name * 2 #输出字符串两次</div></pre></td></tr></table></figure>
+<p>结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">d</div><div class="line">rre</div><div class="line">Fantasy</div><div class="line">darrenFantasydarrenFantasy</div></pre></td></tr></table></figure>
+<p>Java里可以直接String+int</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">int i = 1;</div><div class="line">String name = &quot;darrenFantasy&quot;;</div><div class="line">System.out.print(name + i);</div></pre></td></tr></table></figure>
+<p>但是Python不能这样，Python必须使用str()函数把int转成String，才能拼接字符串。</p>
+<p>​</p>
+</li>
+<li><p>Python条件语句</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">if 判断条件:</div><div class="line">	pass #do something</div><div class="line">else:</div><div class="line">    pass #do something</div></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+<li><p>Python循环语句</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">for iterating_var in sequence:</div><div class="line">   statements(s)</div><div class="line"></div><div class="line"></div><div class="line">for x in range(1,10):</div><div class="line">	pass #do something</div></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+<li><p>Python函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">def function(parameters):</div><div class="line">	pass #do something</div></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+<li><p>Python文件操作</p>
+<p>创建文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">file = open(&apos;f.txt&apos;,&apos;w&apos;) #直接打开一个文件，如果文件不存在则创建文件</div></pre></td></tr></table></figure>
+<p>通常，文件使用模式 ‘r’,’w’,’a’ 来打开，分别代表，读取，写入，追加。</p>
+<p>‘r’ 模式打开已经存在的文件。</p>
+<p>‘w’ 模式打开的文件若存在则首先清空，再加入内容。</p>
+<p>‘a’ 这个模式是追加内容到文件中。</p>
+<p>另一种创建文件的方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">import os</div><div class="line">os.system(&quot;touch test.txt&quot;)</div></pre></td></tr></table></figure>
+<p>读取文件：</p>
+<p>read() 一次读取全部的文件内容。</p>
+<p>readline() 每次读取文件的一行。</p>
+<p>readlines() 读取文件的所有行，返回一个字符串列表。</p>
+<p>最后，使用完记得关闭文件 file.close();</p>
+<p>​</p>
+</li>
+</ol>
+</li>
+<li><p>urllib2库的基本使用</p>
+<p>urllib2是Python获取URL(Uniform Resource Locator)的一个组建。它以urlopen 函数的形式提供了一个非常简单的接口。</p>
+<p>urlopen函数可以传入一个简单的url，也可以传入一个request。</p>
+<ol>
+<li><p>urlopen(url,data,timeout)</p>
+<p>第一个参数为URL，第二个参数data是访问URL时要传送的数据，第三个timeout是设置超时时间。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">import urllib2</div><div class="line">response = urllib2.urlopen(&quot;http://darrenfantasy.com/&quot;)</div><div class="line">html = response.read()</div></pre></td></tr></table></figure>
+<p>执行urlopen方法后返回一个response对象，它有一个read方法，可以返回获取到的网页内容。</p>
+</li>
+<li><p>urlopen还能传入一个request对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">import urllib2</div><div class="line">request = urllib2.Request(url,data,headers)</div><div class="line">response = urllib2.urlopen(request)</div><div class="line">the_page = response.read()</div></pre></td></tr></table></figure>
+<p>data是你希望发送到URL的数据。</p>
+<p>headers是http请求头，有些网站不希望被程序访问，会防爬。默认的urllib2把自己作为“Python-urllib/x.y”(x和y是Python主版本和次版本号,例如Python-urllib/2.5)，可能有些网站会拒绝返回信息，这就需要我们模拟浏览器操作了，修改headers信息，浏览器确认自己身份是通过User-Agent头。（期间，自己爬一个网站，伪装成浏览器，但是还是被拒绝访问，后来改用requests库结果可以了）</p>
+<p>​</p>
+</li>
+</ol>
+</li>
+<li><p>使用requests库</p>
+<p>因为之前使用urllib2被网站拒绝，后来研究发现使用requests库可以获取页面内容。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">import requests</div><div class="line">response = requests.get(&quot;http://darrenfantasy.com/&quot;)</div><div class="line">print response.text</div></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+<li><p>Beautiful Soup的使用</p>
+<p>Beautiful Soup是Python的一个库，主要功能是从网页抓取数据。</p>
+<p><a href="http://beautifulsoup.readthedocs.io/zh_CN/latest/" target="_blank" rel="external">官方文档</a></p>
+<p>通常用来处理网页抓取数据，如下是获取一个网页里的全部 <em>图片标签</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">from bs4 import BeautifulSoup</div><div class="line">def getImageTagsFromHtml(html):</div><div class="line">    soup = BeautifulSoup(html, &quot;html.parser&quot;)</div><div class="line">    imageTagsList = soup.find_all(&apos;img&apos;)</div><div class="line">    return imageTagsList</div></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/2017/02/22/python_basic_knowledge_about_crawlers/" class="article-date">
+  <time datetime="2017-02-22T06:19:14.000Z" itemprop="datePublished">2017-02-22</time>
+</a>
+
+        </li>
+        
+        
+          <li>
+            <span class="label">Tag:</span>
+            
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/crawler/">crawler</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
+
+
+          </li>
+        
+        <hr/>
+      </ul>
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav" class="article-nav">
+  
+    <span id="article-nav-newer" class="article-nav-link-wrap newer"></span>
+  
+  
+    <a href="/2017/02/20/node_js_not_found/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">node.js was not found</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+
+  <section id="comments" class="comments">
+   <!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2017/02/22/python_basic_knowledge_about_crawlers/" data-title="用Python实现爬虫需要掌握的基本知识" data-url="http://yoursite.com/2017/02/22/python_basic_knowledge_about_crawlers/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"darrenfantasy"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+  </section>
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      <hr/>
+      <div id="footerContent" class="footer-content">
+        <p>I am a slow walker, but I never walk backwards.</p>
+
+
+  
+    <span id="busuanzi_container_page_pv">
+         <i class="fa fa-flag"></i>    你是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>个阅读本文的小伙伴
+    </span>
+  
+      </div>
+  </footer>
+
+      
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/typing.js"></script>
+<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+
+
+
+
+
+
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+    </div>
+  </body>
+</html>
