@@ -23,16 +23,15 @@ fb_app_id:
 
 # Profile
 nickname: darrenFantasy
-description: We’re here to put a dent in the universe. Otherwise why else even be here?
+description: 说出来会被嘲笑的梦想，才有实现的价值。
 links:
   Blog: /archives
   GitHub: https://github.com/darrenfantasy
-  Instagram: http://instagram.com/darrenfantasy
   Email: mailto:yuanda.wang1993@gmail.com
   About: /about
 
 # Info
-archive_footer_content: stay hungry ,stay foolish .
-post_footer_content: I am a slow walker, but I never walk backwards.
+archive_footer_content: 温度不迷茫，方向不倔强。
+post_footer_content: stay hungry , stay foolish .
 
 duoshuo_shortname: darrenfantasy
