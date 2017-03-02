@@ -35,7 +35,7 @@ Python基础知识的学习
 ​
 
 Python2.X中默认编码是ASSCII格式，在没有修改">
-<meta property="og:updated_time" content="2017-02-25T06:45:34.000Z">
+<meta property="og:updated_time" content="2017-03-02T12:30:12.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用Python实现爬虫需要掌握的基本知识">
 <meta name="twitter:description" content="最近在用python爬取一些网站的图片，学习期间遇到一些问题，也收获了一些知识，现在整理下有关内容。
@@ -99,55 +99,82 @@ Python2.X中默认编码是ASSCII格式，在没有修改">
       
         <p>最近在用python爬取一些网站的图片，学习期间遇到一些问题，也收获了一些知识，现在整理下有关内容。</p>
 <ul>
-<li><p>Python基础知识的学习</p>
+<li><p><strong>Python基础知识的学习</strong></p>
 <p>这里就简单整理了我爬虫中使用到的，并且与Java语法不同的地方。</p>
 <ol>
 <li><p>首先，python文件开头都会有一个</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/python</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/python</span></div></pre></td></tr></table></figure>
 <p>这是用来指定用什么解释器运行脚步以及解释器所在的位置。</p>
 </li>
 </ol>
 <p>​</p>
 <ol>
 <li><p>Python2.X中默认编码是ASSCII格式，在没有修改编码格式时读取中文会出错。需要在头部指定编码。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#coding:utf-8</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#coding:utf-8</span></div></pre></td></tr></table></figure>
 <p>Python3.X源码文件默认使用utf-8编码，所以可以正常解析中文，无需指定utf-8。</p>
 <p>​</p>
 </li>
 <li><p>Python中变量赋值不需要类型声明</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">name = &quot;darrenFantasy&quot;</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">name = <span class="string">"darrenFantasy"</span></div></pre></td></tr></table></figure>
 <p>​</p>
 </li>
 <li><p>Python字符串</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/python</div><div class="line">#coding:utf-8</div><div class="line">name = &quot;darrenFantasy&quot;</div><div class="line">print name[0] #输出字符串中第一个字符</div><div class="line">print name[2:5] #输出字符串中第三个至第五个之间的字符串</div><div class="line">print name[6:] #输出从第七个字符开始的字符串</div><div class="line">print name * 2 #输出字符串两次</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/python</span></div><div class="line"><span class="comment">#coding:utf-8</span></div><div class="line">name = <span class="string">"darrenFantasy"</span></div><div class="line"><span class="keyword">print</span> name[<span class="number">0</span>] <span class="comment">#输出字符串中第一个字符</span></div><div class="line"><span class="keyword">print</span> name[<span class="number">2</span>:<span class="number">5</span>] <span class="comment">#输出字符串中第三个至第五个之间的字符串</span></div><div class="line"><span class="keyword">print</span> name[<span class="number">6</span>:] <span class="comment">#输出从第七个字符开始的字符串</span></div><div class="line"><span class="keyword">print</span> name * <span class="number">2</span> <span class="comment">#输出字符串两次</span></div><div class="line"><span class="keyword">print</span> name[<span class="number">-2</span>:]<span class="comment">#输出最后两位</span></div><div class="line"><span class="keyword">print</span> name.find(<span class="string">"a"</span>)<span class="comment">#找第一个a字符的位置</span></div><div class="line"><span class="keyword">print</span> name.rfind(<span class="string">"a"</span>)<span class="comment">#找最后一个a字符的位置</span></div><div class="line"><span class="keyword">print</span> name.strip(<span class="string">"darren"</span>)</div><div class="line"><span class="keyword">print</span> name.rstrip(<span class="string">"tasy"</span>)</div></pre></td></tr></table></figure>
 <p>结果：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">d</div><div class="line">rre</div><div class="line">Fantasy</div><div class="line">darrenFantasydarrenFantasy</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">d</div><div class="line">rre</div><div class="line">Fantasy</div><div class="line">darrenFantasydarrenFantasy</div><div class="line">sy</div><div class="line"><span class="number">1</span></div><div class="line"><span class="number">10</span></div><div class="line">fantasy</div><div class="line">darrenfan</div></pre></td></tr></table></figure>
+<p>strip函数</p>
+<p>声明：s为字符串，rm为要删除的字符序列</p>
+<p>s.strip(rm)        删除s字符串中开头、结尾处，位于 rm删除序列的字符</p>
+<p>s.lstrip(rm)       删除s字符串中开头处，位于 rm删除序列的字符</p>
+<p>s.rstrip(rm)      删除s字符串中结尾处，位于 rm删除序列的字符</p>
+<ol>
+<li><p>当rm为空时，默认删除空白符（包括’\n’, ‘\r’,  ‘\t’,  ‘ ‘)</p>
+</li>
+<li><p>这里的rm删除序列是只要边（开头或结尾）上的字符在删除序列内，就删除掉。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">name = <span class="string">"darrenfantasy"</span></div><div class="line"><span class="keyword">print</span> name.strip(<span class="string">"adrrn"</span>)</div><div class="line"><span class="keyword">print</span> name.rstrip(<span class="string">"tasy"</span>)</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">enfantasy</div><div class="line">darrenfan</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>​</p>
 <p>Java里可以直接String+int</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">int i = 1;</div><div class="line">String name = &quot;darrenFantasy&quot;;</div><div class="line">System.out.print(name + i);</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> i = <span class="number">1</span>;</div><div class="line">String name = <span class="string">"darrenFantasy"</span>;</div><div class="line">System.out.print(name + i);</div></pre></td></tr></table></figure>
 <p>但是Python不能这样，Python必须使用str()函数把int转成String，才能拼接字符串。</p>
 <p>​</p>
 </li>
 <li><p>Python条件语句</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">if 判断条件:</div><div class="line">	pass #do something</div><div class="line">else:</div><div class="line">    pass #do something</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> 判断条件:</div><div class="line">	<span class="keyword">pass</span> <span class="comment">#do something</span></div><div class="line"><span class="keyword">else</span>:</div><div class="line">    <span class="keyword">pass</span> <span class="comment">#do something</span></div></pre></td></tr></table></figure>
 <p>​</p>
 </li>
 <li><p>Python循环语句</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">for iterating_var in sequence:</div><div class="line">   statements(s)</div><div class="line"></div><div class="line"></div><div class="line">for x in range(1,10):</div><div class="line">	pass #do something</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">10</span>):</div><div class="line">	<span class="keyword">print</span> x</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="number">0</span></div><div class="line"><span class="number">1</span></div><div class="line"><span class="number">2</span></div><div class="line"><span class="number">3</span></div><div class="line"><span class="number">4</span></div><div class="line"><span class="number">5</span></div><div class="line"><span class="number">6</span></div><div class="line"><span class="number">7</span></div><div class="line"><span class="number">8</span></div><div class="line"><span class="number">9</span></div></pre></td></tr></table></figure>
+<p>​</p>
+<p>for循环 1到10</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">10</span>+<span class="number">1</span>):</div><div class="line">	<span class="keyword">print</span> x</div></pre></td></tr></table></figure>
+<p>range(start,stop,step)，step默认1。</p>
+<p>​</p>
+<p>遍历某个list</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">List = [<span class="string">"1"</span>,<span class="string">"2"</span>,<span class="string">"3"</span>,<span class="string">"4"</span>,<span class="string">"5"</span>]</div><div class="line"><span class="keyword">for</span> x <span class="keyword">in</span> xrange(len(List)):</div><div class="line">   <span class="keyword">print</span> List[x]</div></pre></td></tr></table></figure>
+<p>range和xrange的区别（python2x）</p>
+<ol>
+<li>range()返回整个list,xrange()返回的是一个xrange object,且这个对象是一个iterable。</li>
+<li>xrange的性能更好。</li>
+</ol>
 <p>​</p>
 </li>
 <li><p>Python函数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">def function(parameters):</div><div class="line">	pass #do something</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">function</span><span class="params">(parameters)</span>:</span></div><div class="line">	<span class="keyword">pass</span> <span class="comment">#do something</span></div></pre></td></tr></table></figure>
 <p>​</p>
 </li>
 <li><p>Python文件操作</p>
 <p>创建文件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">file = open(&apos;f.txt&apos;,&apos;w&apos;) #直接打开一个文件，如果文件不存在则创建文件</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">file = open(<span class="string">'f.txt'</span>,<span class="string">'w'</span>) <span class="comment">#直接打开一个文件，如果文件不存在则创建文件</span></div></pre></td></tr></table></figure>
 <p>通常，文件使用模式 ‘r’,’w’,’a’ 来打开，分别代表，读取，写入，追加。</p>
 <p>‘r’ 模式打开已经存在的文件。</p>
 <p>‘w’ 模式打开的文件若存在则首先清空，再加入内容。</p>
 <p>‘a’ 这个模式是追加内容到文件中。</p>
 <p>另一种创建文件的方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">import os</div><div class="line">os.system(&quot;touch test.txt&quot;)</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> os</div><div class="line">os.system(<span class="string">"touch test.txt"</span>)</div></pre></td></tr></table></figure>
 <p>读取文件：</p>
 <p>read() 一次读取全部的文件内容。</p>
 <p>readline() 每次读取文件的一行。</p>
@@ -157,33 +184,62 @@ Python2.X中默认编码是ASSCII格式，在没有修改">
 </li>
 </ol>
 </li>
-<li><p>urllib2库的基本使用</p>
+<li><p><strong>urllib2库的基本使用</strong></p>
 <p>urllib2是Python获取URL(Uniform Resource Locator)的一个组建。它以urlopen 函数的形式提供了一个非常简单的接口。</p>
 <p>urlopen函数可以传入一个简单的url，也可以传入一个request。</p>
 <ol>
 <li><p>urlopen(url,data,timeout)</p>
 <p>第一个参数为URL，第二个参数data是访问URL时要传送的数据，第三个timeout是设置超时时间。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">import urllib2</div><div class="line">response = urllib2.urlopen(&quot;http://darrenfantasy.com/&quot;)</div><div class="line">html = response.read()</div></pre></td></tr></table></figure>
-<p>执行urlopen方法后返回一个response对象，它有一个read方法，可以返回获取到的网页内容。</p>
 </li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib2</div><div class="line">response = urllib2.urlopen(<span class="string">"http://darrenfantasy.com/"</span>)</div><div class="line">html = response.read()</div></pre></td></tr></table></figure>
+<p>   执行urlopen方法后返回一个response对象，它有一个read方法，可以返回获取到的网页内容。</p>
+<ol>
 <li><p>urlopen还能传入一个request对象</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">import urllib2</div><div class="line">request = urllib2.Request(url,data,headers)</div><div class="line">response = urllib2.urlopen(request)</div><div class="line">the_page = response.read()</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib2</div><div class="line">request = urllib2.Request(url,data,headers)</div><div class="line">response = urllib2.urlopen(request)</div><div class="line">the_page = response.read()</div></pre></td></tr></table></figure>
 <p>data是你希望发送到URL的数据。</p>
 <p>headers是http请求头，有些网站不希望被程序访问，会防爬。默认的urllib2把自己作为“Python-urllib/x.y”(x和y是Python主版本和次版本号,例如Python-urllib/2.5)，可能有些网站会拒绝返回信息，这就需要我们模拟浏览器操作了，修改headers信息，浏览器确认自己身份是通过User-Agent头。（期间，自己爬一个网站，伪装成浏览器，但是还是被拒绝访问，后来改用requests库结果可以了）</p>
 <p>​</p>
 </li>
 </ol>
 </li>
-<li><p>使用requests库</p>
+<li><p><strong>使用requests库</strong></p>
 <p>因为之前使用urllib2被网站拒绝，后来研究发现使用requests库可以获取页面内容。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">import requests</div><div class="line">response = requests.get(&quot;http://darrenfantasy.com/&quot;)</div><div class="line">print response.text</div></pre></td></tr></table></figure>
+<ol>
+<li><p><em>发送请求</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> requests</div><div class="line">response = requests.get(<span class="string">"http://darrenfantasy.com/"</span>)</div></pre></td></tr></table></figure>
+<p>requests发送一个post请求</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">response = requests.post(<span class="string">"url"</span>)</div></pre></td></tr></table></figure>
+</li>
+<li><p><em>给URL传递参数</em></p>
+<p>requests允许你使用<strong>params</strong>关键字参数，以一个字典来提供这些参数。如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> requests</div><div class="line">myparams = &#123;<span class="string">"key1"</span>:<span class="string">"value1"</span>,<span class="string">"key2"</span>:<span class="string">"value2"</span>&#125;</div><div class="line">response = requests.get(<span class="string">"http://darrenfantasy.com/"</span>,params = myparams)</div><div class="line"><span class="keyword">print</span> response.url</div></pre></td></tr></table></figure>
+<p>输出该url</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http://darrenfantasy.com/?key2=value2&amp;key1=value1</div></pre></td></tr></table></figure>
+</li>
+<li><p><em>响应内容</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> requests</div><div class="line">response = requests.get(<span class="string">"http://darrenfantasy.com/"</span>)</div><div class="line"><span class="keyword">print</span> response.text</div></pre></td></tr></table></figure>
+<p>requests会自动解码来自服务器的内容。请求发出后，requests会基于http头部对响应的编码作出推测。</p>
+<p>当你访问<strong>response.text</strong>时，requests会使用其推测的文本编码。你可以使用<strong>response.encoding</strong>属性来改变它</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> requests</div><div class="line">response = requests.get(<span class="string">"http://darrenfantasy.com/"</span>)</div><div class="line">response.encoding = <span class="string">"utf-8"</span></div><div class="line"><span class="keyword">print</span> response.text</div></pre></td></tr></table></figure>
+</li>
+<li><p><em>Json响应内容</em></p>
+<p>requests中内置JSON解码器，可以帮助我们处理JSON数据</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> requests</div><div class="line">response = requests.get(<span class="string">"url"</span>)</div><div class="line">response.json()</div></pre></td></tr></table></figure>
+</li>
+</ol>
 <p>​</p>
 </li>
-<li><p>Beautiful Soup的使用</p>
+<li><p><strong>Beautiful Soup的使用</strong></p>
 <p>Beautiful Soup是Python的一个库，主要功能是从网页抓取数据。</p>
 <p><a href="http://beautifulsoup.readthedocs.io/zh_CN/latest/" target="_blank" rel="external">官方文档</a></p>
 <p>通常用来处理网页抓取数据，如下是获取一个网页里的全部 <em>图片标签</em></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">from bs4 import BeautifulSoup</div><div class="line">def getImageTagsFromHtml(html):</div><div class="line">    soup = BeautifulSoup(html, &quot;html.parser&quot;)</div><div class="line">    imageTagsList = soup.find_all(&apos;img&apos;)</div><div class="line">    return imageTagsList</div></pre></td></tr></table></figure></li>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">getImageTagsFromHtml</span><span class="params">(html)</span>:</span></div><div class="line">    soup = BeautifulSoup(html, <span class="string">"html.parser"</span>)</div><div class="line">    imageTagsList = soup.find_all(<span class="string">'img'</span>)</div><div class="line">    <span class="keyword">return</span> imageTagsList</div></pre></td></tr></table></figure>
+<p>获取img标签里src属性值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> x <span class="keyword">in</span> xrange(len(imageTagsList)):</div><div class="line">	src = imageTagsList[x].get(<span class="string">"src"</span>)</div></pre></td></tr></table></figure>
+<p>获取某个特定的标签   </p>
+<p>例如 获取一个 <em>class=”example”</em>   的div</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">getImageTagsFromHtml</span><span class="params">(html)</span>:</span></div><div class="line">    soup = BeautifulSoup(html, <span class="string">"html.parser"</span>)</div><div class="line">    exampleDiv = soup.find(<span class="string">'div'</span>,<span class="string">"example"</span>)</div></pre></td></tr></table></figure></li>
 </ul>
 
       
@@ -219,7 +275,7 @@ Python2.X中默认编码是ASSCII格式，在没有修改">
   
   
     <a href="/2017/02/20/node_js_not_found/" id="article-nav-older" class="article-nav-link-wrap older">
-      <strong class="article-nav-caption">Older</strong>
+      <strong class="article-nav-caption">Viejo</strong>
       <div class="article-nav-title">node.js was not found</div>
     </a>
   
@@ -256,7 +312,7 @@ var duoshuoQuery = {short_name:"darrenfantasy"};
     <footer id="footer" class="post-footer footer">
       <hr/>
       <div id="footerContent" class="footer-content">
-        <p>I am a slow walker, but I never walk backwards.</p>
+        <p>stay hungry , stay foolish .</p>
 
 
   
