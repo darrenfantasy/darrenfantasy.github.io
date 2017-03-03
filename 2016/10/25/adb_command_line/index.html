@@ -31,7 +31,9 @@ https://developer.a">
   
     <link rel="icon" href="/favicon.ico">
   
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="/css/typing.css">
+  <link rel="stylesheet" href="/css/algolia.css">
 </head>
 
 
@@ -51,12 +53,32 @@ https://developer.a">
     
       <a class="main-nav-link" href="/about">About</a>
     
+      <a href="#" class="popup-trigger">Search</a>
   </nav>
   <nav id="sub-nav">
     
   </nav>
 </header>
+<div class="site-search">
+  <div class="algolia-popup popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
 
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+</div>
   <hr/>
   <div class="article-inner">
     
@@ -212,6 +234,9 @@ var duoshuoQuery = {short_name:"darrenfantasy"};
   <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
   <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
+
+  <script src="http://cdn.bootcss.com/instantsearch.js/1.5.1/instantsearch.js"></script>
+  <script src="/js/algolia.js"></script>
 
 <script src="/js/typing.js"></script>
 <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
