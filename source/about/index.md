@@ -3,7 +3,7 @@ title:
 date: 2017-02-15 17:42:51
 ---
 
-### About
+### About Me
 
 
 
@@ -18,14 +18,39 @@ date: 2017-02-15 17:42:51
 
 
 
-
-
-
-### Contact
+### Contact Me
 
 
 
 <a href="http://darrenfantasy.com/">博客</a>  –  <a href="https://github.com/darrenfantasy" target="_blank" rel="external">Github</a> –  <a href="https://www.zhihu.com/people/darren-78-24" target="_blank" rel="external">知乎</a> – <a href="http://weibo.com/Fantasy1112" target="_blank" rel="external">微博</a>  – <a href="mailto:yuanda.wang1993@gmail.com" target="_blank" rel="external">Mail</a>
+
+
+
+### About Blog
+
+
+
+*本小站诞生于2016年，用来记录学习和开发中遇到的问题及个人记录的笔记。*
+
+**小站的建立离不开以下平台的支持，感谢：**
+
+**<a href="https://github.com/">GitHub</a>**提供代码托管
+
+**<a href="https://hexo.io/">Hexo</a>**提供静态博客框架
+
+**<a href="https://www.algolia.com/">Algolia</a>**提供搜索功能
+
+**<a href="http://duoshuo.com/">多说</a>**提供评论系统
+
+**<a href="http://busuanzi.ibruce.info/">不蒜子</a>**提供访问量统计
+
+
+
+
+
+
+
+
 
 
 

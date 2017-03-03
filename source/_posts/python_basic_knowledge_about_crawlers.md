@@ -1,5 +1,5 @@
 ---
-title: 用Python实现爬虫需要掌握的基本知识
+title: Python实现爬虫要掌握的基本知识
 date: 2017-02-22 14:19:14
 tags: [python,crawler]
 ---
