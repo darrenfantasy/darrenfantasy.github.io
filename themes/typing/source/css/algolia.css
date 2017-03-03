@@ -171,7 +171,7 @@ a.search-result {
   position: relative;
   overflow: auto;
   padding: 10px 30px;
-  height: calc(100% - 50px);
+  height: calc(100% - 100px);
 }
 .algolia-results hr {
   margin: 10px 0;
@@ -189,7 +189,7 @@ a.search-result {
 .algolia-hit-item {
   margin: 15px 0;
 }
-.algolia-hit-item-link {
+.algolia-hit-item .algolia-hit-item-link {
   display: block;
   border-bottom: 1px dashed #ccc;
   transition-duration: 0.2s;
@@ -200,9 +200,11 @@ a.search-result {
   margin-top: 40px;
   border-top: none;
   padding: 0;
+  text-align: center;
 }
 .algolia-pagination .pagination-item {
   display: inline-block;
+  padding: 0 5px;
 }
 .algolia-pagination .page-number {
   border-top: none;
