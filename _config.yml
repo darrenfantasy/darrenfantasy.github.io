@@ -72,3 +72,10 @@ deploy:
   type: git
   repository: https://github.com/darrenfantasy/darrenfantasy.github.io.git
   branch: master
+
+algolia:
+  applicationID: 9YLWDGRLNL
+  apiKey: 81bb59315f815b2991060d464aadc077
+  adminApiKey: 'secret'
+  indexName: darrenfantasy
+  chunkSize: 5000
