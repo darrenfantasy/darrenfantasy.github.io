@@ -189,7 +189,7 @@ a.search-result {
 .algolia-hit-item {
   margin: 15px 0;
 }
-.algolia-hit-item-link {
+.algolia-hit-item .algolia-hit-item-link {
   display: block;
   border-bottom: 1px dashed #ccc;
   transition-duration: 0.2s;

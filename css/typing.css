@@ -654,7 +654,7 @@ textarea {
 }
 
 .article .article-entry blockquote footer cite a:hover,
-.article .article-nav-link-wrap:hover,
+.article .article-nav-link-wrap:hover, .algolia-hit-item .algolia-hit-item-link:hover,
 a:hover {
 	color: #22c5e5;
 	border-bottom: 1px solid RGBA(34, 197, 229, .2);
