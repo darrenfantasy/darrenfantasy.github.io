@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="default">
 <head>
   <meta charset="utf-8">
   
@@ -19,7 +19,7 @@ https://developer.a">
 https://developer.android.com/studio/command-line/adb.html#IntentSpec
 adb shell 命令
 https://developer.a">
-<meta property="og:updated_time" content="2017-02-16T14:54:52.000Z">
+<meta property="og:updated_time" content="2017-03-06T14:44:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="adb命令">
 <meta name="twitter:description" content="adb(Android Debug Bridge)是android sdk里的一个工具。
@@ -137,6 +137,12 @@ https://developer.a">
 <p>adb pull 手机文件 本地路径：把手机上的文件拷贝到电脑里</p>
 <p>adb devices 获取当前所有online设备 serial number</p>
 <p>adb -s <serial number=""> shell 对某台设备进行操作</serial></p>
+<h2 id="2017-03-06-update"><a href="#2017-03-06-update" class="headerlink" title="2017/03/06 update"></a>2017/03/06 update</h2><p>使用adb命令录屏</p>
+<p>adb的screenrecord命令。需要（API level 19）及以上，即Android4.4及以上。</p>
+<p>录制命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb shell screenrecord /sdcard/demo.mp4</div></pre></td></tr></table></figure>
+<p>保存为在sdcard目录下的demo.mp4文件。</p>
+<p>把录制的视频转成Gif(  <a href="https://ezgif.com/" target="_blank" rel="external">https://ezgif.com/</a>  )。</p>
 
       
     </div>
