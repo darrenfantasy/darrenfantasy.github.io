@@ -116,4 +116,4 @@ adb shell screenrecord /sdcard/demo.mp4
 
 保存为在sdcard目录下的demo.mp4文件。
 
-把录制的视频转成Gif(https://ezgif.com/)。
+把录制的视频转成Gif(  https://ezgif.com/  )。
