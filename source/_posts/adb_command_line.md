@@ -99,3 +99,21 @@ adb pull 手机文件 本地路径：把手机上的文件拷贝到电脑里
 adb devices 获取当前所有online设备 serial number
 
 adb -s <serial number> shell 对某台设备进行操作
+
+
+
+## 2017/03/06 update
+
+使用adb命令录屏
+
+adb的screenrecord命令。需要（API level 19）及以上，即Android4.4及以上。
+
+录制命令
+
+```
+adb shell screenrecord /sdcard/demo.mp4
+```
+
+保存为在sdcard目录下的demo.mp4文件。
+
+把录制的视频转成Gif(https://ezgif.com/)。
