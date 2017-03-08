@@ -104,7 +104,7 @@ adb -s <serial number> shell 对某台设备进行操作
 
 ## 2017/03/06 update
 
-使用adb命令录屏
+**使用adb命令录屏**
 
 adb的screenrecord命令。需要（API level 19）及以上，即Android4.4及以上。
 
@@ -117,3 +117,29 @@ adb shell screenrecord /sdcard/demo.mp4
 保存为在sdcard目录下的demo.mp4文件。
 
 把录制的视频转成Gif(  https://ezgif.com/  )。
+
+
+
+## 2017/03/08 update
+
+**Installing ADB on MAC OS X**（mac系统安装adb命令）
+
+**Using Homebrew**
+
+1. Install *homebrew*
+
+   ```
+   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+   ```
+
+2. Install adb
+
+   ```
+   brew install android-platform-tools
+   ```
+
+3. Start using adb
+
+   ```
+   adb devices
+   ```
