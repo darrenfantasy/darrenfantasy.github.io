@@ -24,6 +24,7 @@ adb shell 命令包括am(activity manager)和pm(package manager)
 
 关于一些am命令的介绍：
 
+```
 start [options] <INTENT> ：启动activity通过指定的intent参数。具体intent参数参照官方表。
 
 startservice [options] <INTENT> ： 启动service通过指定的intent参数。具体intent跟start命令参数相同。
@@ -46,6 +47,8 @@ set-debug-app [options] <PACKAGE> ：设置package包应用为debug模式。参�
 
 clear-debug-app ：清空之前用set-debug-app命令设置的package包应用。
 
+```
+
 
 接下来介绍pm命令，pm全称package manager，你能使用pm命令去模拟Android行为或者查询设备上的应用等，当你在adb shell命令下执行pm命令：
 
@@ -53,6 +56,8 @@ pm <command>
 你也可以在adb shell前执行pm命令：
 adb shell pm uninstall com.example.MyApp
 关于一些pm命令的介绍：
+
+```
 list packages [options] <FILTER> ：打印所有包，选择性的查询包列表。参数选项：-f：查看关联文件，即应用apk的位置跟对应的包名（如：package:/system/app/MusicPlayer.apk=com.sec.android.app.music）；-d：查看disabled packages；-e：查看enable package；-s：查看系统package；-3：查看第三方package；-i：查看package的对应安装者（如：1、package:com.tencent.qqmusic  installer=null 2、package:com.tencent.qqpim  installer=com.android.vending）；-u：查看曾被卸载过的package。（卸载后又重新安装依然会被列入）；--user<USER_ID>：The user space to query。
 
 list permission-groups ：打印所有已知的权限群组。
@@ -78,6 +83,7 @@ enable <PACKAGE_OR_COMPONENT> ：使package或component可用。（如：pm enab
 disable <PACKAGE_OR_COMPONENT> ：使package或component不可用。（如：pm disable "package/class"）（disable了指定的package，但是getComponentEnabledSetting该package里的components依然是enable状态的。disable-user一样原理。）
 
 disable-user [options] <PACKAGE_OR_COMPONENT> ：参数选项：--user <USER_ID>: The user to disable.
+
 grant <PACKAGE_PERMISSION> ：授权给应用。
 
 revoke <PACKAGE_PERMISSION> ：撤销权限。
@@ -99,6 +105,8 @@ adb pull 手机文件 本地路径：把手机上的文件拷贝到电脑里
 adb devices 获取当前所有online设备 serial number
 
 adb -s <serial number> shell 对某台设备进行操作
+
+```
 
 
 

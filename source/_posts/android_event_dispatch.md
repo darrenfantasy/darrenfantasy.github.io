@@ -4,70 +4,73 @@ date: 2016-11-08 16:02:42
 tags: [Android]
 ---
 
+
 看了大神们的技术博客和安卓源码，总结如下
 -----
 
 1.在触摸任意一个控件的时候，都会先调用该控件的 dispatchTouchEvent() 方法。
 <pre><code>
   /**
-     * Pass the touch screen motion event down to the target view, or this
-     * view if it is the target.
-     *
-     * @param event The motion event to be dispatched.
-     * @return True if the event was handled by the view, false otherwise.
-     */
-    public boolean dispatchTouchEvent(MotionEvent event) {
-        // If the event should be handled by accessibility focus first.
-        if (event.isTargetAccessibilityFocus()) {
-            // We don't have focus or no virtual descendant has it, do not handle the event.
-            if (!isAccessibilityFocusedViewOrHost()) {
-                return false;
-            }
-            // We have focus and got the event, then use normal event dispatch.
-            event.setTargetAccessibilityFocus(false);
+```java
+ * Pass the touch screen motion event down to the target view, or this
+ * view if it is the target.
+ *
+ * @param event The motion event to be dispatched.
+ * @return True if the event was handled by the view, false otherwise.
+ */
+public boolean dispatchTouchEvent(MotionEvent event) {
+    // If the event should be handled by accessibility focus first.
+    if (event.isTargetAccessibilityFocus()) {
+        // We don't have focus or no virtual descendant has it, do not handle the event.
+        if (!isAccessibilityFocusedViewOrHost()) {
+            return false;
         }
-
-        boolean result = false;
-
-        if (mInputEventConsistencyVerifier != null) {
-            mInputEventConsistencyVerifier.onTouchEvent(event, 0);
-        }
-
-        final int actionMasked = event.getActionMasked();
-        if (actionMasked == MotionEvent.ACTION_DOWN) {
-            // Defensive cleanup for new gesture
-            stopNestedScroll();
-        }
-
-        if (onFilterTouchEventForSecurity(event)) {
-            //noinspection SimplifiableIfStatement
-            ListenerInfo li = mListenerInfo;
-            if (li != null && li.mOnTouchListener != null
-                    && (mViewFlags & ENABLED_MASK) == ENABLED
-                    && li.mOnTouchListener.onTouch(this, event)) {
-                result = true;
-            }
-            //可以从上面代码看出当以上条件都成立时，即也要满足当onTouch()返回true的时候，就不会执行onTouchEvent()方法了。
-            if (!result && onTouchEvent(event)) {
-                result = true;
-            }
-        }
-
-        if (!result && mInputEventConsistencyVerifier != null) {
-            mInputEventConsistencyVerifier.onUnhandledEvent(event, 0);
-        }
-
-        // Clean up after nested scrolls if this is the end of a gesture;
-        // also cancel it if we tried an ACTION_DOWN but we didn't want the rest
-        // of the gesture.
-        if (actionMasked == MotionEvent.ACTION_UP ||
-                actionMasked == MotionEvent.ACTION_CANCEL ||
-                (actionMasked == MotionEvent.ACTION_DOWN && !result)) {
-            stopNestedScroll();
-        }
-
-        return result;
+        // We have focus and got the event, then use normal event dispatch.
+        event.setTargetAccessibilityFocus(false);
     }
+
+    boolean result = false;
+
+    if (mInputEventConsistencyVerifier != null) {
+        mInputEventConsistencyVerifier.onTouchEvent(event, 0);
+    }
+
+    final int actionMasked = event.getActionMasked();
+    if (actionMasked == MotionEvent.ACTION_DOWN) {
+        // Defensive cleanup for new gesture
+        stopNestedScroll();
+    }
+
+    if (onFilterTouchEventForSecurity(event)) {
+        //noinspection SimplifiableIfStatement
+        ListenerInfo li = mListenerInfo;
+        if (li != null && li.mOnTouchListener != null
+                && (mViewFlags & ENABLED_MASK) == ENABLED
+                && li.mOnTouchListener.onTouch(this, event)) {
+            result = true;
+        }
+        //可以从上面代码看出当以上条件都成立时，即也要满足当onTouch()返回true的时候，就不会执行onTouchEvent()方法了。
+        if (!result && onTouchEvent(event)) {
+            result = true;
+        }
+    }
+
+    if (!result && mInputEventConsistencyVerifier != null) {
+        mInputEventConsistencyVerifier.onUnhandledEvent(event, 0);
+    }
+
+    // Clean up after nested scrolls if this is the end of a gesture;
+    // also cancel it if we tried an ACTION_DOWN but we didn't want the rest
+    // of the gesture.
+    if (actionMasked == MotionEvent.ACTION_UP ||
+            actionMasked == MotionEvent.ACTION_CANCEL ||
+            (actionMasked == MotionEvent.ACTION_DOWN && !result)) {
+        stopNestedScroll();
+    }
+
+    return result;
+}
+```
 <code></pre>
 
 2.onTouch在onTouchEvent之前执行，如果onTouch返回true将事件消费了,则onTouchEvent将不会执行。

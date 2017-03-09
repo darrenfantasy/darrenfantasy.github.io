@@ -5,6 +5,7 @@ tags: [Android,Java]
 ---
 
 ---
+
 2016-11-03关于Java中Integer的值的比较
 ---
 
@@ -14,34 +15,37 @@ tags: [Android,Java]
  Integer i = 40002;
  Integer j = 40002;
  i==j 返回false
- 
+
  而之前错误码0的时候确实返回true
  Integer x = 0;
  Integer y = 0;
  x==y 返回true
- 
+
  一时半会有点晕，打断点的时候才发现对象不一样。
  后来查资料发现
 <pre><code>
  public static Integer valueOf(int i) {
-        return  i >= 128 || i < -128 ? new Integer(i) : SMALL_VALUES[i + 128];
-    }
+```java
+    return  i >= 128 || i < -128 ? new Integer(i) : SMALL_VALUES[i + 128];
+}
 
-    /**
-     * A cache of instances used by {@link Integer#valueOf(int)} and auto-boxing
-     */
-    private static final Integer[] SMALL_VALUES = new Integer[256];
+/**
+ * A cache of instances used by {@link Integer#valueOf(int)} and auto-boxing
+ */
+private static final Integer[] SMALL_VALUES = new Integer[256];
 
-    static {
-        for (int i = -128; i < 128; i++) {
-            SMALL_VALUES[i + 128] = new Integer(i);
-        }
+static {
+    for (int i = -128; i < 128; i++) {
+        SMALL_VALUES[i + 128] = new Integer(i);
     }
+}
+```
  </code></pre>
  默认Integer值在－127到128区间内，就会把i作为变量存到内存里。否则会new一个Integer对象。
  所以比较Integer值的时候，可以使用Integer.intValue()或者直接用equals()比较。
- 
+
 ---
+
 2017-01-12开发表情搜搜demo时遇到的一些问题
 ---
 

@@ -6,28 +6,36 @@ tags: [Android,Java]
 
 ---
 
+
 1.懒汉式
 ----
-<pre><code>
+```java
 public class Singleton{
+
   private static Singleton mInstance;
+
   private Singleton(){
+
   }
+
   public static synchronized Singleton getInstance(){
+
     if(mInstance == null){
       mInstance = new Singleton();
     }
     return mInstance;
+
   }
+
 }
-</code></pre>
+```
 
 对于懒汉式，会延迟加载，在第一次调用的时候才会初始化。如果不需要同步的情况下，效率比较低。
 
 
 2.饿汉式
 ----
-<pre><code>
+```java
 public class Singleton{
   private static Singleton mInstance = new Singleton();
   private Singleton(){
@@ -36,13 +44,14 @@ public class Singleton{
     return mInstance;
   }
 }
-</code></pre>
+```
 
 对于饿汉式，类加载的时候单例就会实例化，会浪费内存。
 
+
 3.双重检查锁定（Double Check Lock）
 ----
-<pre><code>
+```java
 public class Singleton{
   private static Singleton mInstance;
   private Singleton(){
@@ -58,13 +67,14 @@ public class Singleton{
     return mInstance;
   }
 }
-</code></pre>
+```
 
 在JDK1.5之后，这种方法才能达到单例效果。
 
+
 4.静态内部类
 ----
-<pre><code>
+```java
 public class Singleton{
   private Singleton(){
   }
@@ -75,4 +85,4 @@ public class Singleton{
     private static final Singleton mInstance = new Singleton();
   }
 }
-</code></pre>
+```
