@@ -17,7 +17,7 @@
  Integer i = 40002; Integer j = 40002; i==j 返回false
  而之前错误码0的时候确实返回true Integer x = 0; Integer y = 0; x==y 返回true
  一时半会有点晕，打断点的时候才发现对象不一样。 后来">
-<meta property="og:updated_time" content="2017-02-25T06:45:34.000Z">
+<meta property="og:updated_time" content="2017-03-11T15:06:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="开发中遇到的坑">
 <meta name="twitter:description" content="2016-11-03关于Java中Integer的值的比较今天在开发中，需要新增一个错误码的返回值，调试过程中发现
@@ -97,18 +97,8 @@
 <p> Integer i = 40002;<br> Integer j = 40002;<br> i==j 返回false</p>
 <p> 而之前错误码0的时候确实返回true<br> Integer x = 0;<br> Integer y = 0;<br> x==y 返回true</p>
 <p> 一时半会有点晕，打断点的时候才发现对象不一样。<br> 后来查资料发现</p>
-<p><pre><code><br> public static Integer valueOf(int i) {<br>        return  i &gt;= 128 || i &lt; -128 ? new Integer(i) : SMALL_VALUES[i + 128];<br>    }</code></pre></p>
-<pre><code>/**
- * A cache of instances used by {@link Integer#valueOf(int)} and auto-boxing
- */
-private static final Integer[] SMALL_VALUES = new Integer[256];
-
-static {
-    for (int i = -128; i &lt; 128; i++) {
-        SMALL_VALUES[i + 128] = new Integer(i);
-    }
-}
-</code></pre><p> <br> 默认Integer值在－127到128区间内，就会把i作为变量存到内存里。否则会new一个Integer对象。<br> 所以比较Integer值的时候，可以使用Integer.intValue()或者直接用equals()比较。</p>
+<p><pre><code><br> public static Integer valueOf(int i) {<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">    <span class="keyword">return</span>  i &gt;= <span class="number">128</span> || i &lt; -<span class="number">128</span> ? <span class="keyword">new</span> Integer(i) : SMALL_VALUES[i + <span class="number">128</span>];</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * A cache of instances used by &#123;<span class="doctag">@link</span> Integer#valueOf(int)&#125; and auto-boxing</div><div class="line"> */</div><div class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Integer[] SMALL_VALUES = <span class="keyword">new</span> Integer[<span class="number">256</span>];</div><div class="line"></div><div class="line"><span class="keyword">static</span> &#123;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = -<span class="number">128</span>; i &lt; <span class="number">128</span>; i++) &#123;</div><div class="line">        SMALL_VALUES[i + <span class="number">128</span>] = <span class="keyword">new</span> Integer(i);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></code></pre></p>
+<p> <br> 默认Integer值在－127到128区间内，就会把i作为变量存到内存里。否则会new一个Integer对象。<br> 所以比较Integer值的时候，可以使用Integer.intValue()或者直接用equals()比较。</p>
 <hr>
 <h2 id="2017-01-12开发表情搜搜demo时遇到的一些问题"><a href="#2017-01-12开发表情搜搜demo时遇到的一些问题" class="headerlink" title="2017-01-12开发表情搜搜demo时遇到的一些问题"></a>2017-01-12开发表情搜搜demo时遇到的一些问题</h2><p>大约一周半的时间，完成了表情搜搜demo<br>以下记录了开发中遇到的问题</p>
 <p>1.Intent无法传递太大数据<br>（业务需求：把后打开的页面里的一个图片的base64传到上一个页面，由于数据量过大，后改为把图片的url传回上个页面再去转成base64）<br>因为遇到要在后打开的页面传递值返回到上一个页面，所以用StartActivityForResult方法。在setResult时通过Intent来把图片的base64传回去，<br>但是遇到错误信息：E/JavaBinder﹕ !!! FAILED BINDER TRANSACTION !!!<br>查阅资料发现  <a href="https://developer.android.com/reference/android/os/TransactionTooLargeException.html" target="_blank" rel="external">https://developer.android.com/reference/android/os/TransactionTooLargeException.html</a><br>The Binder transaction buffer has a limited fixed size, currently 1Mb, which is shared by all transactions in progress for the process. Consequently this exception can be thrown when there are many transactions in progress even when most of the individual transactions are of moderate size.<br>Binder事务缓冲区具有有限的固定大小，目前为1Mb，由进程正在进行的所有事务共享。因此，当有许多事务正在进行时，即使大多数单独的事务大小适中，也可以抛出此异常.</p>

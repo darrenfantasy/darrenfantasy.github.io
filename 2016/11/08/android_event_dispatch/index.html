@@ -8,10 +8,7 @@
   <meta name="description" content="看了大神们的技术博客和安卓源码，总结如下1.在触摸任意一个控件的时候，都会先调用该控件的 dispatchTouchEvent() 方法。
 
   /**
-     * Pass the touch screen motion event down to the target view, or this
-     * view if it is the target.
-     *
-     * @">
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758 * Pass the touc">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android事件分发机制">
 <meta property="og:url" content="http://yoursite.com/2016/11/08/android_event_dispatch/index.html">
@@ -19,20 +16,14 @@
 <meta property="og:description" content="看了大神们的技术博客和安卓源码，总结如下1.在触摸任意一个控件的时候，都会先调用该控件的 dispatchTouchEvent() 方法。
 
   /**
-     * Pass the touch screen motion event down to the target view, or this
-     * view if it is the target.
-     *
-     * @">
-<meta property="og:updated_time" content="2017-02-16T14:54:52.000Z">
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758 * Pass the touc">
+<meta property="og:updated_time" content="2017-03-11T15:06:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android事件分发机制">
 <meta name="twitter:description" content="看了大神们的技术博客和安卓源码，总结如下1.在触摸任意一个控件的时候，都会先调用该控件的 dispatchTouchEvent() 方法。
 
   /**
-     * Pass the touch screen motion event down to the target view, or this
-     * view if it is the target.
-     *
-     * @">
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758 * Pass the touc">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -104,64 +95,8 @@
         <h2 id="看了大神们的技术博客和安卓源码，总结如下"><a href="#看了大神们的技术博客和安卓源码，总结如下" class="headerlink" title="看了大神们的技术博客和安卓源码，总结如下"></a>看了大神们的技术博客和安卓源码，总结如下</h2><p>1.在触摸任意一个控件的时候，都会先调用该控件的 dispatchTouchEvent() 方法。</p>
 <pre><code>
   /**
-     * Pass the touch screen motion event down to the target view, or this
-     * view if it is the target.
-     *
-     * @param event The motion event to be dispatched.
-     * @return True if the event was handled by the view, false otherwise.
-     */
-    public boolean dispatchTouchEvent(MotionEvent event) {
-        // If the event should be handled by accessibility focus first.
-        if (event.isTargetAccessibilityFocus()) {
-            // We don't have focus or no virtual descendant has it, do not handle the event.
-            if (!isAccessibilityFocusedViewOrHost()) {
-                return false;
-            }
-            // We have focus and got the event, then use normal event dispatch.
-            event.setTargetAccessibilityFocus(false);
-        }
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div></pre></td><td class="code"><pre><div class="line"> * Pass the touch screen motion event down to the target view, or <span class="keyword">this</span></div><div class="line"> * view <span class="keyword">if</span> it is the target.</div><div class="line"> *</div><div class="line"> * <span class="meta">@param</span> event The motion event to be dispatched.</div><div class="line"> * <span class="meta">@return</span> True <span class="keyword">if</span> the event was handled by the view, <span class="keyword">false</span> otherwise.</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">dispatchTouchEvent</span><span class="params">(MotionEvent event)</span> </span>&#123;</div><div class="line">    <span class="comment">// If the event should be handled by accessibility focus first.</span></div><div class="line">    <span class="keyword">if</span> (event.isTargetAccessibilityFocus()) &#123;</div><div class="line">        <span class="comment">// We don't have focus or no virtual descendant has it, do not handle the event.</span></div><div class="line">        <span class="keyword">if</span> (!isAccessibilityFocusedViewOrHost()) &#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="comment">// We have focus and got the event, then use normal event dispatch.</span></div><div class="line">        event.setTargetAccessibilityFocus(<span class="keyword">false</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">boolean</span> result = <span class="keyword">false</span>;</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (mInputEventConsistencyVerifier != <span class="keyword">null</span>) &#123;</div><div class="line">        mInputEventConsistencyVerifier.onTouchEvent(event, <span class="number">0</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">final</span> <span class="keyword">int</span> actionMasked = event.getActionMasked();</div><div class="line">    <span class="keyword">if</span> (actionMasked == MotionEvent.ACTION_DOWN) &#123;</div><div class="line">        <span class="comment">// Defensive cleanup for new gesture</span></div><div class="line">        stopNestedScroll();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (onFilterTouchEventForSecurity(event)) &#123;</div><div class="line">        <span class="comment">//noinspection SimplifiableIfStatement</span></div><div class="line">        ListenerInfo li = mListenerInfo;</div><div class="line">        <span class="keyword">if</span> (li != <span class="keyword">null</span> &amp;&amp; li.mOnTouchListener != <span class="keyword">null</span></div><div class="line">                &amp;&amp; (mViewFlags &amp; ENABLED_MASK) == ENABLED</div><div class="line">                &amp;&amp; li.mOnTouchListener.onTouch(<span class="keyword">this</span>, event)) &#123;</div><div class="line">            result = <span class="keyword">true</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="comment">//可以从上面代码看出当以上条件都成立时，即也要满足当onTouch()返回true的时候，就不会执行onTouchEvent()方法了。</span></div><div class="line">        <span class="keyword">if</span> (!result &amp;&amp; onTouchEvent(event)) &#123;</div><div class="line">            result = <span class="keyword">true</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (!result &amp;&amp; mInputEventConsistencyVerifier != <span class="keyword">null</span>) &#123;</div><div class="line">        mInputEventConsistencyVerifier.onUnhandledEvent(event, <span class="number">0</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// Clean up after nested scrolls if this is the end of a gesture;</span></div><div class="line">    <span class="comment">// also cancel it if we tried an ACTION_DOWN but we didn't want the rest</span></div><div class="line">    <span class="comment">// of the gesture.</span></div><div class="line">    <span class="keyword">if</span> (actionMasked == MotionEvent.ACTION_UP ||</div><div class="line">            actionMasked == MotionEvent.ACTION_CANCEL ||</div><div class="line">            (actionMasked == MotionEvent.ACTION_DOWN &amp;&amp; !result)) &#123;</div><div class="line">        stopNestedScroll();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
-        boolean result = false;
-
-        if (mInputEventConsistencyVerifier != null) {
-            mInputEventConsistencyVerifier.onTouchEvent(event, 0);
-        }
-
-        final int actionMasked = event.getActionMasked();
-        if (actionMasked == MotionEvent.ACTION_DOWN) {
-            // Defensive cleanup for new gesture
-            stopNestedScroll();
-        }
-
-        if (onFilterTouchEventForSecurity(event)) {
-            //noinspection SimplifiableIfStatement
-            ListenerInfo li = mListenerInfo;
-            if (li != null && li.mOnTouchListener != null
-                    && (mViewFlags & ENABLED_MASK) == ENABLED
-                    && li.mOnTouchListener.onTouch(this, event)) {
-                result = true;
-            }
-            //可以从上面代码看出当以上条件都成立时，即也要满足当onTouch()返回true的时候，就不会执行onTouchEvent()方法了。
-            if (!result && onTouchEvent(event)) {
-                result = true;
-            }
-        }
-
-        if (!result && mInputEventConsistencyVerifier != null) {
-            mInputEventConsistencyVerifier.onUnhandledEvent(event, 0);
-        }
-
-        // Clean up after nested scrolls if this is the end of a gesture;
-        // also cancel it if we tried an ACTION_DOWN but we didn't want the rest
-        // of the gesture.
-        if (actionMasked == MotionEvent.ACTION_UP ||
-                actionMasked == MotionEvent.ACTION_CANCEL ||
-                (actionMasked == MotionEvent.ACTION_DOWN && !result)) {
-            stopNestedScroll();
-        }
-
-        return result;
-    }
 <code></code></code></pre>
 
 <p>2.onTouch在onTouchEvent之前执行，如果onTouch返回true将事件消费了,则onTouchEvent将不会执行。</p>
@@ -205,11 +140,11 @@
     
 <nav id="article-nav" class="article-nav">
   
-    <a href="/2017/01/12/android_read_note/" id="article-nav-newer" class="article-nav-link-wrap newer">
+    <a href="/2016/12/11/android_animation/" id="article-nav-newer" class="article-nav-link-wrap newer">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          读《Android开发艺术探索》笔记
+          Android Animation
         
       </div>
     </a>

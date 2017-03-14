@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="default">
+<head>
+  <meta charset="utf-8">
+  
+  <title>重新认识HashMap | darrenfantasy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="我们在存储数据的时候经常会用到HashMap，之前只知道它是用来存储Key和对应Value的，非线程安全等基本使特性。但是对其内部实现原理却不是很清楚，今天想深入探究其实现原理。
+首先对以下四个实现类的特点进行说明：
+
+HashMapHashMap根据Key的hashCode值来存储数据的，大多情况下可以直接定位到它的值，因此访问速度也很快，但遍历顺序却是不确定的。HashMap最多允许一个Key">
+<meta property="og:type" content="article">
+<meta property="og:title" content="重新认识HashMap">
+<meta property="og:url" content="http://yoursite.com/2017/03/13/re_understanding_hashmap/index.html">
+<meta property="og:site_name" content="darrenfantasy">
+<meta property="og:description" content="我们在存储数据的时候经常会用到HashMap，之前只知道它是用来存储Key和对应Value的，非线程安全等基本使特性。但是对其内部实现原理却不是很清楚，今天想深入探究其实现原理。
+首先对以下四个实现类的特点进行说明：
+
+HashMapHashMap根据Key的hashCode值来存储数据的，大多情况下可以直接定位到它的值，因此访问速度也很快，但遍历顺序却是不确定的。HashMap最多允许一个Key">
+<meta property="og:image" content="http://oic2oders.bkt.clouddn.com/blog_hashmap.png">
+<meta property="og:image" content="http://oic2oders.bkt.clouddn.com/blog_hashmap_structure.png">
+<meta property="og:updated_time" content="2017-03-14T12:02:45.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="重新认识HashMap">
+<meta name="twitter:description" content="我们在存储数据的时候经常会用到HashMap，之前只知道它是用来存储Key和对应Value的，非线程安全等基本使特性。但是对其内部实现原理却不是很清楚，今天想深入探究其实现原理。
+首先对以下四个实现类的特点进行说明：
+
+HashMapHashMap根据Key的hashCode值来存储数据的，大多情况下可以直接定位到它的值，因此访问速度也很快，但遍历顺序却是不确定的。HashMap最多允许一个Key">
+<meta name="twitter:image" content="http://oic2oders.bkt.clouddn.com/blog_hashmap.png">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/typing.css">
+  <link rel="stylesheet" href="/css/algolia.css">
+</head>
+
+
+<a href="https://github.com/darrenfantasy"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+
+  
+    <body>
+  
+      <div id="container" class="container">
+        <article id="post-re_understanding_hashmap" class="article article-type-post" itemscope itemprop="blogPost">
+  <header id="header" class="header">
+  <nav id="main-nav" class="main-nav">
+    
+      <a class="main-nav-link" href="/">Home</a>
+    
+      <a class="main-nav-link" href="/archives">Archives</a>
+    
+      <a class="main-nav-link" href="/about">About</a>
+    
+      <a href="#" class="popup-trigger">Search</a>
+  </nav>
+  <nav id="sub-nav">
+    
+  </nav>
+</header>
+<div class="site-search">
+  <div class="algolia-popup popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+</div>
+  <hr/>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      重新认识HashMap
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry typo" itemprop="articleBody">
+      
+        <p>我们在存储数据的时候经常会用到HashMap，之前只知道它是用来存储Key和对应Value的，非线程安全等基本使特性。但是对其内部实现原理却不是很清楚，今天想深入探究其实现原理。</p>
+<p>首先对以下四个实现类的特点进行说明：</p>
+<p><img src="http://oic2oders.bkt.clouddn.com/blog_hashmap.png" alt=""></p>
+<h3 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h3><p>HashMap根据Key的hashCode值来存储数据的，大多情况下可以直接定位到它的值，因此访问速度也很快，但遍历顺序却是不确定的。HashMap最多允许一个Key为null，允许多个Value为null。是非线程安全的，即任一时刻有多个线程同时写HashMap，可能会导致数据的不一致。如果要实现线程安全，那么需要用Collections的sychronizedMap方法来使它具有线程安全，或者使用ConcurrentHashMap。</p>
+<h3 id="HashTable"><a href="#HashTable" class="headerlink" title="HashTable"></a>HashTable</h3><p>HashTable是遗留类，继承Dictionary类，映射的常用功能和HashMap相似，但是是线程安全的。并发行不如ConcurrentHashMap。不需要线程安全的时候可以用HashMap替换，需要线程安全时可用ConcurrentHashMap替换。</p>
+<h3 id="LinkedHashMap"><a href="#LinkedHashMap" class="headerlink" title="LinkedHashMap"></a>LinkedHashMap</h3><p>LinkedHashMap继承自HashMap，它保存了记录的插入顺序，在用迭代器（Iterator）遍历LinkedHashMap时，先得到的记录是先插入的，当然也可以在构造函数时带参数，按照访问次序排序。</p>
+<h3 id="TreeMap"><a href="#TreeMap" class="headerlink" title="TreeMap"></a>TreeMap</h3><p>TreeMap实现SortedMap接口，能够把它保存的记录根据键排序，默认是按键值的升序排序，也可指定排序的比较器。在用迭代器遍历TreeMap时，得到的记录是排序过的。使用TreeMap时，Key必须实现Comparable接口或者在构造时传入自定义的Comparator，否则会在运行时抛出异常（java.lang.ClassCastException）</p>
+<p>上述四种Map类型的类，要求key是不可变对象。不可变对象创建后它的哈希值不会被改变，如果对象的哈希值改变的话，那么Map对象很可能无法定位到映射的位置了。</p>
+<h3 id="HashMap内部实现"><a href="#HashMap内部实现" class="headerlink" title="HashMap内部实现"></a>HashMap内部实现</h3><p>HashMap是由数组＋链表＋红黑树（JDK1.8增加了红黑树）实现的。</p>
+<p><img src="http://oic2oders.bkt.clouddn.com/blog_hashmap_structure.png" alt=""></p>
+<p>HashMap就是使用哈希表来存储的。Java中的HashMap采用<strong>链地址法</strong>来解决冲突。</p>
+<p>链地址法，简而言之，就是数组加链表的结合。每个数组元素上都是一个链表结构。当Key进行Hash后，得到对应数组下标，然后把数据放在对应下标元素的链表上。</p>
+<p>如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">HashMap map = new HashMap();</div><div class="line">map.put(&quot;darren&quot;,&quot;fantasy&quot;);</div></pre></td></tr></table></figure>
+<p>先把“darren”这个key进行hashCode()方法得到其hashCode值，然后再通过Hash算法的<strong>高位运算</strong>和<strong>取模运算</strong>来定位该键值对的存储位置。有时两个key会定位到相同位置，那么就表示发生了Hash碰撞。（Hash算法结果分散越均匀，Hash碰撞的概率就越小，map的存取效率也就越高。）</p>
+<p>当哈希桶数组很大时，即使比较差的Hash算法也会比较分散，但是所需要的空间成本很大。哈希桶数组很小的时候，即使再好的Hash算法也会发生碰撞。那么如何解决这个问题呢？那么就需要好的哈希算法和扩容机制了。</p>
+<p>在理解Hash和扩容之前，我们先了解HashMap里的几个字段。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * The default load factor. Note that this implementation ignores the</div><div class="line"> * load factor, but cannot do away with it entirely because it's</div><div class="line"> * mentioned in the API.</div><div class="line"> *</div><div class="line"> * &lt;p&gt;Note that this constant has no impact on the behavior of the program,</div><div class="line"> * but it is emitted as part of the serialized form. The load factor of</div><div class="line"> * .75 is hardwired into the program, which uses cheap shifts in place of</div><div class="line"> * expensive division.</div><div class="line"> */</div><div class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">float</span> DEFAULT_LOAD_FACTOR = .<span class="number">75F</span>;<span class="comment">//负载因子</span></div><div class="line"></div><div class="line">   <span class="comment">/**</span></div><div class="line"> * The number of mappings in this hash map.</div><div class="line"> */</div><div class="line"><span class="keyword">transient</span> <span class="keyword">int</span> size;<span class="comment">//实际存在的键值对数量</span></div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * Incremented by "structural modifications" to allow (best effort)</div><div class="line"> * detection of concurrent modification.</div><div class="line"> */</div><div class="line"><span class="keyword">transient</span> <span class="keyword">int</span> modCount;<span class="comment">//记录HashMap内部结构发生变化的次数</span></div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * The table is rehashed when its size exceeds this threshold.</div><div class="line"> * The value of this field is generally .75 * capacity, except when</div><div class="line"> * the capacity is zero, as described in the EMPTY_TABLE declaration</div><div class="line"> * above.</div><div class="line"> */</div><div class="line"><span class="keyword">private</span> <span class="keyword">transient</span> <span class="keyword">int</span> threshold;<span class="comment">//所能容纳键值对的临界值</span></div></pre></td></tr></table></figure>
+<p>首先，Node[] table的初始化长度length（默认值是16），<strong>loadFactor负载因子</strong>（默认值是0.75）<strong>threshold</strong>即所能容纳键值对的临界值是:threshold = length <em> loadFactor。当HashMap中容纳的键值对数目超过临界值时则进行扩容。扩容后的HashMap容量是之前的两倍。<strong>size</strong>这个字段是用来表示HashMap中实际存在的键值对数量。<em>*modCount</em></em>是用来记录HashMap内部结构发生变化的次数。（内部结构变化是指结构发生变化，如put新的键值对，但某个键值对的value被覆盖则不属于结构变化。）</p>
+<h3 id="使用put方法进行分析"><a href="#使用put方法进行分析" class="headerlink" title="使用put方法进行分析"></a>使用put方法进行分析</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Maps the specified key to the specified value.</div><div class="line"> *</div><div class="line"> * <span class="doctag">@param</span> key</div><div class="line"> *            the key.</div><div class="line"> * <span class="doctag">@param</span> value</div><div class="line"> *            the value.</div><div class="line"> * <span class="doctag">@return</span> the value of any previous mapping with the specified key or</div><div class="line"> *         &#123;<span class="doctag">@code</span> null&#125; if there was no such mapping.</div><div class="line"> */</div><div class="line"><span class="meta">@Override</span> <span class="function"><span class="keyword">public</span> V <span class="title">put</span><span class="params">(K key, V value)</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span> (key == <span class="keyword">null</span>) &#123;</div><div class="line">        <span class="keyword">return</span> putValueForNullKey(value);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">int</span> hash = Collections.secondaryHash(key);</div><div class="line">    HashMapEntry&lt;K, V&gt;[] tab = table;</div><div class="line">    <span class="keyword">int</span> index = hash &amp; (tab.length - <span class="number">1</span>);<span class="comment">//第三步：取模运算</span></div><div class="line">    <span class="keyword">for</span> (HashMapEntry&lt;K, V&gt; e = tab[index]; e != <span class="keyword">null</span>; e = e.next) &#123;</div><div class="line">        <span class="keyword">if</span> (e.hash == hash &amp;&amp; key.equals(e.key)) &#123;</div><div class="line">            preModify(e);</div><div class="line">            V oldValue = e.value;</div><div class="line">            e.value = value;</div><div class="line">            <span class="keyword">return</span> oldValue;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// No entry for (non-null) key is present; create one</span></div><div class="line">    modCount++;</div><div class="line">    <span class="keyword">if</span> (size++ &gt; threshold) &#123;</div><div class="line">        tab = doubleCapacity();</div><div class="line">        index = hash &amp; (tab.length - <span class="number">1</span>);</div><div class="line">    &#125;</div><div class="line">    addNewEntry(key, value, hash, index);</div><div class="line">    <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">secondaryHash</span><span class="params">(Object key)</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> secondaryHash(key.hashCode());<span class="comment">//第一步：取Key的HashCode值</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">secondaryHash</span><span class="params">(<span class="keyword">int</span> h)</span> </span>&#123;</div><div class="line">    <span class="comment">// Spread bits to regularize both segment and index locations,</span></div><div class="line">    <span class="comment">// using variant of single-word Wang/Jenkins hash.</span></div><div class="line">    h += (h &lt;&lt;  <span class="number">15</span>) ^ <span class="number">0xffffcd7d</span>;</div><div class="line">    h ^= (h &gt;&gt;&gt; <span class="number">10</span>);</div><div class="line">    h += (h &lt;&lt;   <span class="number">3</span>);</div><div class="line">    h ^= (h &gt;&gt;&gt;  <span class="number">6</span>);</div><div class="line">    h += (h &lt;&lt;   <span class="number">2</span>) + (h &lt;&lt; <span class="number">14</span>);</div><div class="line">    <span class="keyword">return</span> h ^ (h &gt;&gt;&gt; <span class="number">16</span>);<span class="comment">//第二步：高位运算</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>不管是增加，查找，删除，首先都要定位到哈希桶数组的位置。这里Hash算法采用了secondaryHash。取Key的HashCode值，高位运算，取模运算。（对应代码中的1，2，3步骤）</p>
+<p>put方法的整个流程：</p>
+<ol>
+<li>如果Key为null，那么直接执行putValueForNullKey函数。（否则执行2）</li>
+<li>如果不为空，则算出Key所在哈希桶数组的位置。（接着执行3）</li>
+<li>遍历tab[index],即所在数组位置的链表，如果存在相同的Key，则覆盖value。（否则执行4）</li>
+<li>如果不存在相同的Key，那么判断实际存在的键值对数量是否超过临界值threshold，如果超过，则进行扩容。（接着执行5）</li>
+<li>将新的键值对插入对应数组下的链表中。</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/2017/03/13/re_understanding_hashmap/" class="article-date">
+  <time datetime="2017-03-13T10:12:49.000Z" itemprop="datePublished">2017-03-13</time>
+</a>
+
+        </li>
+        
+        
+          <li>
+            <span class="label">Tag:</span>
+            
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+
+
+          </li>
+        
+        <hr/>
+      </ul>
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav" class="article-nav">
+  
+    <span id="article-nav-newer" class="article-nav-link-wrap newer"></span>
+  
+  
+    <a href="/2017/03/07/custom_viewgroup_tag_flow_layout/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">自定义ViewGroup实现TagFlowLayout</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+
+  <section id="comments" class="comments">
+   <!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2017/03/13/re_understanding_hashmap/" data-title="重新认识HashMap" data-url="http://yoursite.com/2017/03/13/re_understanding_hashmap/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"darrenfantasy"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+  </section>
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      <hr/>
+      <div id="footerContent" class="footer-content">
+        <p>stay hungry , stay foolish .</p>
+
+
+  
+    <span id="busuanzi_container_page_pv">
+         <i class="fa fa-flag"></i>    你是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>个阅读本文的小伙伴
+    </span>
+  
+      </div>
+  </footer>
+
+      
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+  <script src="http://cdn.bootcss.com/instantsearch.js/1.5.1/instantsearch.js"></script>
+  <script src="/js/algolia.js"></script>
+
+<script src="/js/typing.js"></script>
+<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+
+
+
+
+
+
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+    </div>
+  </body>
+</html>

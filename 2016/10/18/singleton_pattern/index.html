@@ -5,37 +5,40 @@
   
   <title>单例模式 | darrenfantasy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.懒汉式
-public class Singleton{
-  private static Singleton mInstance;
-  private Singleton(){
-  }
-  public static synchronized Singleton getInstance(){
-    if(mInstance == null){
-      mInstance = new S">
+  <meta name="description" content="单例模式确保此类仅有一个实例，自行实例化并提供一个访问它的全局公有静态方法。
+通常两种情况下需要用到单例模式：
+
+实例话某个对象要消耗过多资源，避免频繁创建和销毁对象对资源的浪费。（如：对数据库操作，访问IO,网络请求等）
+某种类型对象应该只存在一个，如果产生过多实例，会导致程序行为异常和结果不一致。（如：一个管理系统，缓存等）
+
+单例模式的优缺点：
+
+优点：可以减少系统内存开支和性能开销，避免对">
 <meta property="og:type" content="article">
 <meta property="og:title" content="单例模式">
 <meta property="og:url" content="http://yoursite.com/2016/10/18/singleton_pattern/index.html">
 <meta property="og:site_name" content="darrenfantasy">
-<meta property="og:description" content="1.懒汉式
-public class Singleton{
-  private static Singleton mInstance;
-  private Singleton(){
-  }
-  public static synchronized Singleton getInstance(){
-    if(mInstance == null){
-      mInstance = new S">
-<meta property="og:updated_time" content="2017-02-16T14:54:52.000Z">
+<meta property="og:description" content="单例模式确保此类仅有一个实例，自行实例化并提供一个访问它的全局公有静态方法。
+通常两种情况下需要用到单例模式：
+
+实例话某个对象要消耗过多资源，避免频繁创建和销毁对象对资源的浪费。（如：对数据库操作，访问IO,网络请求等）
+某种类型对象应该只存在一个，如果产生过多实例，会导致程序行为异常和结果不一致。（如：一个管理系统，缓存等）
+
+单例模式的优缺点：
+
+优点：可以减少系统内存开支和性能开销，避免对">
+<meta property="og:updated_time" content="2017-03-14T12:02:45.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="单例模式">
-<meta name="twitter:description" content="1.懒汉式
-public class Singleton{
-  private static Singleton mInstance;
-  private Singleton(){
-  }
-  public static synchronized Singleton getInstance(){
-    if(mInstance == null){
-      mInstance = new S">
+<meta name="twitter:description" content="单例模式确保此类仅有一个实例，自行实例化并提供一个访问它的全局公有静态方法。
+通常两种情况下需要用到单例模式：
+
+实例话某个对象要消耗过多资源，避免频繁创建和销毁对象对资源的浪费。（如：对数据库操作，访问IO,网络请求等）
+某种类型对象应该只存在一个，如果产生过多实例，会导致程序行为异常和结果不一致。（如：一个管理系统，缓存等）
+
+单例模式的优缺点：
+
+优点：可以减少系统内存开支和性能开销，避免对">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -104,65 +107,32 @@ public class Singleton{
     
     <div class="article-entry typo" itemprop="articleBody">
       
-        <hr>
-<h2 id="1-懒汉式"><a href="#1-懒汉式" class="headerlink" title="1.懒汉式"></a>1.懒汉式</h2><pre><code>
-public class Singleton{
-  private static Singleton mInstance;
-  private Singleton(){
-  }
-  public static synchronized Singleton getInstance(){
-    if(mInstance == null){
-      mInstance = new Singleton();
-    }
-    return mInstance;
-  }
-}
-</code></pre>
-
-<p>对于懒汉式，会延迟加载，在第一次调用的时候才会初始化。如果不需要同步的情况下，效率比较低。</p>
-<h2 id="2-饿汉式"><a href="#2-饿汉式" class="headerlink" title="2.饿汉式"></a>2.饿汉式</h2><pre><code>
-public class Singleton{
-  private static Singleton mInstance = new Singleton();
-  private Singleton(){
-  }
-  public static Singleton getInstance{
-    return mInstance;
-  }
-}
-</code></pre>
-
+        <p>单例模式确保此类仅有一个实例，自行实例化并提供一个访问它的全局公有静态方法。</p>
+<p>通常两种情况下需要用到单例模式：</p>
+<ol>
+<li>实例话某个对象要消耗过多资源，避免频繁创建和销毁对象对资源的浪费。（如：对数据库操作，访问IO,网络请求等）</li>
+<li>某种类型对象应该只存在一个，如果产生过多实例，会导致程序行为异常和结果不一致。（如：一个管理系统，缓存等）</li>
+</ol>
+<p>单例模式的优缺点：</p>
+<ol>
+<li>优点：可以减少系统内存开支和性能开销，避免对资源的占用。</li>
+<li>缺点：不容易扩展，容易引发内存泄漏。</li>
+</ol>
+<p>单例的实现方式：</p>
+<ol>
+<li>按加载时机来：懒汉式和饿汉式。</li>
+<li>按实现方式来：双重检查加锁，内部类，枚举等。</li>
+</ol>
+<h4 id="最简单的懒汉式"><a href="#最简单的懒汉式" class="headerlink" title="最简单的懒汉式"></a>最简单的懒汉式</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span></span>&#123;</div><div class="line">  <span class="keyword">private</span> <span class="keyword">static</span> Singleton mInstance;</div><div class="line">  <span class="comment">//private的构造函数，除了它本身，不会被其他类实例化</span></div><div class="line">  <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span></span>&#123;&#125;</div><div class="line">  <span class="comment">//通过静态方法，提供全局获取唯一一个可用对象</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">if</span>(mInstance == <span class="keyword">null</span>)&#123;</div><div class="line">      mInstance = <span class="keyword">new</span> Singleton();</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> Singleton;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这种写法只能在单线程下使用。如果是多线程，可能发生一个线程通过进入 <em>if(mInstance == null)</em> 判断语句块，但还未来得及创建新的实例时，另外一个线程也通过了这个判断，最终两个线程都进行了创建实例，导致多个实例的产生。所以多线程下不要使用这个方法。</p>
+<h4 id="对getInstance方法加上sychronized的懒汉式"><a href="#对getInstance方法加上sychronized的懒汉式" class="headerlink" title="对getInstance方法加上sychronized的懒汉式"></a>对getInstance方法加上sychronized的懒汉式</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span></span>&#123;</div><div class="line"></div><div class="line">  <span class="keyword">private</span> <span class="keyword">static</span> Singleton mInstance;</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span></span>&#123;</div><div class="line"></div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">synchronized</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">if</span>(mInstance == <span class="keyword">null</span>)&#123;</div><div class="line">      mInstance = <span class="keyword">new</span> Singleton();</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> mInstance;</div><div class="line"></div><div class="line">  &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>对于这种写法的懒汉式，会延迟加载，在第一次调用的时候才会初始化。如果不需要同步的情况下，效率比较低。而事实上实例创建完成后，同步就变为不必要的开销了，这样做在高并发下肯定会影响性能。</p>
+<h2 id="2-饿汉式"><a href="#2-饿汉式" class="headerlink" title="2.饿汉式"></a>2.饿汉式</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span></span>&#123;</div><div class="line">  <span class="keyword">private</span> <span class="keyword">static</span> Singleton mInstance = <span class="keyword">new</span> Singleton();</div><div class="line">  <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span></span>&#123;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">public</span> <span class="keyword">static</span> Singleton getInstance&#123;</div><div class="line">    <span class="keyword">return</span> mInstance;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>对于饿汉式，类加载的时候单例就会实例化，会浪费内存。</p>
-<h2 id="3-双重检查锁定（Double-Check-Lock）"><a href="#3-双重检查锁定（Double-Check-Lock）" class="headerlink" title="3.双重检查锁定（Double Check Lock）"></a>3.双重检查锁定（Double Check Lock）</h2><pre><code>
-public class Singleton{
-  private static Singleton mInstance;
-  private Singleton(){
-  }
-  public static Singleton getInstance{
-    if(mInstance == null){
-      Synchronized(Singleton.class){
-        if(mInstance == null){
-          mInstance = new Singleton();
-        }
-      }
-    }
-    return mInstance;
-  }
-}
-</code></pre>
-
-<p>在JDK1.5之后，这种方法才能达到单例效果。</p>
-<h2 id="4-静态内部类"><a href="#4-静态内部类" class="headerlink" title="4.静态内部类"></a>4.静态内部类</h2><pre><code>
-public class Singleton{
-  private Singleton(){
-  }
-  public static Singleton getInstance(){
-    return SingletonHolder.mInstance;
-  }
-  private static class SingletonHolder(){
-    private static final Singleton mInstance = new Singleton();
-  }
-}
-</code></pre>
+<h2 id="3-双重检查锁定（Double-Check-Lock）"><a href="#3-双重检查锁定（Double-Check-Lock）" class="headerlink" title="3.双重检查锁定（Double Check Lock）"></a>3.双重检查锁定（Double Check Lock）</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span></span>&#123;</div><div class="line">  <span class="comment">//注意此处的 volatile 关键词</span></div><div class="line">  <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">volatile</span> Singleton mInstance;</div><div class="line">  <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span></span>&#123;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">public</span> <span class="keyword">static</span> Singleton getInstance&#123;</div><div class="line">    <span class="keyword">if</span>(mInstance == <span class="keyword">null</span>)&#123;</div><div class="line">      Synchronized(Singleton.class)&#123;</div><div class="line">        <span class="keyword">if</span>(mInstance == <span class="keyword">null</span>)&#123;</div><div class="line">          mInstance = <span class="keyword">new</span> Singleton();</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> mInstance;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>在JDK1.5及之后，这种方法才能达到单例效果。</p>
+<p>此方法的“Double-Check”体现在进行了两次 if (mInstance == null) 的检查，这样既同步代码块保证了线程安全，同时实例化的代码也只会执行一次，实例化后同步操作不会再被执行，从而效率提升很多。</p>
+<h2 id="4-静态内部类"><a href="#4-静态内部类" class="headerlink" title="4.静态内部类"></a>4.静态内部类</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span></span>&#123;</div><div class="line">  <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span></span>&#123;</div><div class="line">  &#125;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">return</span> SingletonHolder.mInstance;</div><div class="line">  &#125;</div><div class="line">  <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> class <span class="title">SingletonHolder</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Singleton mInstance = <span class="keyword">new</span> Singleton();</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">

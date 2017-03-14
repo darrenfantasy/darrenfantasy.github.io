@@ -6,24 +6,21 @@
   <title>bitmap | darrenfantasy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="整理了一些在学习和开发中遇到的关于bitmap相关的知识。
-
-—inBitmap（2016-09-13）最近公司需要开发一个可以播放动画的imageView,为了节约内存，每次内存里只存一个bitmap,但是发现memory波动还是比较大，后来研究发现inBitmap可以实现内存块的复用。以下为整理后的知识点。
-BitmapFactory.Options 里的inBitmap属性可以实现复用内存块">
+inBitmap（2016-09-13）最近公司需要开发一个可以播放动画的imageView,为了节约内存，每次内存里只存一个bitmap,但是发现memory波动还是比较大，后来研究发现inBitmap可以实现内存块的复用。以下为整理后的知识点。
+BitmapFactory.Options 里的inBitmap属性可以实现复用内存块，不">
 <meta property="og:type" content="article">
 <meta property="og:title" content="bitmap">
 <meta property="og:url" content="http://yoursite.com/2016/09/27/bitmap/index.html">
 <meta property="og:site_name" content="darrenfantasy">
 <meta property="og:description" content="整理了一些在学习和开发中遇到的关于bitmap相关的知识。
-
-—inBitmap（2016-09-13）最近公司需要开发一个可以播放动画的imageView,为了节约内存，每次内存里只存一个bitmap,但是发现memory波动还是比较大，后来研究发现inBitmap可以实现内存块的复用。以下为整理后的知识点。
-BitmapFactory.Options 里的inBitmap属性可以实现复用内存块">
-<meta property="og:updated_time" content="2017-02-25T06:45:34.000Z">
+inBitmap（2016-09-13）最近公司需要开发一个可以播放动画的imageView,为了节约内存，每次内存里只存一个bitmap,但是发现memory波动还是比较大，后来研究发现inBitmap可以实现内存块的复用。以下为整理后的知识点。
+BitmapFactory.Options 里的inBitmap属性可以实现复用内存块，不">
+<meta property="og:updated_time" content="2017-03-11T15:06:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="bitmap">
 <meta name="twitter:description" content="整理了一些在学习和开发中遇到的关于bitmap相关的知识。
-
-—inBitmap（2016-09-13）最近公司需要开发一个可以播放动画的imageView,为了节约内存，每次内存里只存一个bitmap,但是发现memory波动还是比较大，后来研究发现inBitmap可以实现内存块的复用。以下为整理后的知识点。
-BitmapFactory.Options 里的inBitmap属性可以实现复用内存块">
+inBitmap（2016-09-13）最近公司需要开发一个可以播放动画的imageView,为了节约内存，每次内存里只存一个bitmap,但是发现memory波动还是比较大，后来研究发现inBitmap可以实现内存块的复用。以下为整理后的知识点。
+BitmapFactory.Options 里的inBitmap属性可以实现复用内存块，不">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -93,22 +90,32 @@ BitmapFactory.Options 里的inBitmap属性可以实现复用内存块">
     <div class="article-entry typo" itemprop="articleBody">
       
         <p>整理了一些在学习和开发中遇到的关于bitmap相关的知识。</p>
-<hr>
-<h2 id="—inBitmap（2016-09-13）"><a href="#—inBitmap（2016-09-13）" class="headerlink" title="—inBitmap（2016-09-13）"></a>—inBitmap（2016-09-13）</h2><p>最近公司需要开发一个可以播放动画的imageView,为了节约内存，每次内存里只存一个bitmap,但是发现memory波动还是比较大，后来研究发现inBitmap可以实现内存块的复用。以下为整理后的知识点。</p>
+<h3 id="inBitmap（2016-09-13）"><a href="#inBitmap（2016-09-13）" class="headerlink" title="inBitmap（2016-09-13）"></a>inBitmap（2016-09-13）</h3><p>最近公司需要开发一个可以播放动画的imageView,为了节约内存，每次内存里只存一个bitmap,但是发现memory波动还是比较大，后来研究发现inBitmap可以实现内存块的复用。以下为整理后的知识点。</p>
 <p>BitmapFactory.Options 里的inBitmap属性可以实现复用内存块，不需要给这个bitmap重新申请新的内存块，避免了一次内存的分配和回收，从而提高了运行效率。</p>
 <p>inBitmap只能在3.0以后使用。</p>
 <p>使用inBitmap,在4.4之前（SDK 11- 18），只能重用大小相同的bitmap内存区域。4.4之后可以重用任何bitmap区域内存，只要这个内存比将要分配的bitmap内存大即可。</p>
-<hr>
-<h2 id="—Bitmap占用内存计算（2016-09-27）"><a href="#—Bitmap占用内存计算（2016-09-27）" class="headerlink" title="—Bitmap占用内存计算（2016-09-27）"></a>—Bitmap占用内存计算（2016-09-27）</h2><p>Bitmap占用内存决定因素</p>
-<p>－图片的像素点个数</p>
-<p>－单位像素占用的字节数</p>
+<h3 id="Bitmap占用内存计算（2016-09-27）"><a href="#Bitmap占用内存计算（2016-09-27）" class="headerlink" title="Bitmap占用内存计算（2016-09-27）"></a>Bitmap占用内存计算（2016-09-27）</h3><p>Bitmap占用内存决定因素</p>
+<p>－<strong>图片的像素点个数</strong></p>
+<p>－<strong>单位像素占用的字节数</strong></p>
 <p>bitmap大小＝图片长度(像素)＊图片宽度(像素)＊单位像素占用的字节数</p>
 <p>单位像素所占的字节数与图片的解码方式有关。</p>
-<p>ALPHA_8 只存储透明度信息而无颜色值</p>
-<p>ARGB_8888 把每个像素点的透明度，R，G，B色值都用一个byte表示。所以需要4个字节的空间来存储一个像素点。</p>
-<p>RGB_565 不存储像素点的透明度，而且用5bit表示R值，6bit表示G值，5bit表示B值，即共16bit，也就是2个字节的空间来存储一个像素点。</p>
+<p><strong>ALPHA_8 </strong>只存储透明度信息而无颜色值。</p>
+<p><strong>ARGB_8888</strong> 把每个像素点的透明度，R，G，B色值都用一个byte表示。所以需要4个字节的空间来存储一个像素点。</p>
+<p><strong>RGB_565 </strong>不存储像素点的透明度，而且用5bit表示R值，6bit表示G值，5bit表示B值，即共16bit，也就是2个字节的空间来存储一个像素点。</p>
 <p>所以对同一张图片进行解码时，使用RGB_565的方式解码所占内存空间仅仅是ARGB_8888的50%。</p>
-
+<h3 id="如何优雅的展示Bitmap大图-2016-10-10"><a href="#如何优雅的展示Bitmap大图-2016-10-10" class="headerlink" title="如何优雅的展示Bitmap大图 (2016-10-10)"></a>如何优雅的展示Bitmap大图 (2016-10-10)</h3><p>我们在开发应用时经常会遇到展示图片的需求，大多数情况下，这些图片都会大于我们程序所需的大小，比如拍摄的照片的分辨率通常会比我们手机屏幕分辨率高的多。但是我们的应用程序的内存大小都是有限制的，程序占用过高内存会造成OOM。所以我们在展示高分辨率的内存时，最好将图片压缩成和我们用来展示图片的控件大小差不多。</p>
+<p>BitmapFactory这个类提供了多种方法来创建Bitmap对象。</p>
+<p>网络中的图片可以通过<strong>decodeStream</strong>方法来创建；SD卡里的图片可以通过<strong>decodeFile</strong>方法来创建；资源文件里的图片可以使用<strong>decodeResource</strong>方法来创建。</p>
+<p>以上三种方法会为已经构建的bitmap分配内存，这样会容易导致OOM，为此每种解析方法都提供了可选择的<strong>BitmapFactory.Options</strong>参数，把这个参数的<strong>isJustDecodeBounds</strong>属性设为true就可以让解析方法不为bitmap分配内存了。返回值也就不在是一个Bitmap对象了，而是null。但是BitmapFactory.Options的outWidth和outHeight属性都会被赋值。我们获取到图片的长宽后就可以对图片进行压缩了。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">BitmapFactory.Options options = <span class="keyword">new</span> BitmapFactory.Options();  </div><div class="line">options.inJustDecodeBounds = <span class="keyword">true</span>;  </div><div class="line">BitmapFactory.decodeResource(getResources(), R.id.example_img, options);  </div><div class="line"><span class="keyword">int</span> imageHeight = options.outHeight;  </div><div class="line"><span class="keyword">int</span> imageWidth = options.outWidth;</div></pre></td></tr></table></figure>
+<p>图片压缩可以通过<strong>BitmapFactory.inSampleSize</strong>来实现。</p>
+<p>比如有一张1024＊1024像素的图，我们把inSampleSize设成4，就可以把图片压缩成256*256像素了。</p>
+<p>以下函数根据传入的宽高，就可以计算出合适的inSampleSize:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">calculateInSampleSize</span><span class="params">(BitmapFactory.Options options, <span class="keyword">int</span> reqWidth, <span class="keyword">int</span> reqHeight)</span> </span>&#123;  </div><div class="line">    <span class="comment">// 源图片的高度和宽度  </span></div><div class="line">    <span class="keyword">final</span> <span class="keyword">int</span> height = options.outHeight;  </div><div class="line">    <span class="keyword">final</span> <span class="keyword">int</span> width = options.outWidth;  </div><div class="line">    <span class="keyword">int</span> inSampleSize = <span class="number">1</span>;  </div><div class="line">    <span class="keyword">if</span> (height &gt; reqHeight || width &gt; reqWidth) &#123;  </div><div class="line">        <span class="comment">// 计算出实际宽高和目标宽高的比率  </span></div><div class="line">        <span class="keyword">final</span> <span class="keyword">int</span> heightRatio = Math.round((<span class="keyword">float</span>) height / (<span class="keyword">float</span>) reqHeight);  </div><div class="line">        <span class="keyword">final</span> <span class="keyword">int</span> widthRatio = Math.round((<span class="keyword">float</span>) width / (<span class="keyword">float</span>) reqWidth);  </div><div class="line">        <span class="comment">// 选择宽和高中最小的比率作为inSampleSize的值，这样可以保证最终图片的宽和高  </span></div><div class="line">        <span class="comment">// 一定都会大于等于目标的宽和高。  </span></div><div class="line">        inSampleSize = heightRatio &lt; widthRatio ? heightRatio : widthRatio;  </div><div class="line">    &#125;  </div><div class="line">    <span class="keyword">return</span> inSampleSize;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>使用这个方法，首先你要将BitmapFactory.Options的inJustDecodeBounds属性设置为true，解析一次图片。然后将BitmapFactory.Options连同期望的宽度和高度一起传递到到calculateInSampleSize方法中，就可以得到合适的inSampleSize值了。之后再解析一次图片，使用新获取到的inSampleSize值，并把inJustDecodeBounds设置为false，就可以得到压缩后的图片了。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Bitmap <span class="title">decodeSampledBitmapFromResource</span><span class="params">(Resources res, <span class="keyword">int</span> resId, <span class="keyword">int</span> reqWidth, <span class="keyword">int</span> reqHeight)</span> </span>&#123;  </div><div class="line">    <span class="comment">// 第一次解析将inJustDecodeBounds设置为true，来获取图片大小  </span></div><div class="line">    <span class="keyword">final</span> BitmapFactory.Options options = <span class="keyword">new</span> BitmapFactory.Options();  </div><div class="line">    options.inJustDecodeBounds = <span class="keyword">true</span>;  </div><div class="line">    BitmapFactory.decodeResource(res, resId, options);  </div><div class="line">    <span class="comment">// 调用上面定义的方法计算inSampleSize值  </span></div><div class="line">    options.inSampleSize = calculateInSampleSize(options, reqWidth, reqHeight);  </div><div class="line">    <span class="comment">// 使用获取到的inSampleSize值再次解析图片  </span></div><div class="line">    options.inJustDecodeBounds = <span class="keyword">false</span>;  </div><div class="line">    <span class="keyword">return</span> BitmapFactory.decodeResource(res, resId, options);  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>最后，只要这样使用以下代码就可以将任意图片压缩成256*256了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bitmap = decodeSampledBitmapFromResource(getResources(), R.id.example_img, 256, 256);</div></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
