@@ -44,9 +44,7 @@ date: 2017-02-15 17:42:51
 
 **<a href="http://busuanzi.ibruce.info/">不蒜子</a>**提供访问量统计
 
-
-
-
+**<a href="http://www.qiniu.com/">七牛云</a>**提供图片存储
 
 
 
