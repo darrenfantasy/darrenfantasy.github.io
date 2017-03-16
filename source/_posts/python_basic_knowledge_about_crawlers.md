@@ -343,3 +343,17 @@ tags: [python,crawler]
       soup = BeautifulSoup(html, "html.parser")
       exampleDiv = soup.find('div',"example")
   ```
+
+
+
+## update 17/03/16
+
+(今天写爬虫时遇到了网站每隔10s更新一次cookie的问题，用PhantomJS可以获取到JS动态生成的cookie,所以就准备在每次用requests请求网页前执行一次JS文件，然后读取JS返回的cookie。)
+
+**python模拟终端里执行的命令**
+
+```python
+import os
+os.system("phantomjs test.js")//执行你想要执行的命令
+```
+
