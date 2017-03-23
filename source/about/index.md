@@ -40,7 +40,7 @@ date: 2017-02-15 17:42:51
 
 **<a href="https://www.algolia.com/">Algolia</a>**提供搜索功能
 
-**<a href="http://duoshuo.com/">多说</a>**提供评论系统
+**<a href="http://www.uyan.cc/">友言</a>**提供评论系统
 
 **<a href="http://busuanzi.ibruce.info/">不蒜子</a>**提供访问量统计
 
