@@ -1,7 +1,7 @@
 ---
 title: Python＋(selenium-webdriver)破解JS加密的Cookie
 date: 2017-03-24 11:18:46
-tags:[python,爬虫]
+tags: [python,爬虫]
 ---
 
 之前抓取某个网站的时候遇到服务器返回521的问题，然后发现原因是因为网站需要cookie，并且网站的cookie是通过JS动态生成的，每隔一段时间会刷新cookie。后来研究发现可以通过phantomJS来获取JS动态生成的cookie。代码如下：(test.js)
