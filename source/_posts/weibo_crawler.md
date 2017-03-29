@@ -92,7 +92,7 @@ def get_object_top_weibo_by_person_site_name_and_cookie(person_site_name,cookie,
 		pass
 ```
 
-接口返回的数据包含了很多东西，有30多个<script>标签，分析发现微博的内容在一个包含“WB_feed WB_feed_v3 WB_feed_v4”内容的<script>标签中。所以我们找到这个<script>，然后去掉头尾的无用信息，就获取到了我们想要的内容所在的script里。
+接口返回的数据包含了很多东西，有30多个*script*标签，分析发现微博的内容在一个包含“WB_feed WB_feed_v3 WB_feed_v4”内容的*script*标签中。所以我们找到这个*script*，然后去掉头尾的无用信息，就获取到了我们想要的内容所在的*script*里。
 
 接下来就是解析数据了，这里我想获取的是所发的微博里面所包含的图片。
 
