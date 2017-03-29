@@ -9,9 +9,9 @@ date: 2017-02-15 17:42:51
 
 *达子同学，Android程序猿，坐标上海；*
 
-*混迹于网络的常用ID:darrenfantasy；*
+*目前正在努力学习Python中；*
 
-*爱技术，爱篮球，爱生活；*
+*爱技术，爱生活，爱篮球；*
 
 *Java  Android  Python；*
 
@@ -32,19 +32,19 @@ date: 2017-02-15 17:42:51
 
 *本小站诞生于2016年，用来记录学习和开发中遇到的问题及个人记录的笔记。*
 
-**小站的建立离不开以下平台的支持，感谢：**
+**小站的建立离不开以下平台的支持，特别感谢：**
 
-**<a href="https://github.com/">GitHub</a>**提供代码托管
+**<a href="https://github.com/" target="_blank">GitHub</a>**提供代码托管
 
-**<a href="https://hexo.io/">Hexo</a>**提供静态博客框架
+**<a href="https://hexo.io/" target="_blank">Hexo</a>**提供静态博客框架
 
-**<a href="https://www.algolia.com/">Algolia</a>**提供搜索功能
+**<a href="https://www.algolia.com/" target="_blank">Algolia</a>**提供搜索功能
 
-**<a href="http://www.uyan.cc/">友言</a>**提供评论系统
+**<a href="http://www.uyan.cc/" target="_blank">友言</a>**提供评论系统
 
-**<a href="http://busuanzi.ibruce.info/">不蒜子</a>**提供访问量统计
+**<a href="http://busuanzi.ibruce.info/" target="_blank">不蒜子</a>**提供访问量统计
 
-**<a href="http://www.qiniu.com/">七牛云</a>**提供图片存储
+**<a href="http://www.qiniu.com/" target="_blank">七牛云</a>**提供图片存储
 
 
 

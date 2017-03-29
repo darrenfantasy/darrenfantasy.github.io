@@ -250,6 +250,8 @@ tags: [python,crawler]
 
   因为之前使用urllib2被网站拒绝，后来研究发现使用requests库可以获取页面内容。
 
+  参考自 <a href="http://cn.python-requests.org/zh_CN/latest/user/quickstart.html" target="_blank">requests</a>
+
   1. *发送请求*
 
      ```python
@@ -315,7 +317,7 @@ tags: [python,crawler]
 
   Beautiful Soup是Python的一个库，主要功能是从网页抓取数据。
 
-  <a href="http://beautifulsoup.readthedocs.io/zh_CN/latest/">官方文档</a>
+  <a href="http://beautifulsoup.readthedocs.io/zh_CN/latest/" target="_blank">官方文档</a>
 
   通常用来处理网页抓取数据，如下是获取一个网页里的全部 *图片标签*
 
