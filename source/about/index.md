@@ -9,9 +9,9 @@ date: 2017-02-15 17:42:51
 
 *达子同学，Android程序猿，坐标上海；*
 
-*目前正在努力学习Python中；*
-
 *爱技术，爱生活，爱篮球；*
+
+*最近入了  Python 的坑；*
 
 *Java  Android  Python；*
 
