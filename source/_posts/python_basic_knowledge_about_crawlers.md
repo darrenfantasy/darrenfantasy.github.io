@@ -315,6 +315,8 @@ tags: [python,crawler]
 
 - **Beautiful Soup的使用**
 
+  Beautiful Soup 安装：mac os:  pip install beautifulsoup4
+
   Beautiful Soup是Python的一个库，主要功能是从网页抓取数据。
 
   <a href="http://beautifulsoup.readthedocs.io/zh_CN/latest/" target="_blank">官方文档</a>
