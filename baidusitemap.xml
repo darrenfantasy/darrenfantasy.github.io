@@ -3,6 +3,7 @@
 
 
     
+    
   <url>
     <loc>http://yoursite.com/2017/02/22/python_basic_knowledge_about_crawlers/</loc>
     <lastmod>2017-04-02T08:47:22.000Z</lastmod>
@@ -21,7 +22,6 @@
     </data>
     </url>
 
-    
     
   <url>
     <loc>http://yoursite.com/2017/03/29/weibo_crawler/</loc>
@@ -79,23 +79,6 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/03/13/re_understanding_hashmap/</loc>
-    <lastmod>2017-03-14T12:02:45.000Z</lastmod>
-    <data>
-        <display>
-        <title>重新认识HashMap</title>
-        <pubTime>2017-03-13T10:12:49.000Z</pubTime>
-        
-        <tag>Java</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yoursite.com/2016/10/18/singleton_pattern/</loc>
     <lastmod>2017-03-14T12:02:45.000Z</lastmod>
     <data>
@@ -115,12 +98,29 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/11/08/android_event_dispatch/</loc>
+    <loc>http://yoursite.com/2017/03/13/re_understanding_hashmap/</loc>
+    <lastmod>2017-03-14T12:02:45.000Z</lastmod>
+    <data>
+        <display>
+        <title>重新认识HashMap</title>
+        <pubTime>2017-03-13T10:12:49.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/09/27/bitmap/</loc>
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     <data>
         <display>
-        <title>Android事件分发机制</title>
-        <pubTime>2016-11-08T08:02:42.000Z</pubTime>
+        <title>bitmap</title>
+        <pubTime>2016-09-27T07:44:20.000Z</pubTime>
         
         <tag>Android</tag>
          
@@ -151,12 +151,12 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/10/25/adb_command_line/</loc>
+    <loc>http://yoursite.com/2016/10/17/Android-Gradle/</loc>
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     <data>
         <display>
-        <title>adb命令</title>
-        <pubTime>2016-10-25T07:58:40.000Z</pubTime>
+        <title>Android-Gradle</title>
+        <pubTime>2016-10-17T07:54:36.000Z</pubTime>
         
         <tag>Android</tag>
          
@@ -168,12 +168,12 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/10/17/Android-Gradle/</loc>
+    <loc>http://yoursite.com/2016/10/25/adb_command_line/</loc>
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     <data>
         <display>
-        <title>Android-Gradle</title>
-        <pubTime>2016-10-17T07:54:36.000Z</pubTime>
+        <title>adb命令</title>
+        <pubTime>2016-10-25T07:58:40.000Z</pubTime>
         
         <tag>Android</tag>
          
@@ -204,12 +204,12 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/09/27/bitmap/</loc>
+    <loc>http://yoursite.com/2016/11/08/android_event_dispatch/</loc>
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     <data>
         <display>
-        <title>bitmap</title>
-        <pubTime>2016-09-27T07:44:20.000Z</pubTime>
+        <title>Android事件分发机制</title>
+        <pubTime>2016-11-08T08:02:42.000Z</pubTime>
         
         <tag>Android</tag>
          
