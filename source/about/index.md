@@ -15,7 +15,7 @@ date: 2017-02-15 17:42:51
 
 *Java  Android  Python；*
 
-
+**<a href="/dist/index.html">Online Resume</a>**
 
 
 ### Contact Me
