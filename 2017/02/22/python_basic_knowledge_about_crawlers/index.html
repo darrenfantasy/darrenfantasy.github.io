@@ -35,7 +35,7 @@ Python基础知识的学习
 ​
 
 Python2.X中默认编码是ASSCII格式，在没有修改">
-<meta property="og:updated_time" content="2017-03-03T15:50:35.000Z">
+<meta property="og:updated_time" content="2017-04-02T08:47:22.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python实现爬虫要掌握的基本知识">
 <meta name="twitter:description" content="最近在用python爬取一些网站的图片，学习期间遇到一些问题，也收获了一些知识，现在整理下有关内容。
@@ -227,6 +227,7 @@ Python2.X中默认编码是ASSCII格式，在没有修改">
 </li>
 <li><p><strong>使用requests库</strong></p>
 <p>因为之前使用urllib2被网站拒绝，后来研究发现使用requests库可以获取页面内容。</p>
+<p>参考自 <a href="http://cn.python-requests.org/zh_CN/latest/user/quickstart.html" target="_blank">requests</a></p>
 <ol>
 <li><p><em>发送请求</em></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> requests</div><div class="line">response = requests.get(<span class="string">"http://darrenfantasy.com/"</span>)</div></pre></td></tr></table></figure>
@@ -253,16 +254,21 @@ Python2.X中默认编码是ASSCII格式，在没有修改">
 <p>​</p>
 </li>
 <li><p><strong>Beautiful Soup的使用</strong></p>
+<p>Beautiful Soup 安装：mac os:  pip install beautifulsoup4</p>
 <p>Beautiful Soup是Python的一个库，主要功能是从网页抓取数据。</p>
-<p><a href="http://beautifulsoup.readthedocs.io/zh_CN/latest/" target="_blank" rel="external">官方文档</a></p>
+<p><a href="http://beautifulsoup.readthedocs.io/zh_CN/latest/" target="_blank">官方文档</a></p>
 <p>通常用来处理网页抓取数据，如下是获取一个网页里的全部 <em>图片标签</em></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">getImageTagsFromHtml</span><span class="params">(html)</span>:</span></div><div class="line">    soup = BeautifulSoup(html, <span class="string">"html.parser"</span>)</div><div class="line">    imageTagsList = soup.find_all(<span class="string">'img'</span>)</div><div class="line">    <span class="keyword">return</span> imageTagsList</div></pre></td></tr></table></figure>
 <p>获取img标签里src属性值</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> x <span class="keyword">in</span> xrange(len(imageTagsList)):</div><div class="line">	src = imageTagsList[x].get(<span class="string">"src"</span>)</div></pre></td></tr></table></figure>
 <p>获取某个特定的标签   </p>
 <p>例如 获取一个 <em>class=”example”</em>   的div</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">getImageTagsFromHtml</span><span class="params">(html)</span>:</span></div><div class="line">    soup = BeautifulSoup(html, <span class="string">"html.parser"</span>)</div><div class="line">    exampleDiv = soup.find(<span class="string">'div'</span>,<span class="string">"example"</span>)</div></pre></td></tr></table></figure></li>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">getImageTagsFromHtml</span><span class="params">(html)</span>:</span></div><div class="line">    soup = BeautifulSoup(html, <span class="string">"html.parser"</span>)</div><div class="line">    exampleDiv = soup.find(<span class="string">'div'</span>,<span class="string">"example"</span>)</div></pre></td></tr></table></figure>
+</li>
 </ul>
+<h2 id="update-17-03-16"><a href="#update-17-03-16" class="headerlink" title="update 17/03/16"></a>update 17/03/16</h2><p>(今天写爬虫时遇到了网站每隔10s更新一次cookie的问题，用PhantomJS可以获取到JS动态生成的cookie,所以就准备在每次用requests请求网页前执行一次JS文件，然后读取JS返回的cookie。)</p>
+<p><strong>python模拟终端里执行的命令</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> os</div><div class="line">os.system(<span class="string">"phantomjs test.js"</span>)//执行你想要执行的命令</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -315,25 +321,6 @@ Python2.X中默认编码是ASSCII格式，在没有修改">
 </article>
 
 
-  <section id="comments" class="comments">
-   <!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="2017/02/22/python_basic_knowledge_about_crawlers/" data-title="Python实现爬虫要掌握的基本知识" data-url="http://yoursite.com/2017/02/22/python_basic_knowledge_about_crawlers/"></div>
-<!-- 多说评论框 end -->
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"darrenfantasy"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-<!-- 多说公共JS代码 end -->
-  </section>
-
 
 
       </div>
@@ -374,6 +361,20 @@ var duoshuoQuery = {short_name:"darrenfantasy"};
 
 
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
 </script>
     </div>
   </body>
