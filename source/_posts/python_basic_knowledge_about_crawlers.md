@@ -311,6 +311,12 @@ tags: [python,crawler]
      response.json()
      ```
 
+  5. Json返回的内容中文显示成unicode的问题
+
+     ```python
+     json.dumps(data,ensure_ascii = False)
+     ```
+
   ​
 
 - **Beautiful Soup的使用**
@@ -359,5 +365,13 @@ tags: [python,crawler]
 ```python
 import os
 os.system("phantomjs test.js")//执行你想要执行的命令
+```
+
+**python获取命令行中输入的参数**
+
+```python
+import sys
+for x in xrange(len(sys.argv)):
+	print sys.argv[x]
 ```
 
