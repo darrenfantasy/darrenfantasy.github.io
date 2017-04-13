@@ -3,10 +3,9 @@
 
 
     
-    
   <url>
     <loc>http://yoursite.com/2017/02/22/python_basic_knowledge_about_crawlers/</loc>
-    <lastmod>2017-04-02T08:47:22.000Z</lastmod>
+    <lastmod>2017-04-13T13:08:22.000Z</lastmod>
     <data>
         <display>
         <title>Python实现爬虫要掌握的基本知识</title>
@@ -22,6 +21,43 @@
     </data>
     </url>
 
+    
+  <url>
+    <loc>http://yoursite.com/2016/12/24/handler/</loc>
+    <lastmod>2017-04-13T13:08:22.000Z</lastmod>
+    <data>
+        <display>
+        <title>Android异步消息处理机制之Handler</title>
+        <pubTime>2016-12-24T08:57:23.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>Handler</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/04/13/graphic_http/</loc>
+    <lastmod>2017-04-13T13:08:22.000Z</lastmod>
+    <data>
+        <display>
+        <title>读《图解HTTP》笔记</title>
+        <pubTime>2017-04-13T08:29:47.000Z</pubTime>
+        
+        <tag>HTTP</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
     <loc>http://yoursite.com/2017/03/29/weibo_crawler/</loc>
@@ -62,14 +98,14 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/12/11/android_animation/</loc>
+    <loc>http://yoursite.com/2017/03/13/re_understanding_hashmap/</loc>
     <lastmod>2017-03-14T12:02:45.000Z</lastmod>
     <data>
         <display>
-        <title>Android Animation</title>
-        <pubTime>2016-12-11T15:04:08.000Z</pubTime>
+        <title>重新认识HashMap</title>
+        <pubTime>2017-03-13T10:12:49.000Z</pubTime>
         
-        <tag>Android</tag>
+        <tag>Java</tag>
          
          
            
@@ -98,13 +134,32 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/03/13/re_understanding_hashmap/</loc>
-    <lastmod>2017-03-14T12:02:45.000Z</lastmod>
+    <loc>http://yoursite.com/2016/10/17/Android-Gradle/</loc>
+    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     <data>
         <display>
-        <title>重新认识HashMap</title>
-        <pubTime>2017-03-13T10:12:49.000Z</pubTime>
+        <title>Android-Gradle</title>
+        <pubTime>2016-10-17T07:54:36.000Z</pubTime>
         
+        <tag>Android</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/11/03/trouble_in_develop/</loc>
+    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
+    <data>
+        <display>
+        <title>开发中遇到的坑</title>
+        <pubTime>2016-11-03T08:00:58.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
         <tag>Java</tag>
          
          
@@ -151,23 +206,6 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/10/17/Android-Gradle/</loc>
-    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
-    <data>
-        <display>
-        <title>Android-Gradle</title>
-        <pubTime>2016-10-17T07:54:36.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yoursite.com/2016/10/25/adb_command_line/</loc>
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     <data>
@@ -176,25 +214,6 @@
         <pubTime>2016-10-25T07:58:40.000Z</pubTime>
         
         <tag>Android</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2016/11/03/trouble_in_develop/</loc>
-    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
-    <data>
-        <display>
-        <title>开发中遇到的坑</title>
-        <pubTime>2016-11-03T08:00:58.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>Java</tag>
          
          
            
@@ -238,16 +257,14 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/01/18/sdk_develop_summary/</loc>
+    <loc>http://yoursite.com/2016/10/25/git_command_line/</loc>
     <lastmod>2017-02-16T14:54:52.000Z</lastmod>
     <data>
         <display>
-        <title>SDK开发学习小结</title>
-        <pubTime>2017-01-18T08:08:39.000Z</pubTime>
+        <title>git常用命令行</title>
+        <pubTime>2016-10-25T07:59:54.000Z</pubTime>
         
-        <tag>Android</tag>
-         
-        <tag>Java</tag>
+        <tag>git</tag>
          
          
            
@@ -265,6 +282,25 @@
         <pubTime>2016-10-11T07:52:11.000Z</pubTime>
         
         <tag>Android</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/01/18/sdk_develop_summary/</loc>
+    <lastmod>2017-02-16T14:54:52.000Z</lastmod>
+    <data>
+        <display>
+        <title>SDK开发学习小结</title>
+        <pubTime>2017-01-18T08:08:39.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>Java</tag>
          
          
            
@@ -299,23 +335,6 @@
         <pubTime>2017-01-12T08:07:03.000Z</pubTime>
         
         <tag>Android</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2016/10/25/git_command_line/</loc>
-    <lastmod>2017-02-16T14:54:52.000Z</lastmod>
-    <data>
-        <display>
-        <title>git常用命令行</title>
-        <pubTime>2016-10-25T07:59:54.000Z</pubTime>
-        
-        <tag>git</tag>
          
          
            

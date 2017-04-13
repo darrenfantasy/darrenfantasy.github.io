@@ -35,7 +35,7 @@ Python基础知识的学习
 ​
 
 Python2.X中默认编码是ASSCII格式，在没有修改">
-<meta property="og:updated_time" content="2017-04-02T08:47:22.000Z">
+<meta property="og:updated_time" content="2017-04-13T13:08:22.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python实现爬虫要掌握的基本知识">
 <meta name="twitter:description" content="最近在用python爬取一些网站的图片，学习期间遇到一些问题，也收获了一些知识，现在整理下有关内容。
@@ -250,6 +250,9 @@ Python2.X中默认编码是ASSCII格式，在没有修改">
 <p>requests中内置JSON解码器，可以帮助我们处理JSON数据</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> requests</div><div class="line">response = requests.get(<span class="string">"url"</span>)</div><div class="line">response.json()</div></pre></td></tr></table></figure>
 </li>
+<li><p>Json返回的内容中文显示成unicode的问题</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">json.dumps(data,ensure_ascii = <span class="keyword">False</span>)</div></pre></td></tr></table></figure>
+</li>
 </ol>
 <p>​</p>
 </li>
@@ -269,6 +272,8 @@ Python2.X中默认编码是ASSCII格式，在没有修改">
 <h2 id="update-17-03-16"><a href="#update-17-03-16" class="headerlink" title="update 17/03/16"></a>update 17/03/16</h2><p>(今天写爬虫时遇到了网站每隔10s更新一次cookie的问题，用PhantomJS可以获取到JS动态生成的cookie,所以就准备在每次用requests请求网页前执行一次JS文件，然后读取JS返回的cookie。)</p>
 <p><strong>python模拟终端里执行的命令</strong></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> os</div><div class="line">os.system(<span class="string">"phantomjs test.js"</span>)//执行你想要执行的命令</div></pre></td></tr></table></figure>
+<p><strong>python获取命令行中输入的参数</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> sys</div><div class="line"><span class="keyword">for</span> x <span class="keyword">in</span> xrange(len(sys.argv)):</div><div class="line">	<span class="keyword">print</span> sys.argv[x]</div></pre></td></tr></table></figure>
 
       
     </div>

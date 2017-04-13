@@ -714,7 +714,6 @@ body {
 
 a {
 	color: #222;
-	border-bottom: 1px solid #eee;
 	-webkit-transition: color .25s linear;
 	transition: color .25s linear;
 	cursor: pointer
