@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="default">
+<head>
+  <meta charset="utf-8">
+  
+  <title>Android之LruCache | darrenfantasy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="LruCache是Android提供的缓存工具类，其算法是最近最少使用算法。它把最近使用的对象用“强引用”存储在LinkedHashMap中，并且把最近最少使用对象在缓存值达到预设定值前就从内存中移除。
+1.使用方法1234567891011121314// use 1/8 of available heap sizemLruCache = new LruCache&amp;lt;String, Bitm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android之LruCache">
+<meta property="og:url" content="http://yoursite.com/2017/04/20/android_lrucache/index.html">
+<meta property="og:site_name" content="darrenfantasy">
+<meta property="og:description" content="LruCache是Android提供的缓存工具类，其算法是最近最少使用算法。它把最近使用的对象用“强引用”存储在LinkedHashMap中，并且把最近最少使用对象在缓存值达到预设定值前就从内存中移除。
+1.使用方法1234567891011121314// use 1/8 of available heap sizemLruCache = new LruCache&amp;lt;String, Bitm">
+<meta property="og:updated_time" content="2017-05-02T06:10:03.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android之LruCache">
+<meta name="twitter:description" content="LruCache是Android提供的缓存工具类，其算法是最近最少使用算法。它把最近使用的对象用“强引用”存储在LinkedHashMap中，并且把最近最少使用对象在缓存值达到预设定值前就从内存中移除。
+1.使用方法1234567891011121314// use 1/8 of available heap sizemLruCache = new LruCache&amp;lt;String, Bitm">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/typing.css">
+  <link rel="stylesheet" href="/css/algolia.css">
+</head>
+
+
+<a href="https://github.com/darrenfantasy"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+
+  
+    <body>
+  
+      <div id="container" class="container">
+        <article id="post-android_lrucache" class="article article-type-post" itemscope itemprop="blogPost">
+  <header id="header" class="header">
+  <nav id="main-nav" class="main-nav">
+    
+      <a class="main-nav-link" href="/">Home</a>
+    
+      <a class="main-nav-link" href="/archives">Archives</a>
+    
+      <a class="main-nav-link" href="/about">About</a>
+    
+      <a href="#" class="popup-trigger">Search</a>
+  </nav>
+  <nav id="sub-nav">
+    
+  </nav>
+</header>
+<div class="site-search">
+  <div class="algolia-popup popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+</div>
+  <hr/>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Android之LruCache
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry typo" itemprop="articleBody">
+      
+        <p>LruCache是Android提供的缓存工具类，其算法是最近最少使用算法。它把最近使用的对象用“强引用”存储在LinkedHashMap中，并且把最近最少使用对象在缓存值达到预设定值前就从内存中移除。</p>
+<h3 id="1-使用方法"><a href="#1-使用方法" class="headerlink" title="1.使用方法"></a>1.使用方法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// use 1/8 of available heap size</span></div><div class="line">mLruCache = <span class="keyword">new</span> LruCache&lt;String, Bitmap&gt;((<span class="keyword">int</span>) (Runtime.getRuntime().maxMemory() / <span class="number">8</span>)) &#123;</div><div class="line">     <span class="meta">@Override</span></div><div class="line">     <span class="function"><span class="keyword">protected</span> <span class="keyword">int</span> <span class="title">sizeOf</span><span class="params">(String key, Bitmap value)</span> </span>&#123;</div><div class="line">         <span class="keyword">return</span> value.getRowBytes() * value.getHeight();</div><div class="line">     &#125;</div><div class="line">              </div><div class="line">     <span class="meta">@Override</span></div><div class="line">     <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">entryRemoved</span><span class="params">(<span class="keyword">boolean</span> evicted, String key,</span></span></div><div class="line">     		Bitmap oldValue, Bitmap newValue) &#123;</div><div class="line">         <span class="comment">// TODO Auto-generated method stub</span></div><div class="line">         <span class="keyword">super</span>.entryRemoved(evicted, key, oldValue, newValue);</div><div class="line">     &#125;</div><div class="line"> &#125;;</div></pre></td></tr></table></figure>
+<ul>
+<li>需要提供一个缓存容量作为构造参数。（必填）</li>
+<li>覆写sizeOf()方法，自定义设计一条数据存入的容量计算，如果不覆写就无法预知数据的容量，不能保证缓存容量限定在最大容量内。（必填）</li>
+<li>覆写entryRemoved()方法，如果你cache的某个值要明确释放，这个方法会在元素被put或者remove时调用。（选填）</li>
+</ul>
+<h3 id="2-源码分析"><a href="#2-源码分析" class="headerlink" title="2.源码分析"></a>2.源码分析</h3><p>LruCache利用LinkedHashMap的基于访问顺序（accessOrder = true）再加上对其数据操作加锁实现缓存策略的。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="title">LruCache</span><span class="params">(<span class="keyword">int</span> maxSize)</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span> (maxSize &lt;= <span class="number">0</span>) &#123;</div><div class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"maxSize &lt;= 0"</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">this</span>.maxSize = maxSize;</div><div class="line">    <span class="keyword">this</span>.map = <span class="keyword">new</span> LinkedHashMap&lt;K, V&gt;(<span class="number">0</span>, <span class="number">0.75f</span>, <span class="keyword">true</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Constructs a new &#123;<span class="doctag">@code</span> LinkedHashMap&#125; instance with the specified</div><div class="line"> * capacity, load factor and a flag specifying the ordering behavior.</div><div class="line"> *</div><div class="line"> * <span class="doctag">@param</span> initialCapacity</div><div class="line"> *            the initial capacity of this hash map.</div><div class="line"> * <span class="doctag">@param</span> loadFactor</div><div class="line"> *            the initial load factor.</div><div class="line"> * <span class="doctag">@param</span> accessOrder</div><div class="line"> *            &#123;<span class="doctag">@code</span> true&#125; if the ordering should be done based on the last</div><div class="line"> *            access (from least-recently accessed to most-recently</div><div class="line"> *            accessed), and &#123;<span class="doctag">@code</span> false&#125; if the ordering should be the</div><div class="line"> *            order in which the entries were inserted.</div><div class="line"> * <span class="doctag">@throws</span> IllegalArgumentException</div><div class="line"> *             when the capacity is less than zero or the load factor is</div><div class="line"> *             less or equal to zero.</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="title">LinkedHashMap</span><span class="params">(</span></span></div><div class="line">        <span class="keyword">int</span> initialCapacity, <span class="keyword">float</span> loadFactor, <span class="keyword">boolean</span> accessOrder) &#123;</div><div class="line">    <span class="keyword">super</span>(initialCapacity, loadFactor);</div><div class="line">    init();</div><div class="line">    <span class="keyword">this</span>.accessOrder = accessOrder;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>第一个参数 <code>initialCapacity</code> 用于初始化该 LinkedHashMap 的大小。</p>
+<p>先简单介绍一下 第二个参数 <code>loadFactor</code>，这个其实的 HashMap 里的构造参数，涉及到<strong>扩容问题</strong>，比如 HashMap 的最大容量是100，那么这里设置0.75f的话，到75容量的时候就会扩容。</p>
+<p>主要是第三个参数 <code>accessOrder=true</code> ，这样的话 LinkedHashMap 数据排序就会基于数据的访问顺序，从而实现了 LruCache 核心工作原理。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Returns the value for &#123;<span class="doctag">@code</span> key&#125; if it exists in the cache or can be</div><div class="line"> * created by &#123;<span class="doctag">@code</span> #create&#125;. If a value was returned, it is moved to the</div><div class="line"> * head of the queue. This returns null if a value is not cached and cannot</div><div class="line"> * be created.</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> V <span class="title">get</span><span class="params">(K key)</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span> (key == <span class="keyword">null</span>) &#123;</div><div class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> NullPointerException(<span class="string">"key == null"</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    V mapValue;</div><div class="line">    <span class="keyword">synchronized</span> (<span class="keyword">this</span>) &#123;</div><div class="line">        mapValue = map.get(key);</div><div class="line">        <span class="keyword">if</span> (mapValue != <span class="keyword">null</span>) &#123;</div><div class="line">            hitCount++;</div><div class="line">            <span class="keyword">return</span> mapValue;</div><div class="line">        &#125;</div><div class="line">        missCount++;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/*</span></div><div class="line">     * Attempt to create a value. This may take a long time, and the map</div><div class="line">     * may be different when create() returns. If a conflicting value was</div><div class="line">     * added to the map while create() was working, we leave that value in</div><div class="line">     * the map and release the created value.</div><div class="line">     */</div><div class="line"></div><div class="line">    V createdValue = create(key);</div><div class="line">    <span class="keyword">if</span> (createdValue == <span class="keyword">null</span>) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">synchronized</span> (<span class="keyword">this</span>) &#123;</div><div class="line">        createCount++;</div><div class="line">        mapValue = map.put(key, createdValue);</div><div class="line"></div><div class="line">        <span class="keyword">if</span> (mapValue != <span class="keyword">null</span>) &#123;</div><div class="line">            <span class="comment">// There was a conflict so undo that last put</span></div><div class="line">            map.put(key, mapValue);</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            size += safeSizeOf(key, createdValue);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (mapValue != <span class="keyword">null</span>) &#123;</div><div class="line">        entryRemoved(<span class="keyword">false</span>, key, createdValue, mapValue);</div><div class="line">        <span class="keyword">return</span> mapValue;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        trimToSize(maxSize);</div><div class="line">        <span class="keyword">return</span> createdValue;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/2017/04/20/android_lrucache/" class="article-date">
+  <time datetime="2017-04-20T10:17:45.000Z" itemprop="datePublished">2017-04-20</time>
+</a>
+
+        </li>
+        
+        
+          <li>
+            <span class="label">Tag:</span>
+            
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+
+
+          </li>
+        
+        <hr/>
+      </ul>
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav" class="article-nav">
+  
+    <a href="/2017/05/03/thinking-in-Java/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          重新认识Java之对象
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/04/13/graphic_http/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">读《图解HTTP》笔记</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      <hr/>
+      <div id="footerContent" class="footer-content">
+        <p>stay hungry , stay foolish .</p>
+
+
+  
+    <span id="busuanzi_container_page_pv">
+         <i class="fa fa-flag"></i>    你是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>个阅读本文的小伙伴
+    </span>
+  
+      </div>
+  </footer>
+
+      
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+  <script src="http://cdn.bootcss.com/instantsearch.js/1.5.1/instantsearch.js"></script>
+  <script src="/js/algolia.js"></script>
+
+<script src="/js/typing.js"></script>
+<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+
+
+
+
+
+
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+    </div>
+  </body>
+</html>

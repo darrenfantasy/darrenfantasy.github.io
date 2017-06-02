@@ -18,7 +18,8 @@ Web使用一种名为HTTP(HyperTex">
 客户端：即通过发送请求获取服务器资源的Web浏览器等，都可称为客户端。
 Web使用一种名为HTTP(HyperTex">
 <meta property="og:image" content="http://oic2oders.bkt.clouddn.com/http_protocol.png">
-<meta property="og:updated_time" content="2017-04-13T13:08:22.000Z">
+<meta property="og:image" content="http://oic2oders.bkt.clouddn.com/ssl.png">
+<meta property="og:updated_time" content="2017-05-02T06:10:03.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="读《图解HTTP》笔记">
 <meta name="twitter:description" content="因为最近在写网络爬虫程序，需要对HTTP协议方面的知识有足够详细的了解。所以最近阅读了下《图解HTTP》。以下是读书笔记。
@@ -112,6 +113,89 @@ Web使用一种名为HTTP(HyperTex">
 <p><strong>接收端的服务器在链路层接受到数据，按序往上层发送，一直到应用层。当传输到应用层，才是真正接收到由客户端发送过来的HTTP请求。</strong></p>
 <p><img src="http://oic2oders.bkt.clouddn.com/http_protocol.png" alt=""></p>
 <p>发送端在层与层传输数据时，每经过一层时会被打上一个该层所属的首部信息。反之，接收端在层与层传输数据时，每经过一层会把对应的首部消去。</p>
+<p>与HTTP关系密切的协议：<strong>IP，TCP，DNS</strong>。</p>
+<p><strong>负责传输的IP协议</strong></p>
+<p>IP协议的作用是把各种数据包传送给对方。而要保证传送到对方那里，则要满足各类条件。两个重要的条件是<strong>IP地址</strong>和<strong>MAC地址</strong>。</p>
+<p>IP地址指明了节点被分配到的地址，MAC地址是指网卡所属的固定地址。IP地址可以和MAC地址进行配对。IP地址可变换，MAC地址基本不会更改。</p>
+<p><strong>使用ARP凭借MAC地址进行通信</strong></p>
+<p>IP间的通信依赖MAC地址。在网络上，通信双方位于同一局域网(LAN,local area network)的情况很少，通常经多台计算机和网络设备才能连接到对方。而在进行中转时，会利用下一站的中转设备的MAC地址来搜索下一个中转目标。这时会采用ARP（Address Resolution Protocol,地址解析协议），他根据对方的IP就可以查出对应的MAC地址。</p>
+<p><strong>确保可靠性的TCP协议</strong></p>
+<p>按层次分，TCP位于传输层，提供可靠的字节流服务。</p>
+<p>字节流服务即将大块的数据分割成以<strong>报文段</strong>为单位的数据包进行管理。</p>
+<p><strong>三次握手</strong></p>
+<p>TCP的标志：SYN(sychronize)、ACK(acknowledgement)。</p>
+<p>发送端会发送一个带SYN标志的数据包给接收端，接收端收到后会回传一个带有SYN/ACK标志的数据包以示传达确认信息。最后，发送端再回传一个带ACK标志的数据包，表示“握手”结束。</p>
+<p><strong>负责域名解析的DNS服务</strong></p>
+<p>DNS是和HTTP协议一样位于应用层，用来提供域名到IP地址的解析。</p>
+<h3 id="2-简单的HTTP协议"><a href="#2-简单的HTTP协议" class="headerlink" title="2.简单的HTTP协议"></a>2.简单的HTTP协议</h3><p><strong>GET:获取资源</strong>，<strong>PUT:传输实体主体</strong>，<strong>PUT:传输文件</strong>，<strong>DELETE:删除文件</strong>。</p>
+<p>Http返回状态码：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:left">类别</th>
+<th style="text-align:left">原因短句</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1xx</td>
+<td style="text-align:left">Informational(信息性状态码)</td>
+<td style="text-align:left">接收的请求正在处理</td>
+</tr>
+<tr>
+<td style="text-align:center">2xx</td>
+<td style="text-align:left">Success(成功状态码)</td>
+<td style="text-align:left">请求正常处理完毕</td>
+</tr>
+<tr>
+<td style="text-align:center">3xx</td>
+<td style="text-align:left">Redirection(重定向状态码)</td>
+<td style="text-align:left">需要进行附加操作以完成请求</td>
+</tr>
+<tr>
+<td style="text-align:center">4xx</td>
+<td style="text-align:left">Client Error(客户端错误状态码)</td>
+<td style="text-align:left">服务器无法处理请求</td>
+</tr>
+<tr>
+<td style="text-align:center">5xx</td>
+<td style="text-align:left">Server Error(服务端错误状态码)</td>
+<td style="text-align:left">服务器处理请求出错</td>
+</tr>
+</tbody>
+</table>
+<p> <strong>3XX重定向</strong></p>
+<p>3XX响应结果表示浏览器需要执行某些特殊的处理以正确处理请求。</p>
+<p>301:永久性重定向，表示请求的资源已经被分配到新的URI，以后应该使用资源现在所指的URI。也就是说，如果已经把对应的URI保存书签了，这时应该按照Location首部字段提示的URI重新保存。</p>
+<p>302:临时性重定向，表示请求的资源已经被分配到新的URI，希望用户本次能使用新的URI进行访问。</p>
+<p>303:表示由于请求对应的资源存在着另一个URI，应使用GET方法进行重定向获取请求的资源。</p>
+<p>304:表示客户端发送附带的请求条件时，服务器端允许请求访问资源，但未满足条件的情况。304返回时，不包含任何响应的主体部分。304虽然被划为3XX类别中，但和重定向无关。</p>
+<p><strong>4XX客户端发生错误</strong></p>
+<p>400:表示请求报文中存在语法错误，需要修改请求内容后再次发送请求。</p>
+<p>401:表示发送的请求需要通过HTTP认证的认证信息。如之前已进行过一次请求，则表示用户认证失败。</p>
+<p>403:表示请求资源的访问被服务器拒绝了。</p>
+<p>404:表示服务器无法找到请求的资源。</p>
+<p><strong>5XX服务器错误</strong></p>
+<p>500:服务端在请求时发生错误。</p>
+<p>503:服务端暂时处于超负载或正在进行停机维护。</p>
+<h3 id="3-确保Web安全的HTTPS"><a href="#3-确保Web安全的HTTPS" class="headerlink" title="3.确保Web安全的HTTPS"></a>3.确保Web安全的HTTPS</h3><p><strong>HTTP的缺点</strong></p>
+<ul>
+<li>通信使用明文（不加密），内容可能会被窃听。</li>
+<li>不验证通信方的身份，因此可能遭遇伪装。</li>
+<li>无法证明报文的完整性，可能已遭篡改。</li>
+</ul>
+<p>HTTP协议中没有加密机制，但可以通过和SSL（Secure Socket Layer，安全套接层）或TLS（Transport Layer Security，安全层传输协议）的组合使用，加密HTTP的通信内容。</p>
+<p>和SSL组合使用的HTTP被称为HTTPS（HTTP Secure，超文本传输安全协议）。</p>
+<p><img src="http://oic2oders.bkt.clouddn.com/ssl.png" alt=""></p>
+<p>HTTPS需要解决上述HTTP的问题，需要实现以下三点</p>
+<ul>
+<li>客户端和服务器直接的通信只有自己能看懂，即使第三方拿到数据也看不懂这些信息的真实含义。</li>
+<li>客户端必须避免中间人攻击，即除了真正的服务器，任何第三方都无法冒充服务器。</li>
+<li>第三方虽然看不懂数据，但可以 XJB 改，因此客户端和服务器必须有能力判断数据是否被修改过。</li>
+</ul>
+<p>采用对称加密来加密需要传递的信息。</p>
+<p>采用非对称加密来传递对称密钥。</p>
 
       
     </div>
@@ -142,7 +226,14 @@ Web使用一种名为HTTP(HyperTex">
     
 <nav id="article-nav" class="article-nav">
   
-    <span id="article-nav-newer" class="article-nav-link-wrap newer"></span>
+    <a href="/2017/04/20/android_lrucache/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Android之LruCache
+        
+      </div>
+    </a>
   
   
     <a href="/2017/03/29/weibo_crawler/" id="article-nav-older" class="article-nav-link-wrap older">
