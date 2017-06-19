@@ -27,7 +27,7 @@ HDFS
 HDFS
 解决Call to localhost/127.0.0.1:9000 failed on connection exception错误
 1">
-<meta property="og:updated_time" content="2017-06-02T09:42:36.000Z">
+<meta property="og:updated_time" content="2017-06-19T09:28:32.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hadoop学习笔记">
 <meta name="twitter:description" content="1.查看Hadoop安装目录
@@ -143,6 +143,10 @@ HDFS
 </li>
 </ul>
 <h4 id="MapReduce"><a href="#MapReduce" class="headerlink" title="MapReduce"></a>MapReduce</h4><p>MapReduce是一种编程模型，用于大规模数据集的并行运算。概念“Map（映射）”和“Reduce（归约）”是它们的主要思想。</p>
+<h4 id="Spark-SQL"><a href="#Spark-SQL" class="headerlink" title="Spark SQL"></a>Spark SQL</h4><p>在Spark SQL中实现自定义函数</p>
+<p>因为在开发中遇到想在执行SQL时多表查询两个表中时间相差5s以内的。但是数据库里的时间格式是’<strong>dd/MMM/yyyy:HH:mm:ss</strong>‘无法使用unix_timestamp函数将其转成时间戳，所以必须自己实现这个函数。</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">val</span> loc = <span class="keyword">new</span> <span class="type">Locale</span>(<span class="string">"en"</span>)</div><div class="line"><span class="keyword">val</span> fm = <span class="keyword">new</span> <span class="type">SimpleDateFormat</span>(<span class="string">"dd/MMM/yyyy:HH:mm:ss"</span>, loc)</div><div class="line">sqlContext.udf.register(<span class="string">"dateToTimeStamp"</span>,(input:<span class="type">String</span>)=&gt;</div><div class="line">fm.parse(input).getTime()</div><div class="line">)</div></pre></td></tr></table></figure>
+<p>然后就可以直接在SQL语句里使用<strong>dateToTimeStamp</strong>这个函数了。</p>
 
       
     </div>
