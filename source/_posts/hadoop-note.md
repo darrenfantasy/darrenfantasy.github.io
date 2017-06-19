@@ -86,3 +86,19 @@ sh sbin/stop-all.sh
 #### MapReduce
 
 MapReduce是一种编程模型，用于大规模数据集的并行运算。概念“Map（映射）”和“Reduce（归约）”是它们的主要思想。
+
+#### Spark SQL
+
+在Spark SQL中实现自定义函数
+
+因为在开发中遇到想在执行SQL时多表查询两个表中时间相差5s以内的。但是数据库里的时间格式是'**dd/MMM/yyyy:HH:mm:ss**'无法使用unix_timestamp函数将其转成时间戳，所以必须自己实现这个函数。
+
+```scala
+val loc = new Locale("en")
+val fm = new SimpleDateFormat("dd/MMM/yyyy:HH:mm:ss", loc)
+sqlContext.udf.register("dateToTimeStamp",(input:String)=>
+fm.parse(input).getTime()
+)
+```
+
+然后就可以直接在SQL语句里使用**dateToTimeStamp**这个函数了。
