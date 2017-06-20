@@ -3,6 +3,7 @@
 
 
     
+    
   <url>
     <loc>http://yoursite.com/2017/05/31/hadoop-note/</loc>
     <lastmod>2017-06-20T08:00:00.000Z</lastmod>
@@ -89,6 +90,25 @@
 
     
   <url>
+    <loc>http://yoursite.com/2016/12/24/handler/</loc>
+    <lastmod>2017-04-13T13:08:22.000Z</lastmod>
+    <data>
+        <display>
+        <title>Android异步消息处理机制之Handler</title>
+        <pubTime>2016-12-24T08:57:23.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>Handler</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2017/02/22/python_basic_knowledge_about_crawlers/</loc>
     <lastmod>2017-04-13T13:08:22.000Z</lastmod>
     <data>
@@ -108,32 +128,12 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/12/24/handler/</loc>
-    <lastmod>2017-04-13T13:08:22.000Z</lastmod>
-    <data>
-        <display>
-        <title>Android异步消息处理机制之Handler</title>
-        <pubTime>2016-12-24T08:57:23.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>Handler</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-    
-  <url>
-    <loc>http://yoursite.com/2017/03/29/weibo_crawler/</loc>
+    <loc>http://yoursite.com/2017/03/24/the_solution_to_get_cookie_from_js/</loc>
     <lastmod>2017-04-02T08:44:26.000Z</lastmod>
     <data>
         <display>
-        <title>Python实现微博爬虫</title>
-        <pubTime>2017-03-29T05:44:58.000Z</pubTime>
+        <title>Python＋(selenium-webdriver)破解JS加密的Cookie</title>
+        <pubTime>2017-03-24T03:18:46.000Z</pubTime>
         
         <tag>python</tag>
          
@@ -147,12 +147,12 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/03/24/the_solution_to_get_cookie_from_js/</loc>
+    <loc>http://yoursite.com/2017/03/29/weibo_crawler/</loc>
     <lastmod>2017-04-02T08:44:26.000Z</lastmod>
     <data>
         <display>
-        <title>Python＋(selenium-webdriver)破解JS加密的Cookie</title>
-        <pubTime>2017-03-24T03:18:46.000Z</pubTime>
+        <title>Python实现微博爬虫</title>
+        <pubTime>2017-03-29T05:44:58.000Z</pubTime>
         
         <tag>python</tag>
          
@@ -202,6 +202,23 @@
 
     
   <url>
+    <loc>http://yoursite.com/2016/10/25/adb_command_line/</loc>
+    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
+    <data>
+        <display>
+        <title>adb命令</title>
+        <pubTime>2016-10-25T07:58:40.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2017/03/07/custom_viewgroup_tag_flow_layout/</loc>
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     <data>
@@ -221,46 +238,12 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/11/08/android_event_dispatch/</loc>
-    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
-    <data>
-        <display>
-        <title>Android事件分发机制</title>
-        <pubTime>2016-11-08T08:02:42.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yoursite.com/2016/09/27/bitmap/</loc>
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     <data>
         <display>
         <title>bitmap</title>
         <pubTime>2016-09-27T07:44:20.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2016/10/25/adb_command_line/</loc>
-    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
-    <data>
-        <display>
-        <title>adb命令</title>
-        <pubTime>2016-10-25T07:58:40.000Z</pubTime>
         
         <tag>Android</tag>
          
@@ -308,6 +291,23 @@
 
     
   <url>
+    <loc>http://yoursite.com/2016/11/08/android_event_dispatch/</loc>
+    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
+    <data>
+        <display>
+        <title>Android事件分发机制</title>
+        <pubTime>2016-11-08T08:02:42.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2017/02/20/node_js_not_found/</loc>
     <lastmod>2017-02-20T14:33:51.000Z</lastmod>
     <data>
@@ -344,6 +344,23 @@
 
     
   <url>
+    <loc>http://yoursite.com/2016/10/25/git_command_line/</loc>
+    <lastmod>2017-02-16T14:54:52.000Z</lastmod>
+    <data>
+        <display>
+        <title>git常用命令行</title>
+        <pubTime>2016-10-25T07:59:54.000Z</pubTime>
+        
+        <tag>git</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2016/10/11/canvas/</loc>
     <lastmod>2017-02-16T14:54:52.000Z</lastmod>
     <data>
@@ -369,23 +386,6 @@
         <pubTime>2016-10-24T07:56:31.000Z</pubTime>
         
         <tag>Android</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2016/10/25/git_command_line/</loc>
-    <lastmod>2017-02-16T14:54:52.000Z</lastmod>
-    <data>
-        <display>
-        <title>git常用命令行</title>
-        <pubTime>2016-10-25T07:59:54.000Z</pubTime>
-        
-        <tag>git</tag>
          
          
            
