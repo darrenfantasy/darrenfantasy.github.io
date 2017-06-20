@@ -4,7 +4,7 @@
   <url>
     <loc>http://yoursite.com/2017/05/31/hadoop-note/</loc>
     
-    <lastmod>2017-06-19T09:28:32.000Z</lastmod>
+    <lastmod>2017-06-20T08:00:00.000Z</lastmod>
     
   </url>
   
@@ -12,13 +12,6 @@
     <loc>http://yoursite.com/2017/05/03/thinking-in-Java/</loc>
     
     <lastmod>2017-05-03T15:13:26.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2017/04/20/android_lrucache/</loc>
-    
-    <lastmod>2017-05-02T06:10:03.000Z</lastmod>
     
   </url>
   
@@ -37,14 +30,21 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/12/24/handler/</loc>
+    <loc>http://yoursite.com/2017/04/20/android_lrucache/</loc>
+    
+    <lastmod>2017-05-02T06:10:03.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/02/22/python_basic_knowledge_about_crawlers/</loc>
     
     <lastmod>2017-04-13T13:08:22.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2017/02/22/python_basic_knowledge_about_crawlers/</loc>
+    <loc>http://yoursite.com/2016/12/24/handler/</loc>
     
     <lastmod>2017-04-13T13:08:22.000Z</lastmod>
     
@@ -72,14 +72,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/10/18/singleton_pattern/</loc>
+    <loc>http://yoursite.com/2017/03/13/re_understanding_hashmap/</loc>
     
     <lastmod>2017-03-14T12:02:45.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2017/03/13/re_understanding_hashmap/</loc>
+    <loc>http://yoursite.com/2016/10/18/singleton_pattern/</loc>
     
     <lastmod>2017-03-14T12:02:45.000Z</lastmod>
     
@@ -100,7 +100,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/10/17/Android-Gradle/</loc>
+    <loc>http://yoursite.com/2016/09/27/bitmap/</loc>
+    
+    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/10/25/adb_command_line/</loc>
     
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     
@@ -114,14 +121,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/09/27/bitmap/</loc>
-    
-    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/10/25/adb_command_line/</loc>
+    <loc>http://yoursite.com/2016/10/17/Android-Gradle/</loc>
     
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     
@@ -142,6 +142,13 @@
   </url>
   
   <url>
+    <loc>http://yoursite.com/2016/10/11/canvas/</loc>
+    
+    <lastmod>2017-02-16T14:54:52.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2016/10/24/android_so_file/</loc>
     
     <lastmod>2017-02-16T14:54:52.000Z</lastmod>
@@ -150,13 +157,6 @@
   
   <url>
     <loc>http://yoursite.com/2016/10/25/git_command_line/</loc>
-    
-    <lastmod>2017-02-16T14:54:52.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/10/11/canvas/</loc>
     
     <lastmod>2017-02-16T14:54:52.000Z</lastmod>
     

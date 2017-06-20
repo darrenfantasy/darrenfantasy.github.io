@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://yoursite.com/2017/05/31/hadoop-note/</loc>
-    <lastmod>2017-06-19T09:28:32.000Z</lastmod>
+    <lastmod>2017-06-20T08:00:00.000Z</lastmod>
     <data>
         <display>
         <title>Hadoop学习笔记</title>
@@ -29,23 +29,6 @@
         <pubTime>2017-05-03T14:09:05.000Z</pubTime>
         
         <tag>Java</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/04/20/android_lrucache/</loc>
-    <lastmod>2017-05-02T06:10:03.000Z</lastmod>
-    <data>
-        <display>
-        <title>Android之LruCache</title>
-        <pubTime>2017-04-20T10:17:45.000Z</pubTime>
-        
-        <tag>Android</tag>
          
          
            
@@ -89,16 +72,14 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/12/24/handler/</loc>
-    <lastmod>2017-04-13T13:08:22.000Z</lastmod>
+    <loc>http://yoursite.com/2017/04/20/android_lrucache/</loc>
+    <lastmod>2017-05-02T06:10:03.000Z</lastmod>
     <data>
         <display>
-        <title>Android异步消息处理机制之Handler</title>
-        <pubTime>2016-12-24T08:57:23.000Z</pubTime>
+        <title>Android之LruCache</title>
+        <pubTime>2017-04-20T10:17:45.000Z</pubTime>
         
         <tag>Android</tag>
-         
-        <tag>Handler</tag>
          
          
            
@@ -118,6 +99,25 @@
         <tag>python</tag>
          
         <tag>crawler</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/12/24/handler/</loc>
+    <lastmod>2017-04-13T13:08:22.000Z</lastmod>
+    <data>
+        <display>
+        <title>Android异步消息处理机制之Handler</title>
+        <pubTime>2016-12-24T08:57:23.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>Handler</tag>
          
          
            
@@ -166,15 +166,13 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/10/18/singleton_pattern/</loc>
+    <loc>http://yoursite.com/2017/03/13/re_understanding_hashmap/</loc>
     <lastmod>2017-03-14T12:02:45.000Z</lastmod>
     <data>
         <display>
-        <title>单例模式</title>
-        <pubTime>2016-10-18T07:56:19.000Z</pubTime>
+        <title>重新认识HashMap</title>
+        <pubTime>2017-03-13T10:12:49.000Z</pubTime>
         
-        <tag>Android</tag>
-         
         <tag>Java</tag>
          
          
@@ -185,13 +183,15 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/03/13/re_understanding_hashmap/</loc>
+    <loc>http://yoursite.com/2016/10/18/singleton_pattern/</loc>
     <lastmod>2017-03-14T12:02:45.000Z</lastmod>
     <data>
         <display>
-        <title>重新认识HashMap</title>
-        <pubTime>2017-03-13T10:12:49.000Z</pubTime>
+        <title>单例模式</title>
+        <pubTime>2016-10-18T07:56:19.000Z</pubTime>
         
+        <tag>Android</tag>
+         
         <tag>Java</tag>
          
          
@@ -238,12 +238,29 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/10/17/Android-Gradle/</loc>
+    <loc>http://yoursite.com/2016/09/27/bitmap/</loc>
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     <data>
         <display>
-        <title>Android-Gradle</title>
-        <pubTime>2016-10-17T07:54:36.000Z</pubTime>
+        <title>bitmap</title>
+        <pubTime>2016-09-27T07:44:20.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/10/25/adb_command_line/</loc>
+    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
+    <data>
+        <display>
+        <title>adb命令</title>
+        <pubTime>2016-10-25T07:58:40.000Z</pubTime>
         
         <tag>Android</tag>
          
@@ -274,29 +291,12 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/09/27/bitmap/</loc>
+    <loc>http://yoursite.com/2016/10/17/Android-Gradle/</loc>
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     <data>
         <display>
-        <title>bitmap</title>
-        <pubTime>2016-09-27T07:44:20.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2016/10/25/adb_command_line/</loc>
-    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
-    <data>
-        <display>
-        <title>adb命令</title>
-        <pubTime>2016-10-25T07:58:40.000Z</pubTime>
+        <title>Android-Gradle</title>
+        <pubTime>2016-10-17T07:54:36.000Z</pubTime>
         
         <tag>Android</tag>
          
@@ -344,6 +344,23 @@
 
     
   <url>
+    <loc>http://yoursite.com/2016/10/11/canvas/</loc>
+    <lastmod>2017-02-16T14:54:52.000Z</lastmod>
+    <data>
+        <display>
+        <title>canvas</title>
+        <pubTime>2016-10-11T07:52:11.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2016/10/24/android_so_file/</loc>
     <lastmod>2017-02-16T14:54:52.000Z</lastmod>
     <data>
@@ -369,23 +386,6 @@
         <pubTime>2016-10-25T07:59:54.000Z</pubTime>
         
         <tag>git</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2016/10/11/canvas/</loc>
-    <lastmod>2017-02-16T14:54:52.000Z</lastmod>
-    <data>
-        <display>
-        <title>canvas</title>
-        <pubTime>2016-10-11T07:52:11.000Z</pubTime>
-        
-        <tag>Android</tag>
          
          
            
