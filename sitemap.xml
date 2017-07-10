@@ -23,14 +23,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2017/04/13/graphic_http/</loc>
+    <loc>http://yoursite.com/2016/11/19/four_module_in_android/</loc>
     
     <lastmod>2017-05-02T06:10:03.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/11/19/four_module_in_android/</loc>
+    <loc>http://yoursite.com/2017/04/13/graphic_http/</loc>
     
     <lastmod>2017-05-02T06:10:03.000Z</lastmod>
     
@@ -58,13 +58,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2017/03/24/the_solution_to_get_cookie_from_js/</loc>
-    
-    <lastmod>2017-04-02T08:44:26.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/2017/03/29/weibo_crawler/</loc>
     
     <lastmod>2017-04-02T08:44:26.000Z</lastmod>
@@ -72,14 +65,21 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2017/03/13/re_understanding_hashmap/</loc>
+    <loc>http://yoursite.com/2017/03/24/the_solution_to_get_cookie_from_js/</loc>
+    
+    <lastmod>2017-04-02T08:44:26.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/10/18/singleton_pattern/</loc>
     
     <lastmod>2017-03-14T12:02:45.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/10/18/singleton_pattern/</loc>
+    <loc>http://yoursite.com/2017/03/13/re_understanding_hashmap/</loc>
     
     <lastmod>2017-03-14T12:02:45.000Z</lastmod>
     
@@ -100,13 +100,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/09/27/bitmap/</loc>
-    
-    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/2016/11/03/trouble_in_develop/</loc>
     
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
@@ -114,7 +107,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/10/17/Android-Gradle/</loc>
+    <loc>http://yoursite.com/2016/09/27/bitmap/</loc>
     
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     
@@ -122,6 +115,13 @@
   
   <url>
     <loc>http://yoursite.com/2016/11/08/android_event_dispatch/</loc>
+    
+    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/10/17/Android-Gradle/</loc>
     
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     
