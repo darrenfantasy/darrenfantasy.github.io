@@ -4,7 +4,7 @@
   <url>
     <loc>http://yoursite.com/about/index.html</loc>
     
-    <lastmod>2017-06-20T08:37:16.000Z</lastmod>
+    <lastmod>2017-08-04T02:27:48.000Z</lastmod>
     
   </url>
   
@@ -23,7 +23,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/11/19/four_module_in_android/</loc>
+    <loc>http://yoursite.com/2017/04/20/android_lrucache/</loc>
     
     <lastmod>2017-05-02T06:10:03.000Z</lastmod>
     
@@ -37,7 +37,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2017/04/20/android_lrucache/</loc>
+    <loc>http://yoursite.com/2016/11/19/four_module_in_android/</loc>
     
     <lastmod>2017-05-02T06:10:03.000Z</lastmod>
     
@@ -72,13 +72,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/10/18/singleton_pattern/</loc>
-    
-    <lastmod>2017-03-14T12:02:45.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/2017/03/13/re_understanding_hashmap/</loc>
     
     <lastmod>2017-03-14T12:02:45.000Z</lastmod>
@@ -86,7 +79,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/10/25/adb_command_line/</loc>
+    <loc>http://yoursite.com/2016/10/18/singleton_pattern/</loc>
+    
+    <lastmod>2017-03-14T12:02:45.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/11/03/trouble_in_develop/</loc>
     
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     
@@ -100,14 +100,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/11/03/trouble_in_develop/</loc>
+    <loc>http://yoursite.com/2016/10/17/Android-Gradle/</loc>
     
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/09/27/bitmap/</loc>
+    <loc>http://yoursite.com/2016/10/25/adb_command_line/</loc>
     
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     
@@ -121,7 +121,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/10/17/Android-Gradle/</loc>
+    <loc>http://yoursite.com/2016/09/27/bitmap/</loc>
     
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     
@@ -131,13 +131,6 @@
     <loc>http://yoursite.com/2017/02/20/node_js_not_found/</loc>
     
     <lastmod>2017-02-20T14:33:51.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2017/01/18/sdk_develop_summary/</loc>
-    
-    <lastmod>2017-02-16T14:54:52.000Z</lastmod>
     
   </url>
   
@@ -156,6 +149,13 @@
   </url>
   
   <url>
+    <loc>http://yoursite.com/2017/01/12/android_read_note/</loc>
+    
+    <lastmod>2017-02-16T14:54:52.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2016/10/24/android_so_file/</loc>
     
     <lastmod>2017-02-16T14:54:52.000Z</lastmod>
@@ -163,7 +163,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2017/01/12/android_read_note/</loc>
+    <loc>http://yoursite.com/2017/01/18/sdk_develop_summary/</loc>
     
     <lastmod>2017-02-16T14:54:52.000Z</lastmod>
     
