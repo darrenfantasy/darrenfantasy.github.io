@@ -50,6 +50,23 @@
 
     
   <url>
+    <loc>http://yoursite.com/2017/04/13/graphic_http/</loc>
+    <lastmod>2017-05-02T06:10:03.000Z</lastmod>
+    <data>
+        <display>
+        <title>读《图解HTTP》笔记</title>
+        <pubTime>2017-04-13T08:29:47.000Z</pubTime>
+        
+        <tag>HTTP</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2017/04/20/android_lrucache/</loc>
     <lastmod>2017-05-02T06:10:03.000Z</lastmod>
     <data>
@@ -75,23 +92,6 @@
         <pubTime>2016-11-19T06:48:26.000Z</pubTime>
         
         <tag>Android</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/04/13/graphic_http/</loc>
-    <lastmod>2017-05-02T06:10:03.000Z</lastmod>
-    <data>
-        <display>
-        <title>读《图解HTTP》笔记</title>
-        <pubTime>2017-04-13T08:29:47.000Z</pubTime>
-        
-        <tag>HTTP</tag>
          
          
            
@@ -230,31 +230,12 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/03/07/custom_viewgroup_tag_flow_layout/</loc>
+    <loc>http://yoursite.com/2016/10/17/Android-Gradle/</loc>
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     <data>
         <display>
-        <title>自定义ViewGroup实现TagFlowLayout</title>
-        <pubTime>2017-03-07T08:22:25.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>customView</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2016/09/27/bitmap/</loc>
-    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
-    <data>
-        <display>
-        <title>bitmap</title>
-        <pubTime>2016-09-27T07:44:20.000Z</pubTime>
+        <title>Android-Gradle</title>
+        <pubTime>2016-10-17T07:54:36.000Z</pubTime>
         
         <tag>Android</tag>
          
@@ -283,6 +264,25 @@
 
     
   <url>
+    <loc>http://yoursite.com/2017/03/07/custom_viewgroup_tag_flow_layout/</loc>
+    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
+    <data>
+        <display>
+        <title>自定义ViewGroup实现TagFlowLayout</title>
+        <pubTime>2017-03-07T08:22:25.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>customView</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2016/11/03/trouble_in_develop/</loc>
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     <data>
@@ -302,12 +302,12 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/10/17/Android-Gradle/</loc>
+    <loc>http://yoursite.com/2016/09/27/bitmap/</loc>
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     <data>
         <display>
-        <title>Android-Gradle</title>
-        <pubTime>2016-10-17T07:54:36.000Z</pubTime>
+        <title>bitmap</title>
+        <pubTime>2016-09-27T07:44:20.000Z</pubTime>
         
         <tag>Android</tag>
          
@@ -353,12 +353,12 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/10/11/canvas/</loc>
+    <loc>http://yoursite.com/2016/10/24/android_so_file/</loc>
     <lastmod>2017-02-16T14:54:52.000Z</lastmod>
     <data>
         <display>
-        <title>canvas</title>
-        <pubTime>2016-10-11T07:52:11.000Z</pubTime>
+        <title>so文件</title>
+        <pubTime>2016-10-24T07:56:31.000Z</pubTime>
         
         <tag>Android</tag>
          
@@ -370,12 +370,12 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/10/24/android_so_file/</loc>
+    <loc>http://yoursite.com/2016/10/11/canvas/</loc>
     <lastmod>2017-02-16T14:54:52.000Z</lastmod>
     <data>
         <display>
-        <title>so文件</title>
-        <pubTime>2016-10-24T07:56:31.000Z</pubTime>
+        <title>canvas</title>
+        <pubTime>2016-10-11T07:52:11.000Z</pubTime>
         
         <tag>Android</tag>
          
