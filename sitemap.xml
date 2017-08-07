@@ -4,49 +4,7 @@
   <url>
     <loc>http://yoursite.com/album/index.html</loc>
     
-    <lastmod>2017-08-06T15:13:49.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/album/photoSwipe/default-skin/default-skin.css</loc>
-    
-    <lastmod>2017-08-06T14:52:02.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/album/photoSwipe/photoswipe.js</loc>
-    
-    <lastmod>2017-08-06T14:52:02.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/album/photoSwipe/photoswipe.min.js</loc>
-    
-    <lastmod>2017-08-06T14:52:02.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/album/photoSwipe/photoswipe-ui-default.js</loc>
-    
-    <lastmod>2017-08-06T14:52:02.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/album/photoSwipe/photoswipe-ui-default.min.js</loc>
-    
-    <lastmod>2017-08-06T14:52:02.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/album/photoSwipe/photoswipe.css</loc>
-    
-    <lastmod>2017-08-06T14:52:02.000Z</lastmod>
+    <lastmod>2017-08-07T06:00:42.000Z</lastmod>
     
   </url>
   
@@ -135,14 +93,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2017/03/29/weibo_crawler/</loc>
+    <loc>http://yoursite.com/2017/03/24/the_solution_to_get_cookie_from_js/</loc>
     
     <lastmod>2017-04-02T08:44:26.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2017/03/24/the_solution_to_get_cookie_from_js/</loc>
+    <loc>http://yoursite.com/2017/03/29/weibo_crawler/</loc>
     
     <lastmod>2017-04-02T08:44:26.000Z</lastmod>
     
@@ -163,7 +121,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/10/25/adb_command_line/</loc>
+    <loc>http://yoursite.com/2017/03/07/custom_viewgroup_tag_flow_layout/</loc>
     
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     
@@ -177,21 +135,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/11/08/android_event_dispatch/</loc>
-    
-    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2017/03/07/custom_viewgroup_tag_flow_layout/</loc>
-    
-    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/11/03/trouble_in_develop/</loc>
+    <loc>http://yoursite.com/2016/10/25/adb_command_line/</loc>
     
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     
@@ -205,6 +149,20 @@
   </url>
   
   <url>
+    <loc>http://yoursite.com/2016/11/03/trouble_in_develop/</loc>
+    
+    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/11/08/android_event_dispatch/</loc>
+    
+    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2017/02/20/node_js_not_found/</loc>
     
     <lastmod>2017-02-20T14:33:51.000Z</lastmod>
@@ -212,14 +170,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/10/25/git_command_line/</loc>
+    <loc>http://yoursite.com/2017/01/18/sdk_develop_summary/</loc>
     
     <lastmod>2017-02-16T14:54:52.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/10/24/android_so_file/</loc>
+    <loc>http://yoursite.com/2016/10/25/git_command_line/</loc>
     
     <lastmod>2017-02-16T14:54:52.000Z</lastmod>
     
@@ -233,14 +191,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2017/01/12/android_read_note/</loc>
+    <loc>http://yoursite.com/2016/10/24/android_so_file/</loc>
     
     <lastmod>2017-02-16T14:54:52.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2017/01/18/sdk_develop_summary/</loc>
+    <loc>http://yoursite.com/2017/01/12/android_read_note/</loc>
     
     <lastmod>2017-02-16T14:54:52.000Z</lastmod>
     
