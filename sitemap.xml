@@ -2,42 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/photos/index.html</loc>
+    <loc>http://yoursite.com/album/index.html</loc>
     
     <lastmod>2017-08-07T15:59:38.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/photos/data.json</loc>
+    <loc>http://yoursite.com/album/data.json</loc>
     
     <lastmod>2017-08-07T15:59:06.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/photos/photoswipe.css</loc>
+    <loc>http://yoursite.com/album/photoswipe.css</loc>
     
     <lastmod>2017-08-07T14:36:52.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/photos/ins.js</loc>
+    <loc>http://yoursite.com/album/ins.js</loc>
     
     <lastmod>2017-08-06T10:47:13.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/photos/ins.css</loc>
+    <loc>http://yoursite.com/album/ins.css</loc>
     
     <lastmod>2017-08-06T09:57:03.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/photos/lazyload.min.js</loc>
+    <loc>http://yoursite.com/album/lazyload.min.js</loc>
     
     <lastmod>2017-08-06T09:57:03.000Z</lastmod>
     
@@ -65,13 +65,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2017/04/20/android_lrucache/</loc>
-    
-    <lastmod>2017-05-02T06:10:03.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/2016/11/19/four_module_in_android/</loc>
     
     <lastmod>2017-05-02T06:10:03.000Z</lastmod>
@@ -86,14 +79,21 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2017/02/22/python_basic_knowledge_about_crawlers/</loc>
+    <loc>http://yoursite.com/2017/04/20/android_lrucache/</loc>
+    
+    <lastmod>2017-05-02T06:10:03.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/12/24/handler/</loc>
     
     <lastmod>2017-04-13T13:08:22.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/12/24/handler/</loc>
+    <loc>http://yoursite.com/2017/02/22/python_basic_knowledge_about_crawlers/</loc>
     
     <lastmod>2017-04-13T13:08:22.000Z</lastmod>
     
@@ -135,28 +135,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/11/08/android_event_dispatch/</loc>
-    
-    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/09/27/bitmap/</loc>
-    
-    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/2016/11/03/trouble_in_develop/</loc>
-    
-    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/10/25/adb_command_line/</loc>
     
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     
@@ -170,6 +149,27 @@
   </url>
   
   <url>
+    <loc>http://yoursite.com/2016/10/25/adb_command_line/</loc>
+    
+    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/09/27/bitmap/</loc>
+    
+    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/11/08/android_event_dispatch/</loc>
+    
+    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2017/02/20/node_js_not_found/</loc>
     
     <lastmod>2017-02-20T14:33:51.000Z</lastmod>
@@ -177,7 +177,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/10/11/canvas/</loc>
+    <loc>http://yoursite.com/2017/01/18/sdk_develop_summary/</loc>
+    
+    <lastmod>2017-02-16T14:54:52.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/01/12/android_read_note/</loc>
     
     <lastmod>2017-02-16T14:54:52.000Z</lastmod>
     
@@ -198,14 +205,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2017/01/12/android_read_note/</loc>
-    
-    <lastmod>2017-02-16T14:54:52.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2017/01/18/sdk_develop_summary/</loc>
+    <loc>http://yoursite.com/2016/10/11/canvas/</loc>
     
     <lastmod>2017-02-16T14:54:52.000Z</lastmod>
     
