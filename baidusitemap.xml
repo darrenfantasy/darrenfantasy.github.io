@@ -3,6 +3,23 @@
 
 
     
+  <url>
+    <loc>http://yoursite.com/2017/08/16/mac-terminal-set-proxy/</loc>
+    <lastmod>2017-08-17T06:25:07.000Z</lastmod>
+    <data>
+        <display>
+        <title>mac终端下实现翻墙</title>
+        <pubTime>2017-08-16T12:45:25.000Z</pubTime>
+        
+        <tag>tools</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
     
     
     
@@ -36,6 +53,23 @@
         <pubTime>2017-05-03T14:09:05.000Z</pubTime>
         
         <tag>Java</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/04/20/android_lrucache/</loc>
+    <lastmod>2017-05-02T06:10:03.000Z</lastmod>
+    <data>
+        <display>
+        <title>Android之LruCache</title>
+        <pubTime>2017-04-20T10:17:45.000Z</pubTime>
+        
+        <tag>Android</tag>
          
          
            
@@ -79,14 +113,16 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/04/20/android_lrucache/</loc>
-    <lastmod>2017-05-02T06:10:03.000Z</lastmod>
+    <loc>http://yoursite.com/2017/02/22/python_basic_knowledge_about_crawlers/</loc>
+    <lastmod>2017-04-13T13:08:22.000Z</lastmod>
     <data>
         <display>
-        <title>Android之LruCache</title>
-        <pubTime>2017-04-20T10:17:45.000Z</pubTime>
+        <title>Python实现爬虫要掌握的基本知识</title>
+        <pubTime>2017-02-22T06:19:14.000Z</pubTime>
         
-        <tag>Android</tag>
+        <tag>python</tag>
+         
+        <tag>crawler</tag>
          
          
            
@@ -115,12 +151,12 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/02/22/python_basic_knowledge_about_crawlers/</loc>
-    <lastmod>2017-04-13T13:08:22.000Z</lastmod>
+    <loc>http://yoursite.com/2017/03/24/the_solution_to_get_cookie_from_js/</loc>
+    <lastmod>2017-04-02T08:44:26.000Z</lastmod>
     <data>
         <display>
-        <title>Python实现爬虫要掌握的基本知识</title>
-        <pubTime>2017-02-22T06:19:14.000Z</pubTime>
+        <title>Python＋(selenium-webdriver)破解JS加密的Cookie</title>
+        <pubTime>2017-03-24T03:18:46.000Z</pubTime>
         
         <tag>python</tag>
          
@@ -153,16 +189,16 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/03/24/the_solution_to_get_cookie_from_js/</loc>
-    <lastmod>2017-04-02T08:44:26.000Z</lastmod>
+    <loc>http://yoursite.com/2016/10/18/singleton_pattern/</loc>
+    <lastmod>2017-03-14T12:02:45.000Z</lastmod>
     <data>
         <display>
-        <title>Python＋(selenium-webdriver)破解JS加密的Cookie</title>
-        <pubTime>2017-03-24T03:18:46.000Z</pubTime>
+        <title>单例模式</title>
+        <pubTime>2016-10-18T07:56:19.000Z</pubTime>
         
-        <tag>python</tag>
+        <tag>Android</tag>
          
-        <tag>crawler</tag>
+        <tag>Java</tag>
          
          
            
@@ -189,12 +225,65 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/10/18/singleton_pattern/</loc>
-    <lastmod>2017-03-14T12:02:45.000Z</lastmod>
+    <loc>http://yoursite.com/2016/11/08/android_event_dispatch/</loc>
+    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     <data>
         <display>
-        <title>单例模式</title>
-        <pubTime>2016-10-18T07:56:19.000Z</pubTime>
+        <title>Android事件分发机制</title>
+        <pubTime>2016-11-08T08:02:42.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/10/25/adb_command_line/</loc>
+    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
+    <data>
+        <display>
+        <title>adb命令</title>
+        <pubTime>2016-10-25T07:58:40.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/03/07/custom_viewgroup_tag_flow_layout/</loc>
+    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
+    <data>
+        <display>
+        <title>自定义ViewGroup实现TagFlowLayout</title>
+        <pubTime>2017-03-07T08:22:25.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>customView</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/11/03/trouble_in_develop/</loc>
+    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
+    <data>
+        <display>
+        <title>开发中遇到的坑</title>
+        <pubTime>2016-11-03T08:00:58.000Z</pubTime>
         
         <tag>Android</tag>
          
@@ -225,84 +314,12 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/11/03/trouble_in_develop/</loc>
-    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
-    <data>
-        <display>
-        <title>开发中遇到的坑</title>
-        <pubTime>2016-11-03T08:00:58.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>Java</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/03/07/custom_viewgroup_tag_flow_layout/</loc>
-    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
-    <data>
-        <display>
-        <title>自定义ViewGroup实现TagFlowLayout</title>
-        <pubTime>2017-03-07T08:22:25.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>customView</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2016/10/25/adb_command_line/</loc>
-    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
-    <data>
-        <display>
-        <title>adb命令</title>
-        <pubTime>2016-10-25T07:58:40.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yoursite.com/2016/09/27/bitmap/</loc>
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     <data>
         <display>
         <title>bitmap</title>
         <pubTime>2016-09-27T07:44:20.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2016/11/08/android_event_dispatch/</loc>
-    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
-    <data>
-        <display>
-        <title>Android事件分发机制</title>
-        <pubTime>2016-11-08T08:02:42.000Z</pubTime>
         
         <tag>Android</tag>
          
@@ -350,12 +367,29 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/01/12/android_read_note/</loc>
+    <loc>http://yoursite.com/2016/10/25/git_command_line/</loc>
     <lastmod>2017-02-16T14:54:52.000Z</lastmod>
     <data>
         <display>
-        <title>读《Android开发艺术探索》笔记</title>
-        <pubTime>2017-01-12T08:07:03.000Z</pubTime>
+        <title>git常用命令行</title>
+        <pubTime>2016-10-25T07:59:54.000Z</pubTime>
+        
+        <tag>git</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/10/11/canvas/</loc>
+    <lastmod>2017-02-16T14:54:52.000Z</lastmod>
+    <data>
+        <display>
+        <title>canvas</title>
+        <pubTime>2016-10-11T07:52:11.000Z</pubTime>
         
         <tag>Android</tag>
          
@@ -384,29 +418,12 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/10/25/git_command_line/</loc>
+    <loc>http://yoursite.com/2017/01/12/android_read_note/</loc>
     <lastmod>2017-02-16T14:54:52.000Z</lastmod>
     <data>
         <display>
-        <title>git常用命令行</title>
-        <pubTime>2016-10-25T07:59:54.000Z</pubTime>
-        
-        <tag>git</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2016/10/11/canvas/</loc>
-    <lastmod>2017-02-16T14:54:52.000Z</lastmod>
-    <data>
-        <display>
-        <title>canvas</title>
-        <pubTime>2016-10-11T07:52:11.000Z</pubTime>
+        <title>读《Android开发艺术探索》笔记</title>
+        <pubTime>2017-01-12T08:07:03.000Z</pubTime>
         
         <tag>Android</tag>
          
