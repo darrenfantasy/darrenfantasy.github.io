@@ -5,6 +5,7 @@
     
     
     
+    
   <url>
     <loc>http://yoursite.com/2017/08/16/mac-terminal-set-proxy/</loc>
     <lastmod>2017-08-17T06:25:07.000Z</lastmod>
@@ -21,7 +22,6 @@
     </data>
     </url>
 
-    
     
     
     
@@ -225,29 +225,12 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/09/27/bitmap/</loc>
+    <loc>http://yoursite.com/2016/10/25/adb_command_line/</loc>
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     <data>
         <display>
-        <title>bitmap</title>
-        <pubTime>2016-09-27T07:44:20.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2016/10/17/Android-Gradle/</loc>
-    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
-    <data>
-        <display>
-        <title>Android-Gradle</title>
-        <pubTime>2016-10-17T07:54:36.000Z</pubTime>
+        <title>adb命令</title>
+        <pubTime>2016-10-25T07:58:40.000Z</pubTime>
         
         <tag>Android</tag>
          
@@ -265,6 +248,23 @@
         <display>
         <title>Android事件分发机制</title>
         <pubTime>2016-11-08T08:02:42.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/09/27/bitmap/</loc>
+    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
+    <data>
+        <display>
+        <title>bitmap</title>
+        <pubTime>2016-09-27T07:44:20.000Z</pubTime>
         
         <tag>Android</tag>
          
@@ -295,12 +295,12 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/10/25/adb_command_line/</loc>
+    <loc>http://yoursite.com/2016/10/17/Android-Gradle/</loc>
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     <data>
         <display>
-        <title>adb命令</title>
-        <pubTime>2016-10-25T07:58:40.000Z</pubTime>
+        <title>Android-Gradle</title>
+        <pubTime>2016-10-17T07:54:36.000Z</pubTime>
         
         <tag>Android</tag>
          

@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/album/index.html</loc>
+    
+    <lastmod>2017-08-17T13:36:15.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/album/data.json</loc>
     
-    <lastmod>2017-08-17T10:01:47.000Z</lastmod>
+    <lastmod>2017-08-17T10:36:57.000Z</lastmod>
     
   </url>
   
@@ -26,13 +33,6 @@
     <loc>http://yoursite.com/about/index.html</loc>
     
     <lastmod>2017-08-09T05:50:49.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/album/index.html</loc>
-    
-    <lastmod>2017-08-07T15:59:38.000Z</lastmod>
     
   </url>
   
@@ -135,14 +135,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/09/27/bitmap/</loc>
-    
-    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/10/17/Android-Gradle/</loc>
+    <loc>http://yoursite.com/2016/10/25/adb_command_line/</loc>
     
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     
@@ -156,6 +149,13 @@
   </url>
   
   <url>
+    <loc>http://yoursite.com/2016/09/27/bitmap/</loc>
+    
+    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2016/11/03/trouble_in_develop/</loc>
     
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
@@ -163,7 +163,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/10/25/adb_command_line/</loc>
+    <loc>http://yoursite.com/2016/10/17/Android-Gradle/</loc>
     
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     
