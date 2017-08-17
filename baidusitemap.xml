@@ -79,14 +79,14 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/04/20/android_lrucache/</loc>
+    <loc>http://yoursite.com/2017/04/13/graphic_http/</loc>
     <lastmod>2017-05-02T06:10:03.000Z</lastmod>
     <data>
         <display>
-        <title>Android之LruCache</title>
-        <pubTime>2017-04-20T10:17:45.000Z</pubTime>
+        <title>读《图解HTTP》笔记</title>
+        <pubTime>2017-04-13T08:29:47.000Z</pubTime>
         
-        <tag>Android</tag>
+        <tag>HTTP</tag>
          
          
            
@@ -96,14 +96,14 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/04/13/graphic_http/</loc>
+    <loc>http://yoursite.com/2017/04/20/android_lrucache/</loc>
     <lastmod>2017-05-02T06:10:03.000Z</lastmod>
     <data>
         <display>
-        <title>读《图解HTTP》笔记</title>
-        <pubTime>2017-04-13T08:29:47.000Z</pubTime>
+        <title>Android之LruCache</title>
+        <pubTime>2017-04-20T10:17:45.000Z</pubTime>
         
-        <tag>HTTP</tag>
+        <tag>Android</tag>
          
          
            
@@ -225,12 +225,12 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/11/08/android_event_dispatch/</loc>
+    <loc>http://yoursite.com/2016/09/27/bitmap/</loc>
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     <data>
         <display>
-        <title>Android事件分发机制</title>
-        <pubTime>2016-11-08T08:02:42.000Z</pubTime>
+        <title>bitmap</title>
+        <pubTime>2016-09-27T07:44:20.000Z</pubTime>
         
         <tag>Android</tag>
          
@@ -259,12 +259,12 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/09/27/bitmap/</loc>
+    <loc>http://yoursite.com/2016/11/08/android_event_dispatch/</loc>
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     <data>
         <display>
-        <title>bitmap</title>
-        <pubTime>2016-09-27T07:44:20.000Z</pubTime>
+        <title>Android事件分发机制</title>
+        <pubTime>2016-11-08T08:02:42.000Z</pubTime>
         
         <tag>Android</tag>
          
