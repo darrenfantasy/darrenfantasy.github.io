@@ -3,6 +3,8 @@
 
 
     
+    
+    
   <url>
     <loc>http://yoursite.com/2017/08/16/mac-terminal-set-proxy/</loc>
     <lastmod>2017-08-17T06:25:07.000Z</lastmod>
@@ -19,8 +21,6 @@
     </data>
     </url>
 
-    
-    
     
     
     
@@ -62,12 +62,12 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/04/20/android_lrucache/</loc>
+    <loc>http://yoursite.com/2016/11/19/four_module_in_android/</loc>
     <lastmod>2017-05-02T06:10:03.000Z</lastmod>
     <data>
         <display>
-        <title>Android之LruCache</title>
-        <pubTime>2017-04-20T10:17:45.000Z</pubTime>
+        <title>Android四大组件</title>
+        <pubTime>2016-11-19T06:48:26.000Z</pubTime>
         
         <tag>Android</tag>
          
@@ -79,12 +79,12 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/11/19/four_module_in_android/</loc>
+    <loc>http://yoursite.com/2017/04/20/android_lrucache/</loc>
     <lastmod>2017-05-02T06:10:03.000Z</lastmod>
     <data>
         <display>
-        <title>Android四大组件</title>
-        <pubTime>2016-11-19T06:48:26.000Z</pubTime>
+        <title>Android之LruCache</title>
+        <pubTime>2017-04-20T10:17:45.000Z</pubTime>
         
         <tag>Android</tag>
          
@@ -225,6 +225,40 @@
 
     
   <url>
+    <loc>http://yoursite.com/2016/09/27/bitmap/</loc>
+    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
+    <data>
+        <display>
+        <title>bitmap</title>
+        <pubTime>2016-09-27T07:44:20.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/10/17/Android-Gradle/</loc>
+    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
+    <data>
+        <display>
+        <title>Android-Gradle</title>
+        <pubTime>2016-10-17T07:54:36.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2016/11/08/android_event_dispatch/</loc>
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     <data>
@@ -233,6 +267,25 @@
         <pubTime>2016-11-08T08:02:42.000Z</pubTime>
         
         <tag>Android</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/11/03/trouble_in_develop/</loc>
+    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
+    <data>
+        <display>
+        <title>开发中遇到的坑</title>
+        <pubTime>2016-11-03T08:00:58.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>Java</tag>
          
          
            
@@ -269,59 +322,6 @@
         <tag>Android</tag>
          
         <tag>customView</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2016/11/03/trouble_in_develop/</loc>
-    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
-    <data>
-        <display>
-        <title>开发中遇到的坑</title>
-        <pubTime>2016-11-03T08:00:58.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>Java</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2016/10/17/Android-Gradle/</loc>
-    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
-    <data>
-        <display>
-        <title>Android-Gradle</title>
-        <pubTime>2016-10-17T07:54:36.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2016/09/27/bitmap/</loc>
-    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
-    <data>
-        <display>
-        <title>bitmap</title>
-        <pubTime>2016-09-27T07:44:20.000Z</pubTime>
-        
-        <tag>Android</tag>
          
          
            
