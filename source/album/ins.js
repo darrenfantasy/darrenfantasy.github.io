@@ -79,12 +79,6 @@
       };
     }
 
-    /**
-     * @name impush-client 
-     * @description 这个项目让我发家致富…
-     * @date 2016-12-1
-     */
-
     var _collection = [];
     var _count = 0;
     var searchData;
@@ -116,8 +110,8 @@
         var data = res.list[j].arr;
         var liTmpl = "";
         for (var i = 0, len = data.link.length; i < len; i++) {
-          var minSrc = 'http://oic2oders.bkt.clouddn.com/shanghai/' + data.link[i];
-          var src = 'http://oic2oders.bkt.clouddn.com/shanghai/' + data.link[i];
+          var minSrc = 'http://oud3xi5hk.bkt.clouddn.com/' + data.link[i];
+          var src = 'http://oud3xi5hk.bkt.clouddn.com/' + data.link[i];
           var type = data.type[i];
           var target = src + (type === 'video' ? '.mp4' : '.jpg');
           src += '';
