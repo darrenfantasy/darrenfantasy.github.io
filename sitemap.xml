@@ -2,16 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/album/index.html</loc>
+    <loc>http://yoursite.com/album/data.json</loc>
     
-    <lastmod>2017-08-17T13:36:15.000Z</lastmod>
+    <lastmod>2017-08-17T14:24:54.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/album/data.json</loc>
+    <loc>http://yoursite.com/album/index.html</loc>
     
-    <lastmod>2017-08-17T10:36:57.000Z</lastmod>
+    <lastmod>2017-08-17T13:36:15.000Z</lastmod>
     
   </url>
   
@@ -135,7 +135,28 @@
   </url>
   
   <url>
+    <loc>http://yoursite.com/2016/10/17/Android-Gradle/</loc>
+    
+    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2016/10/25/adb_command_line/</loc>
+    
+    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/03/07/custom_viewgroup_tag_flow_layout/</loc>
+    
+    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/11/03/trouble_in_develop/</loc>
     
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     
@@ -150,27 +171,6 @@
   
   <url>
     <loc>http://yoursite.com/2016/09/27/bitmap/</loc>
-    
-    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/11/03/trouble_in_develop/</loc>
-    
-    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/10/17/Android-Gradle/</loc>
-    
-    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2017/03/07/custom_viewgroup_tag_flow_layout/</loc>
     
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     
@@ -198,14 +198,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/10/11/canvas/</loc>
+    <loc>http://yoursite.com/2016/10/24/android_so_file/</loc>
     
     <lastmod>2017-02-16T14:54:52.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/10/24/android_so_file/</loc>
+    <loc>http://yoursite.com/2016/10/11/canvas/</loc>
     
     <lastmod>2017-02-16T14:54:52.000Z</lastmod>
     
