@@ -21,15 +21,14 @@ fb_app_id:
 
 # Profile
 nickname: darrenFantasy
-description: 说出来会被嘲笑的梦想，才有实现的价值。
+description: You got a dream, you gotta protect it.
 links:
   Blog: /archives
+  Album: /album
   GitHub: https://github.com/darrenfantasy
-  Email: mailto:darrenfantasy30@gmail.com
   About: /about
 
 # Info
 archive_footer_content: 温度不迷茫 方向不倔强
 post_footer_content: stay hungry , stay foolish .
 
-duoshuo_shortname: darrenfantasy
