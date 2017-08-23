@@ -44,14 +44,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/album/ins.css</loc>
+    <loc>http://yoursite.com/album/lazyload.min.js</loc>
     
     <lastmod>2017-08-06T09:57:03.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/album/lazyload.min.js</loc>
+    <loc>http://yoursite.com/album/ins.css</loc>
     
     <lastmod>2017-08-06T09:57:03.000Z</lastmod>
     
@@ -72,14 +72,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2017/04/13/graphic_http/</loc>
+    <loc>http://yoursite.com/2016/11/19/four_module_in_android/</loc>
     
     <lastmod>2017-05-02T06:10:03.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/11/19/four_module_in_android/</loc>
+    <loc>http://yoursite.com/2017/04/13/graphic_http/</loc>
     
     <lastmod>2017-05-02T06:10:03.000Z</lastmod>
     
@@ -93,13 +93,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/12/24/handler/</loc>
-    
-    <lastmod>2017-04-13T13:08:22.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/2017/02/22/python_basic_knowledge_about_crawlers/</loc>
     
     <lastmod>2017-04-13T13:08:22.000Z</lastmod>
@@ -107,9 +100,9 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2017/03/29/weibo_crawler/</loc>
+    <loc>http://yoursite.com/2016/12/24/handler/</loc>
     
-    <lastmod>2017-04-02T08:44:26.000Z</lastmod>
+    <lastmod>2017-04-13T13:08:22.000Z</lastmod>
     
   </url>
   
@@ -121,9 +114,9 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/10/18/singleton_pattern/</loc>
+    <loc>http://yoursite.com/2017/03/29/weibo_crawler/</loc>
     
-    <lastmod>2017-03-14T12:02:45.000Z</lastmod>
+    <lastmod>2017-04-02T08:44:26.000Z</lastmod>
     
   </url>
   
@@ -135,7 +128,21 @@
   </url>
   
   <url>
+    <loc>http://yoursite.com/2016/10/18/singleton_pattern/</loc>
+    
+    <lastmod>2017-03-14T12:02:45.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2016/11/08/android_event_dispatch/</loc>
+    
+    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/10/25/adb_command_line/</loc>
     
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     
@@ -156,7 +163,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/10/25/adb_command_line/</loc>
+    <loc>http://yoursite.com/2016/09/27/bitmap/</loc>
     
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     
@@ -170,30 +177,9 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/09/27/bitmap/</loc>
-    
-    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/2017/02/20/node_js_not_found/</loc>
     
     <lastmod>2017-02-20T14:33:51.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/10/11/canvas/</loc>
-    
-    <lastmod>2017-02-16T14:54:52.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2017/01/12/android_read_note/</loc>
-    
-    <lastmod>2017-02-16T14:54:52.000Z</lastmod>
     
   </url>
   
@@ -206,6 +192,20 @@
   
   <url>
     <loc>http://yoursite.com/2016/10/25/git_command_line/</loc>
+    
+    <lastmod>2017-02-16T14:54:52.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/10/11/canvas/</loc>
+    
+    <lastmod>2017-02-16T14:54:52.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/01/12/android_read_note/</loc>
     
     <lastmod>2017-02-16T14:54:52.000Z</lastmod>
     
