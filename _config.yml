@@ -65,6 +65,7 @@ pagination_dir: page
 ## Themes: https://hexo.io/themes/
 theme: typing
 
+youyan_uid: 2128029
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
@@ -75,6 +76,6 @@ deploy:
 algolia:
   applicationID: 9YLWDGRLNL
   apiKey: 81bb59315f815b2991060d464aadc077
-  adminApiKey: 'secret'
+  adminApiKey: 'bf88446e5844b691b381bc53ae8863b9'
   indexName: darrenfantasy
   chunkSize: 5000

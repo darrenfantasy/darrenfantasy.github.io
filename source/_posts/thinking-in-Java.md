@@ -1,5 +1,5 @@
 ---
-title: 重新认识Java之对象
+title: 重新认识Java
 date: 2017-05-03 22:09:05
 tags: [Java]
 ---
@@ -26,4 +26,19 @@ tags: [Java]
 
 **byte,char,short,int,long,float,double,boolean.**
 
- 
+### 2.泛型
+
+### 3.反射
+
+### 4.集合
+
+### 5.多线程
+
+### 6.IO
+
+### 7.异常
+
+### 8.JVM相关
+
+
+

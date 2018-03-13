@@ -117,8 +117,9 @@ public class Singleton{
   public static Singleton getInstance(){
     return SingletonHolder.mInstance;
   }
-  private static class SingletonHolder(){
+  private static class SingletonHolder{
     private static final Singleton mInstance = new Singleton();
   }
 }
 ```
+静态内部类只有在第一次调用的时候才会去加载类。同时实现延迟加载和线程安全。
