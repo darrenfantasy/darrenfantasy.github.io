@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2017/11/13/memory-leak/</loc>
+    
+    <lastmod>2018-03-13T08:33:26.092Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2016/10/18/singleton_pattern/</loc>
     
     <lastmod>2018-03-13T06:23:37.010Z</lastmod>
@@ -72,14 +79,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/album/ins.css</loc>
+    <loc>http://yoursite.com/album/lazyload.min.js</loc>
     
     <lastmod>2017-08-06T09:57:03.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/album/lazyload.min.js</loc>
+    <loc>http://yoursite.com/album/ins.css</loc>
     
     <lastmod>2017-08-06T09:57:03.000Z</lastmod>
     
@@ -93,7 +100,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/11/19/four_module_in_android/</loc>
+    <loc>http://yoursite.com/2017/04/13/graphic_http/</loc>
     
     <lastmod>2017-05-02T06:10:03.000Z</lastmod>
     
@@ -107,7 +114,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2017/04/13/graphic_http/</loc>
+    <loc>http://yoursite.com/2016/11/19/four_module_in_android/</loc>
     
     <lastmod>2017-05-02T06:10:03.000Z</lastmod>
     
@@ -128,14 +135,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2017/03/24/the_solution_to_get_cookie_from_js/</loc>
+    <loc>http://yoursite.com/2017/03/29/weibo_crawler/</loc>
     
     <lastmod>2017-04-02T08:44:26.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2017/03/29/weibo_crawler/</loc>
+    <loc>http://yoursite.com/2017/03/24/the_solution_to_get_cookie_from_js/</loc>
     
     <lastmod>2017-04-02T08:44:26.000Z</lastmod>
     
@@ -149,7 +156,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/10/17/Android-Gradle/</loc>
+    <loc>http://yoursite.com/2017/03/07/custom_viewgroup_tag_flow_layout/</loc>
     
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     
@@ -163,7 +170,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/09/27/bitmap/</loc>
+    <loc>http://yoursite.com/2016/11/08/android_event_dispatch/</loc>
     
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     
@@ -177,14 +184,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/11/08/android_event_dispatch/</loc>
+    <loc>http://yoursite.com/2016/09/27/bitmap/</loc>
     
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2017/03/07/custom_viewgroup_tag_flow_layout/</loc>
+    <loc>http://yoursite.com/2016/10/17/Android-Gradle/</loc>
     
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     
@@ -198,21 +205,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/10/24/android_so_file/</loc>
-    
-    <lastmod>2017-02-16T14:54:52.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/2017/01/18/sdk_develop_summary/</loc>
-    
-    <lastmod>2017-02-16T14:54:52.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/10/25/git_command_line/</loc>
     
     <lastmod>2017-02-16T14:54:52.000Z</lastmod>
     
@@ -227,6 +220,20 @@
   
   <url>
     <loc>http://yoursite.com/2017/01/12/android_read_note/</loc>
+    
+    <lastmod>2017-02-16T14:54:52.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/10/25/git_command_line/</loc>
+    
+    <lastmod>2017-02-16T14:54:52.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/10/24/android_so_file/</loc>
     
     <lastmod>2017-02-16T14:54:52.000Z</lastmod>
     
