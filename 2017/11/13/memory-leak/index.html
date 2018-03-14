@@ -6,30 +6,27 @@
   <title>Android内存泄露总结 | darrenfantasy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="什么是内存泄露当一个不会被使用的对象，因为某些原因，导致它不能被正常回收，而停留在堆内存中，就产生了内存泄露。
-###四种引用类型
-强引用：任何时候都不会被垃圾回收器回收，如果内存不足，宁愿抛出OutOfMemoryError
+四种引用类型强引用：任何时候都不会被垃圾回收器回收，如果内存不足，宁愿抛出OutOfMemoryError
 软引用：只有在内存将满的时候才会被垃圾回收器回收，如果还有可用内存，垃圾回收器不会回收
 弱引用：只要垃圾回收器运行，就肯定会被回收，不管还有没有可用内存
-虚引用：虚引用等于">
+虚引用：虚引用等于没有引用">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android内存泄露总结">
 <meta property="og:url" content="http://yoursite.com/2017/11/13/memory-leak/index.html">
 <meta property="og:site_name" content="darrenfantasy">
 <meta property="og:description" content="什么是内存泄露当一个不会被使用的对象，因为某些原因，导致它不能被正常回收，而停留在堆内存中，就产生了内存泄露。
-###四种引用类型
-强引用：任何时候都不会被垃圾回收器回收，如果内存不足，宁愿抛出OutOfMemoryError
+四种引用类型强引用：任何时候都不会被垃圾回收器回收，如果内存不足，宁愿抛出OutOfMemoryError
 软引用：只有在内存将满的时候才会被垃圾回收器回收，如果还有可用内存，垃圾回收器不会回收
 弱引用：只要垃圾回收器运行，就肯定会被回收，不管还有没有可用内存
-虚引用：虚引用等于">
-<meta property="og:updated_time" content="2018-03-13T08:33:26.092Z">
+虚引用：虚引用等于没有引用">
+<meta property="og:updated_time" content="2018-03-14T05:40:06.252Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android内存泄露总结">
 <meta name="twitter:description" content="什么是内存泄露当一个不会被使用的对象，因为某些原因，导致它不能被正常回收，而停留在堆内存中，就产生了内存泄露。
-###四种引用类型
-强引用：任何时候都不会被垃圾回收器回收，如果内存不足，宁愿抛出OutOfMemoryError
+四种引用类型强引用：任何时候都不会被垃圾回收器回收，如果内存不足，宁愿抛出OutOfMemoryError
 软引用：只有在内存将满的时候才会被垃圾回收器回收，如果还有可用内存，垃圾回收器不会回收
 弱引用：只要垃圾回收器运行，就肯定会被回收，不管还有没有可用内存
-虚引用：虚引用等于">
+虚引用：虚引用等于没有引用">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -102,13 +99,11 @@
     <div class="article-entry typo" itemprop="articleBody">
       
         <h3 id="什么是内存泄露"><a href="#什么是内存泄露" class="headerlink" title="什么是内存泄露"></a>什么是内存泄露</h3><p>当一个不会被使用的对象，因为某些原因，导致它不能被正常回收，而停留在堆内存中，就产生了内存泄露。</p>
-<p>###四种引用类型</p>
-<p><strong>强引用：</strong>任何时候都不会被垃圾回收器回收，如果内存不足，宁愿抛出OutOfMemoryError</p>
+<h3 id="四种引用类型"><a href="#四种引用类型" class="headerlink" title="四种引用类型"></a>四种引用类型</h3><p><strong>强引用：</strong>任何时候都不会被垃圾回收器回收，如果内存不足，宁愿抛出OutOfMemoryError</p>
 <p><strong>软引用：</strong>只有在内存将满的时候才会被垃圾回收器回收，如果还有可用内存，垃圾回收器不会回收</p>
 <p><strong>弱引用：</strong>只要垃圾回收器运行，就肯定会被回收，不管还有没有可用内存</p>
 <p><strong>虚引用：</strong>虚引用等于没有引用，任何时候都有可能被垃圾回收</p>
-<p>###Android中常见内存泄露</p>
-<ul>
+<h3 id="Android中常见内存泄露"><a href="#Android中常见内存泄露" class="headerlink" title="Android中常见内存泄露"></a>Android中常见内存泄露</h3><ul>
 <li><p><strong>集合类泄露</strong></p>
 <p>如静态的集合类，静态变量所引用的对象不会被回收。</p>
 </li>
