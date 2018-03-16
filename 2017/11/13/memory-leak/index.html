@@ -19,7 +19,7 @@
 软引用：只有在内存将满的时候才会被垃圾回收器回收，如果还有可用内存，垃圾回收器不会回收
 弱引用：只要垃圾回收器运行，就肯定会被回收，不管还有没有可用内存
 虚引用：虚引用等于没有引用">
-<meta property="og:updated_time" content="2018-03-14T05:40:06.252Z">
+<meta property="og:updated_time" content="2018-03-16T02:02:40.404Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android内存泄露总结">
 <meta name="twitter:description" content="什么是内存泄露当一个不会被使用的对象，因为某些原因，导致它不能被正常回收，而停留在堆内存中，就产生了内存泄露。
@@ -120,6 +120,15 @@
 <p>在我们需要频繁使用某个类的时候，或者在for循环里创建新的对象时，导致JVM不断创建同一个类。</p>
 <p>如我们在使用Message时，不是直接new出来，而是用obtain方法获取。这里用到了享元模式。从消息池里取出可复用的消息，避免产生大量的Message对象。</p>
 </li>
+<li><p><strong>Context使用不当造成的内存泄露</strong></p>
+<p>一般Context造成的泄露，都是因为Context要销毁时，却因为被引用而导致无法回收。</p>
+<p>所以正确使用Context的姿势应该是：</p>
+<ol>
+<li>在Application能搞定的情况下，并且生命周期长的对象，尽量使用Application的Context。</li>
+<li>不要让生命周期长于Activity的对象持有Activity。</li>
+<li>尽量不要在Activity中使用非静态内部类。因为非静态内部类会隐式持有外部类的引用，如果使用静态内部类，可以将外部类的弱引用持有。</li>
+</ol>
+</li>
 </ul>
 <h3 id="对于Android应用内存泄露的检测"><a href="#对于Android应用内存泄露的检测" class="headerlink" title="对于Android应用内存泄露的检测"></a>对于Android应用内存泄露的检测</h3><h4 id="LeakCanary"><a href="#LeakCanary" class="headerlink" title="LeakCanary"></a>LeakCanary</h4><p>项目地址:<a href="https://github.com/square/leakcanary" target="_blank" rel="external">https://github.com/square/leakcanary</a></p>
 <p>在<code>LeakCanary</code>中，检测主要分为三步：1.检测一个对象是否是可疑的泄漏对象；2.如果第一步发现可疑对象，<code>dump</code>内存快照，通过分析<code>.hprof</code>文件，确定怀疑的对象是否真的泄漏。3.将分析的结果展示</p>
@@ -153,7 +162,14 @@
     
 <nav id="article-nav" class="article-nav">
   
-    <span id="article-nav-newer" class="article-nav-link-wrap newer"></span>
+    <a href="/2018/03/14/Okhttp3/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          OkHttp3学习
+        
+      </div>
+    </a>
   
   
     <a href="/2017/08/16/mac-terminal-set-proxy/" id="article-nav-older" class="article-nav-link-wrap older">
