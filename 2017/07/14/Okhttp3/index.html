@@ -3,14 +3,39 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2018/12 | darrenfantasy</title>
+  <title>OkHttp3学习 | darrenfantasy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="darrenfantasy">
-<meta property="og:url" content="http://yoursite.com/archives/2018/12/index.html">
+  <meta name="description" content="OkHttp是一个快速、高效的网络请求库，它的设计和实现的首要目标便是高效，有如下特性：
+
+支持http2，使得对同一个主机发出的所有请求都可以共享相同的socket套接字连接；
+使用连接池来复用连接以减少延迟、提高效率；
+支持Gzip压缩响应体，降低传输内容的大小；
+支持Http缓存，避免重复请求；
+请求失败时会自动重试主机中的其他IP地址自动重定向；
+使用Okio来简化数据的访问与存储，提高性">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OkHttp3学习">
+<meta property="og:url" content="http://yoursite.com/2017/07/14/Okhttp3/index.html">
 <meta property="og:site_name" content="darrenfantasy">
+<meta property="og:description" content="OkHttp是一个快速、高效的网络请求库，它的设计和实现的首要目标便是高效，有如下特性：
+
+支持http2，使得对同一个主机发出的所有请求都可以共享相同的socket套接字连接；
+使用连接池来复用连接以减少延迟、提高效率；
+支持Gzip压缩响应体，降低传输内容的大小；
+支持Http缓存，避免重复请求；
+请求失败时会自动重试主机中的其他IP地址自动重定向；
+使用Okio来简化数据的访问与存储，提高性">
+<meta property="og:updated_time" content="2018-03-17T13:54:00.762Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="darrenfantasy">
+<meta name="twitter:title" content="OkHttp3学习">
+<meta name="twitter:description" content="OkHttp是一个快速、高效的网络请求库，它的设计和实现的首要目标便是高效，有如下特性：
+
+支持http2，使得对同一个主机发出的所有请求都可以共享相同的socket套接字连接；
+使用连接池来复用连接以减少延迟、提高效率；
+支持Gzip压缩响应体，降低传输内容的大小；
+支持Http缓存，避免重复请求；
+请求失败时会自动重试主机中的其他IP地址自动重定向；
+使用Okio来简化数据的访问与存储，提高性">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -22,11 +47,13 @@
 </head>
 
 
+<a href="https://github.com/darrenfantasy"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+
   
     <body>
   
       <div id="container" class="container">
-        <div class="archive-container">
+        <article id="post-Okhttp3" class="article article-type-post" itemscope itemprop="blogPost">
   <header id="header" class="header">
   <nav id="main-nav" class="main-nav">
     
@@ -65,51 +92,101 @@
   </div>
 </div>
   <hr/>
-  
-  
-  
+  <div class="article-inner">
     
     
-      
-      
-      <section class="archives-wrap">
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/12/14/Okhttp3/" class="archive-article-date">
-  <time datetime="2018-12-14T09:43:18.000Z" itemprop="datePublished">Dec 14 2018</time>
-</a>
-
-      
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/12/14/Okhttp3/">OkHttp3学习</a>
+    <h1 class="article-title" itemprop="name">
+      OkHttp3学习
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-entry typo" itemprop="articleBody">
+      
+        <p><code>OkHttp</code>是一个快速、高效的网络请求库，它的设计和实现的首要目标便是高效，有如下特性：</p>
+<ol>
+<li>支持http2，使得对同一个主机发出的所有请求都可以共享相同的socket套接字连接；</li>
+<li>使用连接池来复用连接以减少延迟、提高效率；</li>
+<li>支持Gzip压缩响应体，降低传输内容的大小；</li>
+<li>支持Http缓存，避免重复请求；</li>
+<li>请求失败时会自动重试主机中的其他IP地址自动重定向；</li>
+<li>使用Okio来简化数据的访问与存储，提高性能；</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/2017/07/14/Okhttp3/" class="article-date">
+  <time datetime="2017-07-14T09:43:18.000Z" itemprop="datePublished">2017-07-14</time>
+</a>
+
+        </li>
+        
+        
+          <li>
+            <span class="label">Tag:</span>
+            
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+
+
+          </li>
+        
+        <hr/>
+      </ul>
+    </footer>
   </div>
+  
+    
+<nav id="article-nav" class="article-nav">
+  
+    <a href="/2017/08/12/eventbus/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          EventBus3.0使用及原理解析
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/05/31/hadoop-note/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hadoop学习笔记</div>
+    </a>
+  
+</nav>
+
+
+  
 </article>
 
-  
-  
-    </div></section>
-  
+
+  <section id="comments" class="comments">
+  <div id="uyan_frame"></div>
+<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2128029"></script>
+  </section>
 
 
-
-</div>
 
       </div>
       
-<footer id="footer" class="archive-footer footer">
-  <hr/>
-  <div id="footerContent" class="footer-content">
-    <p>温度不迷茫 方向不倔强</p>
+    <footer id="footer" class="post-footer footer">
+      <hr/>
+      <div id="footerContent" class="footer-content">
+        <p>stay hungry , stay foolish .</p>
 
 
+  
+    <span id="busuanzi_container_page_pv">
+         <i class="fa fa-flag"></i>    你是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>个阅读本文的小伙伴
+    </span>
   
       </div>
   </footer>
