@@ -3,30 +3,66 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Android内存泄露总结 | darrenfantasy</title>
+  <title>Android性能优化小结 | darrenfantasy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="什么是内存泄露当一个不会被使用的对象，因为某些原因，导致它不能被正常回收，而停留在堆内存中，就产生了内存泄露。
-四种引用类型强引用：任何时候都不会被垃圾回收器回收，如果内存不足，宁愿抛出OutOfMemoryError
-软引用：只有在内存将满的时候才会被垃圾回收器回收，如果还有可用内存，垃圾回收器不会回收
-弱引用：只要垃圾回收器运行，就肯定会被回收，不管还有没有可用内存
-虚引用：虚引用等于没有引用">
+  <meta name="description" content="关于Android性能优化，主要包括以下几点
+
+布局优化
+绘制优化
+内存泄露优化
+响应速度优化
+线程优化
+ListView/RecyclerView优化
+Bitmap显示优化
+其他杂七杂八的优化
+
+
+布局优化布局优化主要是通过减少布局文件的层级来实现。
+
+删除布局中无用的控件和层次，有选择性的选择布局文件。
+
+如能使用LinearLayout或者FrameLayout实现的，就不要选择使用Rela">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android内存泄露总结">
-<meta property="og:url" content="http://yoursite.com/2017/11/13/memory-leak/index.html">
+<meta property="og:title" content="Android性能优化小结">
+<meta property="og:url" content="http://yoursite.com/2018/01/17/performance-optimization/index.html">
 <meta property="og:site_name" content="darrenfantasy">
-<meta property="og:description" content="什么是内存泄露当一个不会被使用的对象，因为某些原因，导致它不能被正常回收，而停留在堆内存中，就产生了内存泄露。
-四种引用类型强引用：任何时候都不会被垃圾回收器回收，如果内存不足，宁愿抛出OutOfMemoryError
-软引用：只有在内存将满的时候才会被垃圾回收器回收，如果还有可用内存，垃圾回收器不会回收
-弱引用：只要垃圾回收器运行，就肯定会被回收，不管还有没有可用内存
-虚引用：虚引用等于没有引用">
-<meta property="og:updated_time" content="2018-03-16T02:02:40.404Z">
+<meta property="og:description" content="关于Android性能优化，主要包括以下几点
+
+布局优化
+绘制优化
+内存泄露优化
+响应速度优化
+线程优化
+ListView/RecyclerView优化
+Bitmap显示优化
+其他杂七杂八的优化
+
+
+布局优化布局优化主要是通过减少布局文件的层级来实现。
+
+删除布局中无用的控件和层次，有选择性的选择布局文件。
+
+如能使用LinearLayout或者FrameLayout实现的，就不要选择使用Rela">
+<meta property="og:updated_time" content="2018-03-17T13:48:39.345Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android内存泄露总结">
-<meta name="twitter:description" content="什么是内存泄露当一个不会被使用的对象，因为某些原因，导致它不能被正常回收，而停留在堆内存中，就产生了内存泄露。
-四种引用类型强引用：任何时候都不会被垃圾回收器回收，如果内存不足，宁愿抛出OutOfMemoryError
-软引用：只有在内存将满的时候才会被垃圾回收器回收，如果还有可用内存，垃圾回收器不会回收
-弱引用：只要垃圾回收器运行，就肯定会被回收，不管还有没有可用内存
-虚引用：虚引用等于没有引用">
+<meta name="twitter:title" content="Android性能优化小结">
+<meta name="twitter:description" content="关于Android性能优化，主要包括以下几点
+
+布局优化
+绘制优化
+内存泄露优化
+响应速度优化
+线程优化
+ListView/RecyclerView优化
+Bitmap显示优化
+其他杂七杂八的优化
+
+
+布局优化布局优化主要是通过减少布局文件的层级来实现。
+
+删除布局中无用的控件和层次，有选择性的选择布局文件。
+
+如能使用LinearLayout或者FrameLayout实现的，就不要选择使用Rela">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -44,7 +80,7 @@
     <body>
   
       <div id="container" class="container">
-        <article id="post-memory-leak" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-performance-optimization" class="article article-type-post" itemscope itemprop="blogPost">
   <header id="header" class="header">
   <nav id="main-nav" class="main-nav">
     
@@ -90,7 +126,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Android内存泄露总结
+      Android性能优化小结
     </h1>
   
 
@@ -98,40 +134,65 @@
     
     <div class="article-entry typo" itemprop="articleBody">
       
-        <h3 id="什么是内存泄露"><a href="#什么是内存泄露" class="headerlink" title="什么是内存泄露"></a>什么是内存泄露</h3><p>当一个不会被使用的对象，因为某些原因，导致它不能被正常回收，而停留在堆内存中，就产生了内存泄露。</p>
-<h3 id="四种引用类型"><a href="#四种引用类型" class="headerlink" title="四种引用类型"></a>四种引用类型</h3><p><strong>强引用：</strong>任何时候都不会被垃圾回收器回收，如果内存不足，宁愿抛出OutOfMemoryError</p>
-<p><strong>软引用：</strong>只有在内存将满的时候才会被垃圾回收器回收，如果还有可用内存，垃圾回收器不会回收</p>
-<p><strong>弱引用：</strong>只要垃圾回收器运行，就肯定会被回收，不管还有没有可用内存</p>
-<p><strong>虚引用：</strong>虚引用等于没有引用，任何时候都有可能被垃圾回收</p>
-<h3 id="Android中常见内存泄露"><a href="#Android中常见内存泄露" class="headerlink" title="Android中常见内存泄露"></a>Android中常见内存泄露</h3><ul>
-<li><p><strong>集合类泄露</strong></p>
-<p>如静态的集合类，静态变量所引用的对象不会被回收。</p>
-</li>
-<li><p><strong>单例造成的内存泄露</strong></p>
-<p>如单例对象持有某个activity的引用，导致activity对象无法释放。</p>
-</li>
-<li><p><strong>非静态内部类造成的内存泄露</strong></p>
-<p>如Handler引发的内存泄露，Handler持有外部类的引用，需要使用静态内部类+弱引用来避免。</p>
-</li>
-<li><p><strong>资源未关闭导致的内存泄露</strong></p>
-<p>如广播使用后未关闭，File,Cursor,Stream等资源代码未及时关闭或注销导致。</p>
-</li>
-<li><p><strong>使用对象池避免内存泄露</strong></p>
-<p>在我们需要频繁使用某个类的时候，或者在for循环里创建新的对象时，导致JVM不断创建同一个类。</p>
-<p>如我们在使用Message时，不是直接new出来，而是用obtain方法获取。这里用到了享元模式。从消息池里取出可复用的消息，避免产生大量的Message对象。</p>
-</li>
-<li><p><strong>Context使用不当造成的内存泄露</strong></p>
-<p>一般Context造成的泄露，都是因为Context要销毁时，却因为被引用而导致无法回收。</p>
-<p>所以正确使用Context的姿势应该是：</p>
+        <p>关于Android性能优化，主要包括以下几点</p>
 <ol>
-<li>在Application能搞定的情况下，并且生命周期长的对象，尽量使用Application的Context。</li>
-<li>不要让生命周期长于Activity的对象持有Activity。</li>
-<li>尽量不要在Activity中使用非静态内部类。因为非静态内部类会隐式持有外部类的引用，如果使用静态内部类，可以将外部类的弱引用持有。</li>
+<li>布局优化</li>
+<li>绘制优化</li>
+<li>内存泄露优化</li>
+<li>响应速度优化</li>
+<li>线程优化</li>
+<li>ListView/RecyclerView优化</li>
+<li>Bitmap显示优化</li>
+<li>其他杂七杂八的优化</li>
+</ol>
+<ul>
+<li><h4 id="布局优化"><a href="#布局优化" class="headerlink" title="布局优化"></a>布局优化</h4><p>布局优化主要是通过减少布局文件的层级来实现。</p>
+<ol>
+<li>删除布局中无用的控件和层次，有选择性的选择布局文件。</li>
+</ol>
+<p>如能使用LinearLayout或者FrameLayout实现的，就不要选择使用RelativeLayout。因为RelativeLayout布   局需要消耗更多CPU计算时间。当然这是在同样的层级数量为前提的。</p>
+<ol>
+<li><p>使用标签，include、ViewStub等。</p>
+<p>ViewStub提供了按需加载的功能，当需要时才会将ViewStub中的布局加载到内存，提高了程序初始化效率。</p>
+</li>
+<li><p>避免过度绘制。如移除不必要的背景色</p>
+</li>
 </ol>
 </li>
 </ul>
-<h3 id="对于Android应用内存泄露的检测"><a href="#对于Android应用内存泄露的检测" class="headerlink" title="对于Android应用内存泄露的检测"></a>对于Android应用内存泄露的检测</h3><h4 id="LeakCanary"><a href="#LeakCanary" class="headerlink" title="LeakCanary"></a>LeakCanary</h4><p>项目地址:<a href="https://github.com/square/leakcanary" target="_blank" rel="external">https://github.com/square/leakcanary</a></p>
-<p>在<code>LeakCanary</code>中，检测主要分为三步：1.检测一个对象是否是可疑的泄漏对象；2.如果第一步发现可疑对象，<code>dump</code>内存快照，通过分析<code>.hprof</code>文件，确定怀疑的对象是否真的泄漏。3.将分析的结果展示</p>
+<ul>
+<li><h4 id="绘制优化"><a href="#绘制优化" class="headerlink" title="绘制优化"></a>绘制优化</h4><p>绘制优化主要指onDraw中要避免执行大量操作。</p>
+<ol>
+<li><p>onDraw中不要创建新的临时对象。</p>
+<p>因为onDraw方法可能会被频繁调用，导致一瞬间产生大量对象，这样不仅占用了过多内存，而且会导致系统频繁gc，降低了程序执行效率。</p>
+</li>
+<li><p>onDraw中不要做耗时任务,避免执行循环操作。</p>
+<p>尽管每次循环都很轻量级，但是大量的循环仍然十分抢占CPU的时间片，这会造成View的绘制过程不流畅。</p>
+</li>
+</ol>
+</li>
+<li><h4 id="内存泄露优化"><a href="#内存泄露优化" class="headerlink" title="内存泄露优化"></a>内存泄露优化</h4><p>写代码的时候避免写出内存泄露的代码。使用工具分析潜在的内存泄露。</p>
+<p>具体见 <a href="http://darrenfantasy.com/2017/11/13/memory-leak/" target="_blank" rel="external">http://darrenfantasy.com/2017/11/13/memory-leak/</a></p>
+</li>
+<li><h4 id="响应速度优化"><a href="#响应速度优化" class="headerlink" title="响应速度优化"></a>响应速度优化</h4><p>响应速度优化核心思想就是避免在主线程做耗时操作。</p>
+<p>耗时操作放到子线程，采用异步的方法来执行耗时操作。Android中，Activity在5s不能响应屏幕触摸事件或者键盘输入事件就会ANR。BroadcastReceiver在10s内未执行结束也会ANR。</p>
+</li>
+<li><h4 id="线程优化"><a href="#线程优化" class="headerlink" title="线程优化"></a>线程优化</h4><p>线程优化就是采用线程池的方式来避免内存中同时存在大量的Thread，线程池可以重用内部的线程，从而避免了线程的创建和销毁所带来的开销。同时线程池还能有效控制线程池的最大并发量，避免大量线程因互相抢占资源而导致阻塞现象的发生。</p>
+</li>
+<li><h4 id="ListView-RecyclerView优化"><a href="#ListView-RecyclerView优化" class="headerlink" title="ListView/RecyclerView优化"></a>ListView/RecyclerView优化</h4><p>listview使用contentview进行复用，而不是每一次都去new一个。</p>
+<p>使用ViewHolder，避免每次都去findViewById()来获取控件。</p>
+<p>如果item中有图片，在滑动过程中停止加载图片。</p>
+</li>
+<li><h4 id="Bitmap优化"><a href="#Bitmap优化" class="headerlink" title="Bitmap优化"></a>Bitmap优化</h4><p>主要是对图片进行压缩处理。</p>
+<p>具体见 <a href="http://darrenfantasy.com/2016/09/27/bitmap/" target="_blank" rel="external">http://darrenfantasy.com/2016/09/27/bitmap/</a></p>
+</li>
+<li><h4 id="其他杂七杂八的优化"><a href="#其他杂七杂八的优化" class="headerlink" title="其他杂七杂八的优化"></a>其他杂七杂八的优化</h4><p>Android中少使用枚举，枚举占的内存大。</p>
+<p>常量使用static final修饰。</p>
+<p>适当使用软引用和弱引用。</p>
+<p>使用Android特有的数据结构，如SparseArray。</p>
+</li>
+</ul>
+<p>暂时就想到这么多啦。有遇到新的优化方案会继续更新上去。。。。。</p>
 
       
     </div>
@@ -139,8 +200,8 @@
       <ul class="article-meta">
         <li>
           <span class="label">Published Date:</span>
-          <a href="/2017/11/13/memory-leak/" class="article-date">
-  <time datetime="2017-11-13T07:20:35.000Z" itemprop="datePublished">2017-11-13</time>
+          <a href="/2018/01/17/performance-optimization/" class="article-date">
+  <time datetime="2018-01-17T13:12:14.000Z" itemprop="datePublished">2018-01-17</time>
 </a>
 
         </li>
@@ -162,19 +223,19 @@
     
 <nav id="article-nav" class="article-nav">
   
-    <a href="/2018/01/17/performance-optimization/" id="article-nav-newer" class="article-nav-link-wrap newer">
+    <a href="/2018/12/14/Okhttp3/" id="article-nav-newer" class="article-nav-link-wrap newer">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          Android性能优化小结
+          OkHttp3学习
         
       </div>
     </a>
   
   
-    <a href="/2017/08/16/mac-terminal-set-proxy/" id="article-nav-older" class="article-nav-link-wrap older">
+    <a href="/2017/11/13/memory-leak/" id="article-nav-older" class="article-nav-link-wrap older">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">mac终端下实现翻墙</div>
+      <div class="article-nav-title">Android内存泄露总结</div>
     </a>
   
 </nav>

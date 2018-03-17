@@ -4,12 +4,12 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/11/13/memory-leak/</loc>
-    <lastmod>2018-03-16T02:02:40.404Z</lastmod>
+    <loc>http://yoursite.com/2018/01/17/performance-optimization/</loc>
+    <lastmod>2018-03-17T13:48:39.345Z</lastmod>
     <data>
         <display>
-        <title>Android内存泄露总结</title>
-        <pubTime>2017-11-13T07:20:35.000Z</pubTime>
+        <title>Android性能优化小结</title>
+        <pubTime>2018-01-17T13:12:14.000Z</pubTime>
         
         <tag>Android</tag>
          
@@ -21,12 +21,29 @@
 
     
   <url>
-    <loc>http://yoursite.com/2018/03/14/Okhttp3/</loc>
-    <lastmod>2018-03-14T09:45:27.644Z</lastmod>
+    <loc>http://yoursite.com/2018/12/14/Okhttp3/</loc>
+    <lastmod>2018-03-16T02:05:33.193Z</lastmod>
     <data>
         <display>
         <title>OkHttp3学习</title>
-        <pubTime>2018-03-14T09:43:18.000Z</pubTime>
+        <pubTime>2018-12-14T09:43:18.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/11/13/memory-leak/</loc>
+    <lastmod>2018-03-16T02:02:40.404Z</lastmod>
+    <data>
+        <display>
+        <title>Android内存泄露总结</title>
+        <pubTime>2017-11-13T07:20:35.000Z</pubTime>
         
         <tag>Android</tag>
          
@@ -149,14 +166,14 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/04/20/android_lrucache/</loc>
+    <loc>http://yoursite.com/2017/04/13/graphic_http/</loc>
     <lastmod>2017-05-02T06:10:03.000Z</lastmod>
     <data>
         <display>
-        <title>Android之LruCache</title>
-        <pubTime>2017-04-20T10:17:45.000Z</pubTime>
+        <title>读《图解HTTP》笔记</title>
+        <pubTime>2017-04-13T08:29:47.000Z</pubTime>
         
-        <tag>Android</tag>
+        <tag>HTTP</tag>
          
          
            
@@ -183,33 +200,14 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/04/13/graphic_http/</loc>
+    <loc>http://yoursite.com/2017/04/20/android_lrucache/</loc>
     <lastmod>2017-05-02T06:10:03.000Z</lastmod>
     <data>
         <display>
-        <title>读《图解HTTP》笔记</title>
-        <pubTime>2017-04-13T08:29:47.000Z</pubTime>
+        <title>Android之LruCache</title>
+        <pubTime>2017-04-20T10:17:45.000Z</pubTime>
         
-        <tag>HTTP</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/02/22/python_basic_knowledge_about_crawlers/</loc>
-    <lastmod>2017-04-13T13:08:22.000Z</lastmod>
-    <data>
-        <display>
-        <title>Python实现爬虫要掌握的基本知识</title>
-        <pubTime>2017-02-22T06:19:14.000Z</pubTime>
-        
-        <tag>python</tag>
-         
-        <tag>crawler</tag>
+        <tag>Android</tag>
          
          
            
@@ -229,6 +227,25 @@
         <tag>Android</tag>
          
         <tag>Handler</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/02/22/python_basic_knowledge_about_crawlers/</loc>
+    <lastmod>2017-04-13T13:08:22.000Z</lastmod>
+    <data>
+        <display>
+        <title>Python实现爬虫要掌握的基本知识</title>
+        <pubTime>2017-02-22T06:19:14.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+        <tag>crawler</tag>
          
          
            
@@ -293,14 +310,35 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/10/17/Android-Gradle/</loc>
+    <loc>http://yoursite.com/2016/11/03/trouble_in_develop/</loc>
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     <data>
         <display>
-        <title>Android-Gradle</title>
-        <pubTime>2016-10-17T07:54:36.000Z</pubTime>
+        <title>开发中遇到的坑</title>
+        <pubTime>2016-11-03T08:00:58.000Z</pubTime>
         
         <tag>Android</tag>
+         
+        <tag>Java</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/03/07/custom_viewgroup_tag_flow_layout/</loc>
+    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
+    <data>
+        <display>
+        <title>自定义ViewGroup实现TagFlowLayout</title>
+        <pubTime>2017-03-07T08:22:25.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>customView</tag>
          
          
            
@@ -318,25 +356,6 @@
         <pubTime>2016-11-08T08:02:42.000Z</pubTime>
         
         <tag>Android</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2016/11/03/trouble_in_develop/</loc>
-    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
-    <data>
-        <display>
-        <title>开发中遇到的坑</title>
-        <pubTime>2016-11-03T08:00:58.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>Java</tag>
          
          
            
@@ -380,16 +399,14 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/03/07/custom_viewgroup_tag_flow_layout/</loc>
+    <loc>http://yoursite.com/2016/10/17/Android-Gradle/</loc>
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     <data>
         <display>
-        <title>自定义ViewGroup实现TagFlowLayout</title>
-        <pubTime>2017-03-07T08:22:25.000Z</pubTime>
+        <title>Android-Gradle</title>
+        <pubTime>2016-10-17T07:54:36.000Z</pubTime>
         
         <tag>Android</tag>
-         
-        <tag>customView</tag>
          
          
            
@@ -416,12 +433,48 @@
 
     
   <url>
+    <loc>http://yoursite.com/2017/01/18/sdk_develop_summary/</loc>
+    <lastmod>2017-02-16T14:54:52.000Z</lastmod>
+    <data>
+        <display>
+        <title>SDK开发学习小结</title>
+        <pubTime>2017-01-18T08:08:39.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>Java</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2017/01/12/android_read_note/</loc>
     <lastmod>2017-02-16T14:54:52.000Z</lastmod>
     <data>
         <display>
         <title>读《Android开发艺术探索》笔记</title>
         <pubTime>2017-01-12T08:07:03.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/10/11/canvas/</loc>
+    <lastmod>2017-02-16T14:54:52.000Z</lastmod>
+    <data>
+        <display>
+        <title>canvas</title>
+        <pubTime>2016-10-11T07:52:11.000Z</pubTime>
         
         <tag>Android</tag>
          
@@ -456,42 +509,6 @@
         <display>
         <title>so文件</title>
         <pubTime>2016-10-24T07:56:31.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/01/18/sdk_develop_summary/</loc>
-    <lastmod>2017-02-16T14:54:52.000Z</lastmod>
-    <data>
-        <display>
-        <title>SDK开发学习小结</title>
-        <pubTime>2017-01-18T08:08:39.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>Java</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2016/10/11/canvas/</loc>
-    <lastmod>2017-02-16T14:54:52.000Z</lastmod>
-    <data>
-        <display>
-        <title>canvas</title>
-        <pubTime>2016-10-11T07:52:11.000Z</pubTime>
         
         <tag>Android</tag>
          
