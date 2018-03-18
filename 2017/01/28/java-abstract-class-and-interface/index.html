@@ -3,36 +3,30 @@
 <head>
   <meta charset="utf-8">
   
-  <title>SDK开发学习小结 | darrenfantasy</title>
+  <title>Java再谈接口与抽象类 | darrenfantasy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="以下为做表情云SDK开发时的一些小结
-
-什么是SDK?
-SDK(SoftWare Development Kit)软件开发工具包。通常为辅助某软件而编写的特定软件包，框架集合等，一般包含相关文档，范例及工具。
-SDK主要包含Framework,API及Library这三部分。
-Framework定义了SDK整体的可重用设计，规定了SDK各功能模块的职责及依赖关系。
-各个功能模块体现为Library">
+  <meta name="description" content="先从设计的角度来理解
+抽象类是对一种事物的抽象，即对类抽象，而接口是对行为的抽象。抽象类是对整个类整体进行抽象，包括属性、行为，但是接口却是对类局部（行为）进行抽象。
+抽象类在《Java编程思想》一书中，将抽象类定义为“包含抽象方法的类”，但是后面发现如果一个类不包含抽象方法，只是用abstract修饰的话也是抽象类。也就是说抽象类不一定必须含有抽象方法。
+ 抽象类与普通类的区别
+1）抽象方法必须">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SDK开发学习小结">
-<meta property="og:url" content="http://yoursite.com/2017/01/18/sdk_develop_summary/index.html">
+<meta property="og:title" content="Java再谈接口与抽象类">
+<meta property="og:url" content="http://yoursite.com/2017/01/28/java-abstract-class-and-interface/index.html">
 <meta property="og:site_name" content="darrenfantasy">
-<meta property="og:description" content="以下为做表情云SDK开发时的一些小结
-
-什么是SDK?
-SDK(SoftWare Development Kit)软件开发工具包。通常为辅助某软件而编写的特定软件包，框架集合等，一般包含相关文档，范例及工具。
-SDK主要包含Framework,API及Library这三部分。
-Framework定义了SDK整体的可重用设计，规定了SDK各功能模块的职责及依赖关系。
-各个功能模块体现为Library">
-<meta property="og:updated_time" content="2017-02-16T14:54:52.000Z">
+<meta property="og:description" content="先从设计的角度来理解
+抽象类是对一种事物的抽象，即对类抽象，而接口是对行为的抽象。抽象类是对整个类整体进行抽象，包括属性、行为，但是接口却是对类局部（行为）进行抽象。
+抽象类在《Java编程思想》一书中，将抽象类定义为“包含抽象方法的类”，但是后面发现如果一个类不包含抽象方法，只是用abstract修饰的话也是抽象类。也就是说抽象类不一定必须含有抽象方法。
+ 抽象类与普通类的区别
+1）抽象方法必须">
+<meta property="og:updated_time" content="2018-03-18T15:07:22.048Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SDK开发学习小结">
-<meta name="twitter:description" content="以下为做表情云SDK开发时的一些小结
-
-什么是SDK?
-SDK(SoftWare Development Kit)软件开发工具包。通常为辅助某软件而编写的特定软件包，框架集合等，一般包含相关文档，范例及工具。
-SDK主要包含Framework,API及Library这三部分。
-Framework定义了SDK整体的可重用设计，规定了SDK各功能模块的职责及依赖关系。
-各个功能模块体现为Library">
+<meta name="twitter:title" content="Java再谈接口与抽象类">
+<meta name="twitter:description" content="先从设计的角度来理解
+抽象类是对一种事物的抽象，即对类抽象，而接口是对行为的抽象。抽象类是对整个类整体进行抽象，包括属性、行为，但是接口却是对类局部（行为）进行抽象。
+抽象类在《Java编程思想》一书中，将抽象类定义为“包含抽象方法的类”，但是后面发现如果一个类不包含抽象方法，只是用abstract修饰的话也是抽象类。也就是说抽象类不一定必须含有抽象方法。
+ 抽象类与普通类的区别
+1）抽象方法必须">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -50,7 +44,7 @@ Framework定义了SDK整体的可重用设计，规定了SDK各功能模块的�
     <body>
   
       <div id="container" class="container">
-        <article id="post-sdk_develop_summary" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-java-abstract-class-and-interface" class="article article-type-post" itemscope itemprop="blogPost">
   <header id="header" class="header">
   <nav id="main-nav" class="main-nav">
     
@@ -96,7 +90,7 @@ Framework定义了SDK整体的可重用设计，规定了SDK各功能模块的�
         
   
     <h1 class="article-title" itemprop="name">
-      SDK开发学习小结
+      Java再谈接口与抽象类
     </h1>
   
 
@@ -104,40 +98,19 @@ Framework定义了SDK整体的可重用设计，规定了SDK各功能模块的�
     
     <div class="article-entry typo" itemprop="articleBody">
       
-        <p>以下为做表情云SDK开发时的一些小结</p>
-<ul>
-<li><p>什么是SDK?</p>
-<p>SDK(SoftWare Development Kit)软件开发工具包。通常为辅助某软件而编写的特定软件包，框架集合等，一般包含相关文档，范例及工具。</p>
-<p>SDK主要包含Framework,API及Library这三部分。</p>
-<p>Framework定义了SDK整体的可重用设计，规定了SDK各功能模块的职责及依赖关系。</p>
-<p>各个功能模块体现为Library。</p>
-<p>API则是进行模块间内部通信和SDK对外提供服务的接口。</p>
-</li>
-<li><p>SDK整体架构设计</p>
-<p>a.模块化开发</p>
-<p>b.组件化开发</p>
-<p>c.插件化开发</p>
-</li>
-</ul>
-<ul>
-<li><p>SDK需实现的目标</p>
-<p>a.简洁易用</p>
-<p>b.稳定</p>
-<p>c.轻量</p>
-<p>d.高效</p>
-</li>
-<li><p>API设计</p>
-<p>a.方法名能表明用途</p>
-<p>b.方法要明确其单一功能</p>
-<p>c.方法异常问题</p>
-<p>d.方法权限控制</p>
-<p>e.参数合法性校验</p>
-<p>f.避免参数过长</p>
-<p>g.避免直接返回NULL</p>
-<p>h.谨慎使用方法重载</p>
-<p>​</p>
-</li>
-</ul>
+        <p>先从设计的角度来理解</p>
+<p><strong>抽象类是对一种事物的抽象，即对类抽象，而接口是对行为的抽象。抽象类是对整个类整体进行抽象，包括属性、行为，但是接口却是对类局部（行为）进行抽象。</strong></p>
+<h4 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h4><p>在《Java编程思想》一书中，将抽象类定义为“包含抽象方法的类”，但是后面发现如果一个类不包含抽象方法，只是用abstract修饰的话也是抽象类。也就是说<strong>抽象类不一定必须含有抽象方法</strong>。</p>
+<p> <strong>抽象类与普通类的区别</strong></p>
+<p>1）抽象方法必须为public或者protected（因为如果为private，则不能被子类继承，子类便无法实现该方法），缺省情况下默认为public。</p>
+<p>2）抽象类不能用来创建对象；</p>
+<p>3）如果一个类继承于一个抽象类，则子类必须实现父类的抽象方法。如果子类没有实现父类的抽象方法，则必须将子类也定义为为abstract类。</p>
+<h4 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h4><p>接口中可以含有 变量和方法。但是要注意，接口中的变量会被隐式地指定为public static final变量（并且只能是public static final变量，也就是<strong>常量</strong>。用private修饰会报编译错误），而方法会被隐式地指定为public abstract方法且只能是public abstract方法（用其他关键字，比如private、protected、static、 final等修饰会报编译错误），并且接口中所有的方法不能有具体的实现，也就是说，接口中的方法必须都是抽象方法。从这里可以隐约看出接口和抽象类的区别，接口是一种极度抽象的类型，它比抽象类更加“抽象”，并且一般情况下不在接口中定义变量。</p>
+<h4 id="抽象类与接口的区别"><a href="#抽象类与接口的区别" class="headerlink" title="抽象类与接口的区别"></a>抽象类与接口的区别</h4><p>1）抽象类可以提供成员方法的实现细节，而接口中只能存在public abstract 方法；</p>
+<p>2）抽象类中的成员变量可以是各种类型的，而接口中的成员变量只能是public static final类型的；</p>
+<p>3）接口中不能含有静态代码块以及静态方法，而抽象类可以有静态代码块和静态方法；</p>
+<p>4）一个类只能继承一个抽象类，而一个类却可以实现多个接口;</p>
+<p>5）对于抽象类，如果需要添加新的方法，可以直接在抽象类中添加具体的实现，子类可以不进行变更；而对于接口则不行，如果接口进行了变更，则所有实现这个接口的类都必须进行相应的改动;</p>
 
       
     </div>
@@ -145,8 +118,8 @@ Framework定义了SDK整体的可重用设计，规定了SDK各功能模块的�
       <ul class="article-meta">
         <li>
           <span class="label">Published Date:</span>
-          <a href="/2017/01/18/sdk_develop_summary/" class="article-date">
-  <time datetime="2017-01-18T08:08:39.000Z" itemprop="datePublished">2017-01-18</time>
+          <a href="/2017/01/28/java-abstract-class-and-interface/" class="article-date">
+  <time datetime="2017-01-28T14:45:13.000Z" itemprop="datePublished">2017-01-28</time>
 </a>
 
         </li>
@@ -155,7 +128,7 @@ Framework定义了SDK整体的可重用设计，规定了SDK各功能模块的�
           <li>
             <span class="label">Tag:</span>
             
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
 
 
           </li>
@@ -168,19 +141,19 @@ Framework定义了SDK整体的可重用设计，规定了SDK各功能模块的�
     
 <nav id="article-nav" class="article-nav">
   
-    <a href="/2017/01/28/java-abstract-class-and-interface/" id="article-nav-newer" class="article-nav-link-wrap newer">
+    <a href="/2017/02/20/node_js_not_found/" id="article-nav-newer" class="article-nav-link-wrap newer">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          Java再谈接口与抽象类
+          node.js was not found
         
       </div>
     </a>
   
   
-    <a href="/2017/01/12/android_read_note/" id="article-nav-older" class="article-nav-link-wrap older">
+    <a href="/2017/01/18/sdk_develop_summary/" id="article-nav-older" class="article-nav-link-wrap older">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">读《Android开发艺术探索》笔记</div>
+      <div class="article-nav-title">SDK开发学习小结</div>
     </a>
   
 </nav>
