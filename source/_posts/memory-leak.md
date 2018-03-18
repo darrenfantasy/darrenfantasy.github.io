@@ -42,6 +42,16 @@ tags: [Android]
 
   如我们在使用Message时，不是直接new出来，而是用obtain方法获取。这里用到了享元模式。从消息池里取出可复用的消息，避免产生大量的Message对象。
 
+* **Context使用不当造成的内存泄露**
+
+  一般Context造成的泄露，都是因为Context要销毁时，却因为被引用而导致无法回收。
+
+  所以正确使用Context的姿势应该是：
+
+  1. 在Application能搞定的情况下，并且生命周期长的对象，尽量使用Application的Context。
+  2. 不要让生命周期长于Activity的对象持有Activity。
+  3. 尽量不要在Activity中使用非静态内部类。因为非静态内部类会隐式持有外部类的引用，如果使用静态内部类，可以将外部类的弱引用持有。
+
 ### 对于Android应用内存泄露的检测
 
 #### LeakCanary 
