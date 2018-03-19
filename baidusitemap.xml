@@ -4,6 +4,61 @@
 
     
   <url>
+    <loc>http://yoursite.com/2017/06/13/java-thread/</loc>
+    <lastmod>2018-03-19T09:56:21.188Z</lastmod>
+    <data>
+        <display>
+        <title>Java线程相关知识点巩固</title>
+        <pubTime>2017-06-13T15:23:49.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/10/18/singleton_pattern/</loc>
+    <lastmod>2018-03-19T07:27:17.371Z</lastmod>
+    <data>
+        <display>
+        <title>单例模式</title>
+        <pubTime>2016-10-18T07:56:19.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>Java</tag>
+         
+        <tag>设计模式</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/03/18/sort-algorithm/</loc>
+    <lastmod>2018-03-19T06:33:28.471Z</lastmod>
+    <data>
+        <display>
+        <title>常见排序算法总结(更新中)</title>
+        <pubTime>2018-03-18T06:55:08.000Z</pubTime>
+        
+        <tag>算法</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2017/01/28/java-abstract-class-and-interface/</loc>
     <lastmod>2018-03-18T15:09:45.578Z</lastmod>
     <data>
@@ -29,44 +84,6 @@
         <pubTime>2017-05-18T13:09:29.000Z</pubTime>
         
         <tag>Java</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2018/03/18/sort-algorithm/</loc>
-    <lastmod>2018-03-18T13:05:15.210Z</lastmod>
-    <data>
-        <display>
-        <title>常见排序算法总结(更新中)</title>
-        <pubTime>2018-03-18T06:55:08.000Z</pubTime>
-        
-        <tag>算法</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2016/10/18/singleton_pattern/</loc>
-    <lastmod>2018-03-17T13:58:03.973Z</lastmod>
-    <data>
-        <display>
-        <title>单例模式</title>
-        <pubTime>2016-10-18T07:56:19.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>Java</tag>
-         
-        <tag>设计模式</tag>
          
          
            
@@ -236,23 +253,6 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/04/13/graphic_http/</loc>
-    <lastmod>2017-05-02T06:10:03.000Z</lastmod>
-    <data>
-        <display>
-        <title>读《图解HTTP》笔记</title>
-        <pubTime>2017-04-13T08:29:47.000Z</pubTime>
-        
-        <tag>HTTP</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yoursite.com/2016/11/19/four_module_in_android/</loc>
     <lastmod>2017-05-02T06:10:03.000Z</lastmod>
     <data>
@@ -270,16 +270,14 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/12/24/handler/</loc>
-    <lastmod>2017-04-13T13:08:22.000Z</lastmod>
+    <loc>http://yoursite.com/2017/04/13/graphic_http/</loc>
+    <lastmod>2017-05-02T06:10:03.000Z</lastmod>
     <data>
         <display>
-        <title>Android异步消息处理机制之Handler</title>
-        <pubTime>2016-12-24T08:57:23.000Z</pubTime>
+        <title>读《图解HTTP》笔记</title>
+        <pubTime>2017-04-13T08:29:47.000Z</pubTime>
         
-        <tag>Android</tag>
-         
-        <tag>Handler</tag>
+        <tag>HTTP</tag>
          
          
            
@@ -299,6 +297,25 @@
         <tag>python</tag>
          
         <tag>crawler</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/12/24/handler/</loc>
+    <lastmod>2017-04-13T13:08:22.000Z</lastmod>
+    <data>
+        <display>
+        <title>Android异步消息处理机制之Handler</title>
+        <pubTime>2016-12-24T08:57:23.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>Handler</tag>
          
          
            
@@ -363,33 +380,14 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/11/08/android_event_dispatch/</loc>
+    <loc>http://yoursite.com/2016/10/17/Android-Gradle/</loc>
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     <data>
         <display>
-        <title>Android事件分发机制</title>
-        <pubTime>2016-11-08T08:02:42.000Z</pubTime>
+        <title>Android-Gradle</title>
+        <pubTime>2016-10-17T07:54:36.000Z</pubTime>
         
         <tag>Android</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/03/07/custom_viewgroup_tag_flow_layout/</loc>
-    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
-    <data>
-        <display>
-        <title>自定义ViewGroup实现TagFlowLayout</title>
-        <pubTime>2017-03-07T08:22:25.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>customView</tag>
          
          
            
@@ -405,6 +403,23 @@
         <display>
         <title>adb命令</title>
         <pubTime>2016-10-25T07:58:40.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/09/27/bitmap/</loc>
+    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
+    <data>
+        <display>
+        <title>bitmap</title>
+        <pubTime>2016-09-27T07:44:20.000Z</pubTime>
         
         <tag>Android</tag>
          
@@ -435,14 +450,16 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/10/17/Android-Gradle/</loc>
+    <loc>http://yoursite.com/2017/03/07/custom_viewgroup_tag_flow_layout/</loc>
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     <data>
         <display>
-        <title>Android-Gradle</title>
-        <pubTime>2016-10-17T07:54:36.000Z</pubTime>
+        <title>自定义ViewGroup实现TagFlowLayout</title>
+        <pubTime>2017-03-07T08:22:25.000Z</pubTime>
         
         <tag>Android</tag>
+         
+        <tag>customView</tag>
          
          
            
@@ -452,12 +469,12 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/09/27/bitmap/</loc>
+    <loc>http://yoursite.com/2016/11/08/android_event_dispatch/</loc>
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     <data>
         <display>
-        <title>bitmap</title>
-        <pubTime>2016-09-27T07:44:20.000Z</pubTime>
+        <title>Android事件分发机制</title>
+        <pubTime>2016-11-08T08:02:42.000Z</pubTime>
         
         <tag>Android</tag>
          
@@ -477,23 +494,6 @@
         <pubTime>2017-02-20T03:25:57.000Z</pubTime>
         
         <tag>Node.js</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2016/10/11/canvas/</loc>
-    <lastmod>2017-02-16T14:54:52.000Z</lastmod>
-    <data>
-        <display>
-        <title>canvas</title>
-        <pubTime>2016-10-11T07:52:11.000Z</pubTime>
-        
-        <tag>Android</tag>
          
          
            
@@ -537,6 +537,25 @@
 
     
   <url>
+    <loc>http://yoursite.com/2017/01/18/sdk_develop_summary/</loc>
+    <lastmod>2017-02-16T14:54:52.000Z</lastmod>
+    <data>
+        <display>
+        <title>SDK开发学习小结</title>
+        <pubTime>2017-01-18T08:08:39.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>Java</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2016/10/25/git_command_line/</loc>
     <lastmod>2017-02-16T14:54:52.000Z</lastmod>
     <data>
@@ -554,16 +573,14 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/01/18/sdk_develop_summary/</loc>
+    <loc>http://yoursite.com/2016/10/11/canvas/</loc>
     <lastmod>2017-02-16T14:54:52.000Z</lastmod>
     <data>
         <display>
-        <title>SDK开发学习小结</title>
-        <pubTime>2017-01-18T08:08:39.000Z</pubTime>
+        <title>canvas</title>
+        <pubTime>2016-10-11T07:52:11.000Z</pubTime>
         
         <tag>Android</tag>
-         
-        <tag>Java</tag>
          
          
            
