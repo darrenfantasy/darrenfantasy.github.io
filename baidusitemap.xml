@@ -4,6 +4,57 @@
 
     
   <url>
+    <loc>http://yoursite.com/2016/11/19/four_module_in_android/</loc>
+    <lastmod>2018-03-22T14:47:51.393Z</lastmod>
+    <data>
+        <display>
+        <title>Android四大组件</title>
+        <pubTime>2016-11-19T06:48:26.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/04/13/graphic_http/</loc>
+    <lastmod>2018-03-21T08:01:57.741Z</lastmod>
+    <data>
+        <display>
+        <title>读《图解HTTP》笔记</title>
+        <pubTime>2017-04-13T08:29:47.000Z</pubTime>
+        
+        <tag>HTTP</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/03/20/android-screen-refresh-mechanism/</loc>
+    <lastmod>2018-03-20T03:49:11.701Z</lastmod>
+    <data>
+        <display>
+        <title>Android屏幕刷新机制学习</title>
+        <pubTime>2018-03-20T03:36:41.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2017/06/13/java-thread/</loc>
     <lastmod>2018-03-19T09:56:21.188Z</lastmod>
     <data>
@@ -253,31 +304,16 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/11/19/four_module_in_android/</loc>
-    <lastmod>2017-05-02T06:10:03.000Z</lastmod>
+    <loc>http://yoursite.com/2016/12/24/handler/</loc>
+    <lastmod>2017-04-13T13:08:22.000Z</lastmod>
     <data>
         <display>
-        <title>Android四大组件</title>
-        <pubTime>2016-11-19T06:48:26.000Z</pubTime>
+        <title>Android异步消息处理机制之Handler</title>
+        <pubTime>2016-12-24T08:57:23.000Z</pubTime>
         
         <tag>Android</tag>
          
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/04/13/graphic_http/</loc>
-    <lastmod>2017-05-02T06:10:03.000Z</lastmod>
-    <data>
-        <display>
-        <title>读《图解HTTP》笔记</title>
-        <pubTime>2017-04-13T08:29:47.000Z</pubTime>
-        
-        <tag>HTTP</tag>
+        <tag>Handler</tag>
          
          
            
@@ -297,25 +333,6 @@
         <tag>python</tag>
          
         <tag>crawler</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2016/12/24/handler/</loc>
-    <lastmod>2017-04-13T13:08:22.000Z</lastmod>
-    <data>
-        <display>
-        <title>Android异步消息处理机制之Handler</title>
-        <pubTime>2016-12-24T08:57:23.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>Handler</tag>
          
          
            
@@ -380,46 +397,12 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/10/17/Android-Gradle/</loc>
+    <loc>http://yoursite.com/2016/11/08/android_event_dispatch/</loc>
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     <data>
         <display>
-        <title>Android-Gradle</title>
-        <pubTime>2016-10-17T07:54:36.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2016/10/25/adb_command_line/</loc>
-    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
-    <data>
-        <display>
-        <title>adb命令</title>
-        <pubTime>2016-10-25T07:58:40.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2016/09/27/bitmap/</loc>
-    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
-    <data>
-        <display>
-        <title>bitmap</title>
-        <pubTime>2016-09-27T07:44:20.000Z</pubTime>
+        <title>Android事件分发机制</title>
+        <pubTime>2016-11-08T08:02:42.000Z</pubTime>
         
         <tag>Android</tag>
          
@@ -450,6 +433,40 @@
 
     
   <url>
+    <loc>http://yoursite.com/2016/10/25/adb_command_line/</loc>
+    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
+    <data>
+        <display>
+        <title>adb命令</title>
+        <pubTime>2016-10-25T07:58:40.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/10/17/Android-Gradle/</loc>
+    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
+    <data>
+        <display>
+        <title>Android-Gradle</title>
+        <pubTime>2016-10-17T07:54:36.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2017/03/07/custom_viewgroup_tag_flow_layout/</loc>
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     <data>
@@ -469,12 +486,12 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/11/08/android_event_dispatch/</loc>
+    <loc>http://yoursite.com/2016/09/27/bitmap/</loc>
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     <data>
         <display>
-        <title>Android事件分发机制</title>
-        <pubTime>2016-11-08T08:02:42.000Z</pubTime>
+        <title>bitmap</title>
+        <pubTime>2016-09-27T07:44:20.000Z</pubTime>
         
         <tag>Android</tag>
          
@@ -520,14 +537,14 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/10/24/android_so_file/</loc>
+    <loc>http://yoursite.com/2016/10/25/git_command_line/</loc>
     <lastmod>2017-02-16T14:54:52.000Z</lastmod>
     <data>
         <display>
-        <title>so文件</title>
-        <pubTime>2016-10-24T07:56:31.000Z</pubTime>
+        <title>git常用命令行</title>
+        <pubTime>2016-10-25T07:59:54.000Z</pubTime>
         
-        <tag>Android</tag>
+        <tag>git</tag>
          
          
            
@@ -556,14 +573,14 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/10/25/git_command_line/</loc>
+    <loc>http://yoursite.com/2016/10/11/canvas/</loc>
     <lastmod>2017-02-16T14:54:52.000Z</lastmod>
     <data>
         <display>
-        <title>git常用命令行</title>
-        <pubTime>2016-10-25T07:59:54.000Z</pubTime>
+        <title>canvas</title>
+        <pubTime>2016-10-11T07:52:11.000Z</pubTime>
         
-        <tag>git</tag>
+        <tag>Android</tag>
          
          
            
@@ -573,12 +590,12 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/10/11/canvas/</loc>
+    <loc>http://yoursite.com/2016/10/24/android_so_file/</loc>
     <lastmod>2017-02-16T14:54:52.000Z</lastmod>
     <data>
         <display>
-        <title>canvas</title>
-        <pubTime>2016-10-11T07:52:11.000Z</pubTime>
+        <title>so文件</title>
+        <pubTime>2016-10-24T07:56:31.000Z</pubTime>
         
         <tag>Android</tag>
          

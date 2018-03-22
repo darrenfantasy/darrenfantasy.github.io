@@ -19,7 +19,7 @@ Web使用一种名为HTTP(HyperTex">
 Web使用一种名为HTTP(HyperTex">
 <meta property="og:image" content="http://oic2oders.bkt.clouddn.com/http_protocol.png">
 <meta property="og:image" content="http://oic2oders.bkt.clouddn.com/ssl.png">
-<meta property="og:updated_time" content="2017-05-02T06:10:03.000Z">
+<meta property="og:updated_time" content="2018-03-21T08:01:57.741Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="读《图解HTTP》笔记">
 <meta name="twitter:description" content="因为最近在写网络爬虫程序，需要对HTTP协议方面的知识有足够详细的了解。所以最近阅读了下《图解HTTP》。以下是读书笔记。
@@ -126,8 +126,10 @@ Web使用一种名为HTTP(HyperTex">
 <p>按层次分，TCP位于传输层，提供可靠的字节流服务。</p>
 <p>字节流服务即将大块的数据分割成以<strong>报文段</strong>为单位的数据包进行管理。</p>
 <p><strong>三次握手</strong></p>
-<p>TCP的标志：SYN(sychronize)、ACK(acknowledgement)。</p>
+<p>TCP的标志：SYN(synchronize)、ACK(acknowledgement)。</p>
 <p>发送端会发送一个带SYN标志的数据包给接收端，接收端收到后会回传一个带有SYN/ACK标志的数据包以示传达确认信息。最后，发送端再回传一个带ACK标志的数据包，表示“握手”结束。</p>
+<p><strong>四次挥手</strong></p>
+<p>为什么断开要4次呢，第一次客户端会发送一个</p>
 <p><strong>负责域名解析的DNS服务</strong></p>
 <p>DNS是和HTTP协议一样位于应用层，用来提供域名到IP地址的解析。</p>
 <h3 id="2-简单的HTTP协议"><a href="#2-简单的HTTP协议" class="headerlink" title="2.简单的HTTP协议"></a>2.简单的HTTP协议</h3><p><strong>GET:获取资源</strong>，<strong>PUT:传输实体主体</strong>，<strong>PUT:传输文件</strong>，<strong>DELETE:删除文件</strong>。</p>
