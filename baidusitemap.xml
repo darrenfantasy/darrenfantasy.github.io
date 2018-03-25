@@ -4,6 +4,40 @@
 
     
   <url>
+    <loc>http://yoursite.com/2017/05/03/reflection-java/</loc>
+    <lastmod>2018-03-25T14:04:15.757Z</lastmod>
+    <data>
+        <display>
+        <title>Java反射理解</title>
+        <pubTime>2017-05-03T14:09:05.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/02/22/java-classloader/</loc>
+    <lastmod>2018-03-25T13:54:58.949Z</lastmod>
+    <data>
+        <display>
+        <title>JVM类加载机制学习</title>
+        <pubTime>2018-02-22T14:58:49.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2016/10/17/Android-Gradle/</loc>
     <lastmod>2018-03-25T13:47:18.551Z</lastmod>
     <data>
@@ -29,23 +63,6 @@
         <pubTime>2017-07-14T09:43:18.000Z</pubTime>
         
         <tag>Android</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2018/02/22/java-classloader/</loc>
-    <lastmod>2018-03-25T11:44:58.148Z</lastmod>
-    <data>
-        <display>
-        <title>JVM类加载机制学习</title>
-        <pubTime>2018-02-22T14:58:49.000Z</pubTime>
-        
-        <tag>Java</tag>
          
          
            
@@ -262,23 +279,6 @@
     </url>
 
     
-  <url>
-    <loc>http://yoursite.com/2017/05/03/thinking-in-Java/</loc>
-    <lastmod>2018-03-12T10:15:22.990Z</lastmod>
-    <data>
-        <display>
-        <title>重新认识Java</title>
-        <pubTime>2017-05-03T14:09:05.000Z</pubTime>
-        
-        <tag>Java</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
     
     
     
@@ -465,25 +465,6 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/03/07/custom_viewgroup_tag_flow_layout/</loc>
-    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
-    <data>
-        <display>
-        <title>自定义ViewGroup实现TagFlowLayout</title>
-        <pubTime>2017-03-07T08:22:25.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>customView</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yoursite.com/2016/11/03/trouble_in_develop/</loc>
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     <data>
@@ -494,6 +475,25 @@
         <tag>Android</tag>
          
         <tag>Java</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/03/07/custom_viewgroup_tag_flow_layout/</loc>
+    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
+    <data>
+        <display>
+        <title>自定义ViewGroup实现TagFlowLayout</title>
+        <pubTime>2017-03-07T08:22:25.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>customView</tag>
          
          
            
@@ -537,6 +537,23 @@
 
     
   <url>
+    <loc>http://yoursite.com/2016/10/25/git_command_line/</loc>
+    <lastmod>2017-02-16T14:54:52.000Z</lastmod>
+    <data>
+        <display>
+        <title>git常用命令行</title>
+        <pubTime>2016-10-25T07:59:54.000Z</pubTime>
+        
+        <tag>git</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2017/01/18/sdk_develop_summary/</loc>
     <lastmod>2017-02-16T14:54:52.000Z</lastmod>
     <data>
@@ -564,23 +581,6 @@
         <pubTime>2016-10-24T07:56:31.000Z</pubTime>
         
         <tag>Android</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2016/10/25/git_command_line/</loc>
-    <lastmod>2017-02-16T14:54:52.000Z</lastmod>
-    <data>
-        <display>
-        <title>git常用命令行</title>
-        <pubTime>2016-10-25T07:59:54.000Z</pubTime>
-        
-        <tag>git</tag>
          
          
            

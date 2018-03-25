@@ -9,8 +9,7 @@
 2.Java ClassLoader的类型
 3.双亲委托机制
 4.Android ClassLoader的类型
-###1.类加载过程
-首先，在代码编译后，就会生成JVM（Java虚拟机）能够识别的二进制字节流文件（.class）。而JVM把Class文件中的类描述数据从文件加载到内存，并对数据进行校验、转换解析、初始化，使这些数据最终成为可以被JVM直接使用的J">
+1.类加载过程首先，在代码编译后，就会生成JVM（Java虚拟机）能够识别的二进制字节流文件（.class）。而JVM把Class文件中的类描述数据从文件加载到内存，并对数据进行校验、转换解析、初始化，使这些数据最终成为可以被JVM直接使用的Java类">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JVM类加载机制学习">
 <meta property="og:url" content="http://yoursite.com/2018/02/22/java-classloader/index.html">
@@ -19,17 +18,15 @@
 2.Java ClassLoader的类型
 3.双亲委托机制
 4.Android ClassLoader的类型
-###1.类加载过程
-首先，在代码编译后，就会生成JVM（Java虚拟机）能够识别的二进制字节流文件（.class）。而JVM把Class文件中的类描述数据从文件加载到内存，并对数据进行校验、转换解析、初始化，使这些数据最终成为可以被JVM直接使用的J">
-<meta property="og:updated_time" content="2018-03-25T11:44:58.148Z">
+1.类加载过程首先，在代码编译后，就会生成JVM（Java虚拟机）能够识别的二进制字节流文件（.class）。而JVM把Class文件中的类描述数据从文件加载到内存，并对数据进行校验、转换解析、初始化，使这些数据最终成为可以被JVM直接使用的Java类">
+<meta property="og:updated_time" content="2018-03-25T13:54:58.949Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JVM类加载机制学习">
 <meta name="twitter:description" content="主要分为4部分来学习1.类加载过程
 2.Java ClassLoader的类型
 3.双亲委托机制
 4.Android ClassLoader的类型
-###1.类加载过程
-首先，在代码编译后，就会生成JVM（Java虚拟机）能够识别的二进制字节流文件（.class）。而JVM把Class文件中的类描述数据从文件加载到内存，并对数据进行校验、转换解析、初始化，使这些数据最终成为可以被JVM直接使用的J">
+1.类加载过程首先，在代码编译后，就会生成JVM（Java虚拟机）能够识别的二进制字节流文件（.class）。而JVM把Class文件中的类描述数据从文件加载到内存，并对数据进行校验、转换解析、初始化，使这些数据最终成为可以被JVM直接使用的Java类">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -105,8 +102,7 @@
 <p>2.Java ClassLoader的类型</p>
 <p>3.双亲委托机制</p>
 <p>4.Android ClassLoader的类型</p>
-<p>###1.类加载过程</p>
-<p>首先，在代码编译后，就会生成JVM（Java虚拟机）能够识别的二进制字节流文件（<em>.class）。而JVM把Class文件中的类描述数据从文件加载到内存，并对数据进行校验、转换解析、初始化，使这些数据最终成为可以被JVM直接使用的Java类型，这个说来简单但实际复杂的过程叫做<em>*JVM的类加载机制</em></em>。</p>
+<h3 id="1-类加载过程"><a href="#1-类加载过程" class="headerlink" title="1.类加载过程"></a>1.类加载过程</h3><p>首先，在代码编译后，就会生成JVM（Java虚拟机）能够识别的二进制字节流文件（<em>.class）。而JVM把Class文件中的类描述数据从文件加载到内存，并对数据进行校验、转换解析、初始化，使这些数据最终成为可以被JVM直接使用的Java类型，这个说来简单但实际复杂的过程叫做<em>*JVM的类加载机制</em></em>。</p>
 <p><strong>一、类的加载</strong></p>
 <p>我们平常说的加载大多不是指的类加载机制，只是类加载机制中的第一步加载。在这个阶段，JVM主要完成三件事：</p>
 <p>1、通过一个类的全限定名（包名与类名）来获取定义此类的二进制字节流（Class文件）。而获取的方式，可以通过jar包、war包、网络中获取、JSP文件生成等方式。</p>
@@ -147,12 +143,10 @@
 <li>系统属性java.class.path指定的目录</li>
 </ul>
 <p>用户自定义加载器，则是通过继承 java.lang.ClassLoader类的方式来实现自己的类加载器。</p>
-<p>###3.双亲委托机制</p>
-<p>类加载器查找Class所采用的是双亲委托模式，所谓双亲委托模式就是首先判断该Class是否已经加载，如果没有则不是自身去查找而是委托给父加载器进行查找，这样依次的进行递归，直到委托到最顶层的Bootstrap ClassLoader，如果Bootstrap ClassLoader找到了该Class，就会直接返回，如果没找到，则继续依次向下查找，如果还没找到则最后会交由自身去查找。</p>
+<h3 id="3-双亲委托机制"><a href="#3-双亲委托机制" class="headerlink" title="3.双亲委托机制"></a>3.双亲委托机制</h3><p>类加载器查找Class所采用的是双亲委托模式，所谓双亲委托模式就是首先判断该Class是否已经加载，如果没有则不是自身去查找而是委托给父加载器进行查找，这样依次的进行递归，直到委托到最顶层的Bootstrap ClassLoader，如果Bootstrap ClassLoader找到了该Class，就会直接返回，如果没找到，则继续依次向下查找，如果还没找到则最后会交由自身去查找。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">protected</span> Class&lt;?&gt; More ...loadClass(String name, <span class="keyword">boolean</span> resolve)</div><div class="line">        <span class="keyword">throws</span> ClassNotFoundException</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">synchronized</span> (getClassLoadingLock(name)) &#123;</div><div class="line">            Class&lt;?&gt; c = findLoadedClass(name);<span class="comment">//1</span></div><div class="line">            <span class="keyword">if</span> (c == <span class="keyword">null</span>) &#123;</div><div class="line">                <span class="keyword">long</span> t0 = System.nanoTime();</div><div class="line">                <span class="keyword">try</span> &#123;</div><div class="line">                    <span class="keyword">if</span> (parent != <span class="keyword">null</span>) &#123;</div><div class="line">                        c = parent.loadClass(name, <span class="keyword">false</span>);<span class="comment">//2</span></div><div class="line">                    &#125; <span class="keyword">else</span> &#123;</div><div class="line">                        c = findBootstrapClassOrNull(name);<span class="comment">//3</span></div><div class="line">                    &#125;</div><div class="line">                &#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;            </div><div class="line">                &#125;</div><div class="line">                <span class="keyword">if</span> (c == <span class="keyword">null</span>) &#123;</div><div class="line">                    <span class="comment">// If still not found, then invoke findClass in order</span></div><div class="line">                    <span class="comment">// to find the class.</span></div><div class="line">                    <span class="keyword">long</span> t1 = System.nanoTime();</div><div class="line">                    c = findClass(name);<span class="comment">//4</span></div><div class="line">                    <span class="comment">// this is the defining class loader; record the stats</span></div><div class="line">                    sun.misc.PerfCounter.getParentDelegationTime().addTime(t1 - t0);</div><div class="line">                    sun.misc.PerfCounter.getFindClassTime().addElapsedTimeFrom(t1);</div><div class="line">                    sun.misc.PerfCounter.getFindClasses().increment();</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">           <span class="keyword">if</span> (resolve) &#123;</div><div class="line">                resolveClass(c);</div><div class="line">            &#125;</div><div class="line">           <span class="keyword">return</span> c;</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
 <p>注释1处用来检查类是否已经加载，如果已经加载则后面的代码不会执行，最后会返回该类。没有加载则会接着向下执行。<br>注释2处，如果父类加载器不为null，则调用父类加载器的loadClass方法。如果父类加载器为null则调用注释3处的findBootstrapClassOrNull方法，这个方法内部调用了Native方法findBootstrapClass，findBootstrapClass方法中最终会用Bootstrap Classloader来查找类。如果Bootstrap Classloader仍没有找到该类，也就说明向上委托没有找到该类，则调用注释4处的findClass方法继续向下进行查找。</p>
-<p>####采取双亲委托模式主要有两点好处：</p>
-<ol>
+<h4 id="采取双亲委托模式主要有两点好处："><a href="#采取双亲委托模式主要有两点好处：" class="headerlink" title="采取双亲委托模式主要有两点好处："></a>采取双亲委托模式主要有两点好处：</h4><ol>
 <li>避免重复加载，如果已经加载过一次Class，就不需要再次加载，而是先从缓存中直接读取。</li>
 <li>更加安全，如果不使用双亲委托模式，就可以自定义一个String类来替代系统的String类，这显然会造成安全隐患，采用双亲委托模式会使得系统的String类在Java虚拟机启动时就被加载，也就无法自定义String类来替代系统的String类，除非我们修改类加载器搜索类的默认算法。还有一点，只有两个类名一致并且被同一个类加载器加载的类，Java虚拟机才会认为它们是同一个类，想要骗过Java虚拟机显然不会那么容易。</li>
 </ol>

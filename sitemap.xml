@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2017/05/03/reflection-java/</loc>
+    
+    <lastmod>2018-03-25T14:04:15.757Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/02/22/java-classloader/</loc>
+    
+    <lastmod>2018-03-25T13:54:58.949Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2016/10/17/Android-Gradle/</loc>
     
     <lastmod>2018-03-25T13:47:18.551Z</lastmod>
@@ -12,13 +26,6 @@
     <loc>http://yoursite.com/2017/07/14/Okhttp3/</loc>
     
     <lastmod>2018-03-25T13:09:56.532Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2018/02/22/java-classloader/</loc>
-    
-    <lastmod>2018-03-25T11:44:58.148Z</lastmod>
     
   </url>
   
@@ -107,13 +114,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2017/05/03/thinking-in-Java/</loc>
-    
-    <lastmod>2018-03-12T10:15:22.990Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/album/data.json</loc>
     
     <lastmod>2017-08-18T10:34:31.000Z</lastmod>
@@ -156,14 +156,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/album/ins.css</loc>
+    <loc>http://yoursite.com/album/lazyload.min.js</loc>
     
     <lastmod>2017-08-06T09:57:03.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/album/lazyload.min.js</loc>
+    <loc>http://yoursite.com/album/ins.css</loc>
     
     <lastmod>2017-08-06T09:57:03.000Z</lastmod>
     
@@ -233,14 +233,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2017/03/07/custom_viewgroup_tag_flow_layout/</loc>
+    <loc>http://yoursite.com/2016/11/03/trouble_in_develop/</loc>
     
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/11/03/trouble_in_develop/</loc>
+    <loc>http://yoursite.com/2017/03/07/custom_viewgroup_tag_flow_layout/</loc>
     
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     
@@ -261,6 +261,13 @@
   </url>
   
   <url>
+    <loc>http://yoursite.com/2016/10/25/git_command_line/</loc>
+    
+    <lastmod>2017-02-16T14:54:52.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2017/01/18/sdk_develop_summary/</loc>
     
     <lastmod>2017-02-16T14:54:52.000Z</lastmod>
@@ -269,13 +276,6 @@
   
   <url>
     <loc>http://yoursite.com/2016/10/24/android_so_file/</loc>
-    
-    <lastmod>2017-02-16T14:54:52.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/10/25/git_command_line/</loc>
     
     <lastmod>2017-02-16T14:54:52.000Z</lastmod>
     
