@@ -4,6 +4,23 @@
 
     
   <url>
+    <loc>http://yoursite.com/2017/07/14/Okhttp3/</loc>
+    <lastmod>2018-03-25T13:09:56.532Z</lastmod>
+    <data>
+        <display>
+        <title>OkHttp3学习</title>
+        <pubTime>2017-07-14T09:43:18.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2018/02/22/java-classloader/</loc>
     <lastmod>2018-03-25T11:44:58.148Z</lastmod>
     <data>
@@ -152,23 +169,6 @@
         <pubTime>2017-05-18T13:09:29.000Z</pubTime>
         
         <tag>Java</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/07/14/Okhttp3/</loc>
-    <lastmod>2018-03-17T13:54:00.762Z</lastmod>
-    <data>
-        <display>
-        <title>OkHttp3学习</title>
-        <pubTime>2017-07-14T09:43:18.000Z</pubTime>
-        
-        <tag>Android</tag>
          
          
            
@@ -448,12 +448,12 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/10/17/Android-Gradle/</loc>
+    <loc>http://yoursite.com/2016/11/08/android_event_dispatch/</loc>
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     <data>
         <display>
-        <title>Android-Gradle</title>
-        <pubTime>2016-10-17T07:54:36.000Z</pubTime>
+        <title>Android事件分发机制</title>
+        <pubTime>2016-11-08T08:02:42.000Z</pubTime>
         
         <tag>Android</tag>
          
@@ -484,6 +484,23 @@
 
     
   <url>
+    <loc>http://yoursite.com/2016/10/17/Android-Gradle/</loc>
+    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
+    <data>
+        <display>
+        <title>Android-Gradle</title>
+        <pubTime>2016-10-17T07:54:36.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2017/03/07/custom_viewgroup_tag_flow_layout/</loc>
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     <data>
@@ -503,23 +520,6 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/11/08/android_event_dispatch/</loc>
-    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
-    <data>
-        <display>
-        <title>Android事件分发机制</title>
-        <pubTime>2016-11-08T08:02:42.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yoursite.com/2017/02/20/node_js_not_found/</loc>
     <lastmod>2017-02-20T14:33:51.000Z</lastmod>
     <data>
@@ -528,40 +528,6 @@
         <pubTime>2017-02-20T03:25:57.000Z</pubTime>
         
         <tag>Node.js</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/01/12/android_read_note/</loc>
-    <lastmod>2017-02-16T14:54:52.000Z</lastmod>
-    <data>
-        <display>
-        <title>读《Android开发艺术探索》笔记</title>
-        <pubTime>2017-01-12T08:07:03.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2016/10/11/canvas/</loc>
-    <lastmod>2017-02-16T14:54:52.000Z</lastmod>
-    <data>
-        <display>
-        <title>canvas</title>
-        <pubTime>2016-10-11T07:52:11.000Z</pubTime>
-        
-        <tag>Android</tag>
          
          
            
@@ -590,6 +556,23 @@
 
     
   <url>
+    <loc>http://yoursite.com/2016/10/24/android_so_file/</loc>
+    <lastmod>2017-02-16T14:54:52.000Z</lastmod>
+    <data>
+        <display>
+        <title>so文件</title>
+        <pubTime>2016-10-24T07:56:31.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2016/10/25/git_command_line/</loc>
     <lastmod>2017-02-16T14:54:52.000Z</lastmod>
     <data>
@@ -607,12 +590,29 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/10/24/android_so_file/</loc>
+    <loc>http://yoursite.com/2016/10/11/canvas/</loc>
     <lastmod>2017-02-16T14:54:52.000Z</lastmod>
     <data>
         <display>
-        <title>so文件</title>
-        <pubTime>2016-10-24T07:56:31.000Z</pubTime>
+        <title>canvas</title>
+        <pubTime>2016-10-11T07:52:11.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/01/12/android_read_note/</loc>
+    <lastmod>2017-02-16T14:54:52.000Z</lastmod>
+    <data>
+        <display>
+        <title>读《Android开发艺术探索》笔记</title>
+        <pubTime>2017-01-12T08:07:03.000Z</pubTime>
         
         <tag>Android</tag>
          
