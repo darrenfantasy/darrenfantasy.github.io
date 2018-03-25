@@ -4,6 +4,23 @@
 
     
   <url>
+    <loc>http://yoursite.com/2018/02/22/java-classloader/</loc>
+    <lastmod>2018-03-25T11:44:58.148Z</lastmod>
+    <data>
+        <display>
+        <title>JVM类加载机制学习</title>
+        <pubTime>2018-02-22T14:58:49.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2016/11/19/four_module_in_android/</loc>
     <lastmod>2018-03-22T14:47:51.393Z</lastmod>
     <data>
@@ -397,33 +414,14 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/11/08/android_event_dispatch/</loc>
+    <loc>http://yoursite.com/2016/09/27/bitmap/</loc>
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     <data>
         <display>
-        <title>Android事件分发机制</title>
-        <pubTime>2016-11-08T08:02:42.000Z</pubTime>
+        <title>bitmap</title>
+        <pubTime>2016-09-27T07:44:20.000Z</pubTime>
         
         <tag>Android</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2016/11/03/trouble_in_develop/</loc>
-    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
-    <data>
-        <display>
-        <title>开发中遇到的坑</title>
-        <pubTime>2016-11-03T08:00:58.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>Java</tag>
          
          
            
@@ -467,6 +465,25 @@
 
     
   <url>
+    <loc>http://yoursite.com/2016/11/03/trouble_in_develop/</loc>
+    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
+    <data>
+        <display>
+        <title>开发中遇到的坑</title>
+        <pubTime>2016-11-03T08:00:58.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>Java</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2017/03/07/custom_viewgroup_tag_flow_layout/</loc>
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     <data>
@@ -486,12 +503,12 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/09/27/bitmap/</loc>
+    <loc>http://yoursite.com/2016/11/08/android_event_dispatch/</loc>
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     <data>
         <display>
-        <title>bitmap</title>
-        <pubTime>2016-09-27T07:44:20.000Z</pubTime>
+        <title>Android事件分发机制</title>
+        <pubTime>2016-11-08T08:02:42.000Z</pubTime>
         
         <tag>Android</tag>
          
@@ -537,14 +554,14 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/10/25/git_command_line/</loc>
+    <loc>http://yoursite.com/2016/10/11/canvas/</loc>
     <lastmod>2017-02-16T14:54:52.000Z</lastmod>
     <data>
         <display>
-        <title>git常用命令行</title>
-        <pubTime>2016-10-25T07:59:54.000Z</pubTime>
+        <title>canvas</title>
+        <pubTime>2016-10-11T07:52:11.000Z</pubTime>
         
-        <tag>git</tag>
+        <tag>Android</tag>
          
          
            
@@ -573,14 +590,14 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/10/11/canvas/</loc>
+    <loc>http://yoursite.com/2016/10/25/git_command_line/</loc>
     <lastmod>2017-02-16T14:54:52.000Z</lastmod>
     <data>
         <display>
-        <title>canvas</title>
-        <pubTime>2016-10-11T07:52:11.000Z</pubTime>
+        <title>git常用命令行</title>
+        <pubTime>2016-10-25T07:59:54.000Z</pubTime>
         
-        <tag>Android</tag>
+        <tag>git</tag>
          
          
            

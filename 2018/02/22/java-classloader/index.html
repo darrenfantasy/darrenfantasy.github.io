@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="default">
+<head>
+  <meta charset="utf-8">
+  
+  <title>JVM类加载机制学习 | darrenfantasy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="主要分为4部分来学习1.类加载过程
+2.Java ClassLoader的类型
+3.双亲委托机制
+4.Android ClassLoader的类型
+###1.类加载过程
+首先，在代码编译后，就会生成JVM（Java虚拟机）能够识别的二进制字节流文件（.class）。而JVM把Class文件中的类描述数据从文件加载到内存，并对数据进行校验、转换解析、初始化，使这些数据最终成为可以被JVM直接使用的J">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JVM类加载机制学习">
+<meta property="og:url" content="http://yoursite.com/2018/02/22/java-classloader/index.html">
+<meta property="og:site_name" content="darrenfantasy">
+<meta property="og:description" content="主要分为4部分来学习1.类加载过程
+2.Java ClassLoader的类型
+3.双亲委托机制
+4.Android ClassLoader的类型
+###1.类加载过程
+首先，在代码编译后，就会生成JVM（Java虚拟机）能够识别的二进制字节流文件（.class）。而JVM把Class文件中的类描述数据从文件加载到内存，并对数据进行校验、转换解析、初始化，使这些数据最终成为可以被JVM直接使用的J">
+<meta property="og:updated_time" content="2018-03-25T11:44:58.148Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JVM类加载机制学习">
+<meta name="twitter:description" content="主要分为4部分来学习1.类加载过程
+2.Java ClassLoader的类型
+3.双亲委托机制
+4.Android ClassLoader的类型
+###1.类加载过程
+首先，在代码编译后，就会生成JVM（Java虚拟机）能够识别的二进制字节流文件（.class）。而JVM把Class文件中的类描述数据从文件加载到内存，并对数据进行校验、转换解析、初始化，使这些数据最终成为可以被JVM直接使用的J">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/typing.css">
+  <link rel="stylesheet" href="/css/algolia.css">
+  <link rel="stylesheet" href="/css/default-skin/default-skin.css">
+</head>
+
+
+<a href="https://github.com/darrenfantasy"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+
+  
+    <body>
+  
+      <div id="container" class="container">
+        <article id="post-java-classloader" class="article article-type-post" itemscope itemprop="blogPost">
+  <header id="header" class="header">
+  <nav id="main-nav" class="main-nav">
+    
+      <a class="main-nav-link" href="/">Home</a>
+    
+      <a class="main-nav-link" href="/archives">Archives</a>
+    
+      <a class="main-nav-link" href="/album">Album</a>
+    
+      <a class="main-nav-link" href="/about">About</a>
+    
+      <a href="#" class="popup-trigger">Search</a>
+  </nav>
+  <nav id="sub-nav">
+    
+  </nav>
+</header>
+<div class="site-search">
+  <div class="algolia-popup popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+</div>
+  <hr/>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JVM类加载机制学习
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry typo" itemprop="articleBody">
+      
+        <h5 id="主要分为4部分来学习"><a href="#主要分为4部分来学习" class="headerlink" title="主要分为4部分来学习"></a>主要分为4部分来学习</h5><p>1.类加载过程</p>
+<p>2.Java ClassLoader的类型</p>
+<p>3.双亲委托机制</p>
+<p>4.Android ClassLoader的类型</p>
+<p>###1.类加载过程</p>
+<p>首先，在代码编译后，就会生成JVM（Java虚拟机）能够识别的二进制字节流文件（<em>.class）。而JVM把Class文件中的类描述数据从文件加载到内存，并对数据进行校验、转换解析、初始化，使这些数据最终成为可以被JVM直接使用的Java类型，这个说来简单但实际复杂的过程叫做<em>*JVM的类加载机制</em></em>。</p>
+<p><strong>一、类的加载</strong></p>
+<p>我们平常说的加载大多不是指的类加载机制，只是类加载机制中的第一步加载。在这个阶段，JVM主要完成三件事：</p>
+<p>1、通过一个类的全限定名（包名与类名）来获取定义此类的二进制字节流（Class文件）。而获取的方式，可以通过jar包、war包、网络中获取、JSP文件生成等方式。</p>
+<p>2、将这个字节流所代表的静态存储结构转化为方法区的运行时数据结构。这里只是转化了数据结构，并未合并数据。（方法区就是用来存放已被加载的类信息，常量，静态变量，编译后的代码的运行时内存区域）</p>
+<p>3、在内存中生成一个代表这个类的java.lang.Class对象，作为方法区这个类的各种数据的访问入口。这个Class对象并没有规定是在Java堆内存中，它比较特殊，虽为对象，但存放在方法区中。</p>
+<p><strong>二、类的连接</strong></p>
+<p>类的加载过程后生成了类的java.lang.Class对象，接着会进入连接阶段，连接阶段负责将类的二进制数据合并入JRE（Java运行时环境）中。类的连接大致分三个阶段。</p>
+<p><strong>1、验证：</strong>验证被加载后的类是否有正确的结构，类数据是否会符合虚拟机的要求，确保不会危害虚拟机安全。</p>
+<p><strong>2、准备：</strong>为类的静态变量（static filed）在方法区分配内存，并赋默认初值（0值或null值）。如static int a = 100;</p>
+<p>静态变量a就会在准备阶段被赋默认值0。</p>
+<p>对于一般的成员变量是在类实例化时候，随对象一起分配在堆内存中。</p>
+<p>另外，静态常量（static final filed）会在准备阶段赋程序设定的初值，如static final int a = 666;  静态常量a就会在准备阶段被直接赋值为666，对于静态变量，这个操作是在初始化阶段进行的。</p>
+<p><strong>3、解析：</strong>将类的二进制数据中的符号引用换为直接引用。</p>
+<p><strong>三、类的初始化</strong></p>
+<p>类初始化是类加载的最后一步，除了加载阶段，用户可以通过自定义的类加载器参与，其他阶段都完全由虚拟机主导和控制。到了初始化阶段才真正执行Java代码。</p>
+<p><strong>类的初始化的主要工作</strong>是为静态变量赋程序设定的初值。</p>
+<p>如static int a = 100;在准备阶段，a被赋默认值0，在初始化阶段就会被赋值为100。</p>
+<p>Java虚拟机规范中严格规定了<strong>有且只有五种情况必须对类进行初始化</strong>：</p>
+<p>1、使用new字节码指令创建类的实例，或者使用getstatic、putstatic读取或设置一个静态字段的值（放入常量池中的常量除外），或者调用一个静态方法的时候，对应类必须进行过初始化。</p>
+<p>2、通过java.lang.reflect包的方法对类进行反射调用的时候，如果类没有进行过初始化，则要首先进行初始化。</p>
+<p>3、当初始化一个类的时候，如果发现其父类没有进行过初始化，则首先触发父类初始化。</p>
+<p>4、当虚拟机启动时，用户需要指定一个主类（包含main()方法的类），虚拟机会首先初始化这个类。</p>
+<p>5、使用jdk1.7的动态语言支持时，如果一个java.lang.invoke.MethodHandle实例最后的解析结果REF_getStatic、REF_putStatic、RE_invokeStatic的方法句柄，并且这个方法句柄对应的类没有进行初始化，则需要先触发其初始化。</p>
+<h3 id="2-ClassLoader的类型"><a href="#2-ClassLoader的类型" class="headerlink" title="2.ClassLoader的类型"></a>2.ClassLoader的类型</h3><h4 id="1-BootStrap-ClassLoader-引导类加载器"><a href="#1-BootStrap-ClassLoader-引导类加载器" class="headerlink" title="1.BootStrap ClassLoader  (引导类加载器)"></a>1.BootStrap ClassLoader  (引导类加载器)</h4><p>用C/C++代码实现的加载器，用于加载指定的JDK的核心类库，比如java.lang.<em>、java.uti.</em>等这些系统类。它用来加载以下目录中的类库：</p>
+<ul>
+<li>$JAVA_HOME/jre/lib目录</li>
+<li>-Xbootclasspath参数指定的目录</li>
+</ul>
+<p>Java虚拟机的启动就是通过引导类加载器创建一个初始类来完成的。由于类加载器是使用平台相关的底层C/C++语言实现的， 所以该加载器不能被Java代码访问到。但是我们可以查询某个类是否被引导类加载器加载过。</p>
+<h4 id="2-Extensions-ClassLoader-（扩展类加载器）"><a href="#2-Extensions-ClassLoader-（扩展类加载器）" class="headerlink" title="2.Extensions ClassLoader （扩展类加载器）"></a>2.Extensions ClassLoader （扩展类加载器）</h4><p>用于加载 Java 的拓展类 ，用来提供除了系统类之外的额外功能。它用来加载以下目录中的类库：</p>
+<ul>
+<li>加载$JAVA_HOME/jre/lib/ext目录</li>
+<li>系统属性java.ext.dir所指定的目录。</li>
+</ul>
+<h4 id="3-Appliaction-ClassLoader-（应用程序类加载器）"><a href="#3-Appliaction-ClassLoader-（应用程序类加载器）" class="headerlink" title="3.Appliaction ClassLoader （应用程序类加载器）"></a>3.Appliaction ClassLoader （应用程序类加载器）</h4><p>又称作System ClassLoader(系统类加载器)，这是因为这个类加载器可以通过ClassLoader的getSystemClassLoader方法获取到。它用来加载以下目录中的类库：</p>
+<ul>
+<li>当前应用程序Classpath目录</li>
+<li>系统属性java.class.path指定的目录</li>
+</ul>
+<p>用户自定义加载器，则是通过继承 java.lang.ClassLoader类的方式来实现自己的类加载器。</p>
+<p>###3.双亲委托机制</p>
+<p>类加载器查找Class所采用的是双亲委托模式，所谓双亲委托模式就是首先判断该Class是否已经加载，如果没有则不是自身去查找而是委托给父加载器进行查找，这样依次的进行递归，直到委托到最顶层的Bootstrap ClassLoader，如果Bootstrap ClassLoader找到了该Class，就会直接返回，如果没找到，则继续依次向下查找，如果还没找到则最后会交由自身去查找。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">protected</span> Class&lt;?&gt; More ...loadClass(String name, <span class="keyword">boolean</span> resolve)</div><div class="line">        <span class="keyword">throws</span> ClassNotFoundException</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">synchronized</span> (getClassLoadingLock(name)) &#123;</div><div class="line">            Class&lt;?&gt; c = findLoadedClass(name);<span class="comment">//1</span></div><div class="line">            <span class="keyword">if</span> (c == <span class="keyword">null</span>) &#123;</div><div class="line">                <span class="keyword">long</span> t0 = System.nanoTime();</div><div class="line">                <span class="keyword">try</span> &#123;</div><div class="line">                    <span class="keyword">if</span> (parent != <span class="keyword">null</span>) &#123;</div><div class="line">                        c = parent.loadClass(name, <span class="keyword">false</span>);<span class="comment">//2</span></div><div class="line">                    &#125; <span class="keyword">else</span> &#123;</div><div class="line">                        c = findBootstrapClassOrNull(name);<span class="comment">//3</span></div><div class="line">                    &#125;</div><div class="line">                &#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;            </div><div class="line">                &#125;</div><div class="line">                <span class="keyword">if</span> (c == <span class="keyword">null</span>) &#123;</div><div class="line">                    <span class="comment">// If still not found, then invoke findClass in order</span></div><div class="line">                    <span class="comment">// to find the class.</span></div><div class="line">                    <span class="keyword">long</span> t1 = System.nanoTime();</div><div class="line">                    c = findClass(name);<span class="comment">//4</span></div><div class="line">                    <span class="comment">// this is the defining class loader; record the stats</span></div><div class="line">                    sun.misc.PerfCounter.getParentDelegationTime().addTime(t1 - t0);</div><div class="line">                    sun.misc.PerfCounter.getFindClassTime().addElapsedTimeFrom(t1);</div><div class="line">                    sun.misc.PerfCounter.getFindClasses().increment();</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">           <span class="keyword">if</span> (resolve) &#123;</div><div class="line">                resolveClass(c);</div><div class="line">            &#125;</div><div class="line">           <span class="keyword">return</span> c;</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>注释1处用来检查类是否已经加载，如果已经加载则后面的代码不会执行，最后会返回该类。没有加载则会接着向下执行。<br>注释2处，如果父类加载器不为null，则调用父类加载器的loadClass方法。如果父类加载器为null则调用注释3处的findBootstrapClassOrNull方法，这个方法内部调用了Native方法findBootstrapClass，findBootstrapClass方法中最终会用Bootstrap Classloader来查找类。如果Bootstrap Classloader仍没有找到该类，也就说明向上委托没有找到该类，则调用注释4处的findClass方法继续向下进行查找。</p>
+<p>####采取双亲委托模式主要有两点好处：</p>
+<ol>
+<li>避免重复加载，如果已经加载过一次Class，就不需要再次加载，而是先从缓存中直接读取。</li>
+<li>更加安全，如果不使用双亲委托模式，就可以自定义一个String类来替代系统的String类，这显然会造成安全隐患，采用双亲委托模式会使得系统的String类在Java虚拟机启动时就被加载，也就无法自定义String类来替代系统的String类，除非我们修改类加载器搜索类的默认算法。还有一点，只有两个类名一致并且被同一个类加载器加载的类，Java虚拟机才会认为它们是同一个类，想要骗过Java虚拟机显然不会那么容易。</li>
+</ol>
+<h3 id="4-Android-ClassLoader的类型"><a href="#4-Android-ClassLoader的类型" class="headerlink" title="4.Android ClassLoader的类型"></a>4.Android ClassLoader的类型</h3><p>Java中的ClassLoader可以加载jar文件和Class文件（本质是加载Class文件），这一点在Android中并不适用，因为无论是DVM还是ART它们加载的不再是Class文件，而是dex文件，这就需要重新设计ClassLoader相关类。</p>
+<p>Android中的ClassLoader类型和Java中的ClassLoader类型类似，也分为两种类型，分别是系统ClassLoader和自定义ClassLoader。其中系统ClassLoader包括三种分别是<strong>BootClassLoader</strong>、<strong>PathClassLoader</strong>和<strong>DexClassLoader</strong>。</p>
+<ul>
+<li><p><strong>BootClassLoader</strong></p>
+<p>Android系统启动时会使用BootClassLoader来预加载常用类，与Java中的BootClassLoader不同，它并不是由C/C++代码实现，而是由Java实现的。BootClassLoader是ClassLoader的内部类，并继承自ClassLoader。BootClassLoader是一个单例类，需要注意的是BootClassLoader的访问修饰符是默认的，只有在同一个包中才可以访问，因此我们在应用程序中是无法直接调用的。</p>
+</li>
+</ul>
+<ul>
+<li><p><strong>PathClassLoader</strong></p>
+<p>Android系统使用PathClassLoader来加载系统类和应用程序的类。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PathClassLoader</span> <span class="keyword">extends</span> <span class="title">BaseDexClassLoader</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">PathClassLoader</span><span class="params">(String dexPath, ClassLoader parent)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>((String)<span class="keyword">null</span>, (File)<span class="keyword">null</span>, (String)<span class="keyword">null</span>, (ClassLoader)<span class="keyword">null</span>);</div><div class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">"Stub!"</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">PathClassLoader</span><span class="params">(String dexPath, String librarySearchPath, ClassLoader parent)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>((String)<span class="keyword">null</span>, (File)<span class="keyword">null</span>, (String)<span class="keyword">null</span>, (ClassLoader)<span class="keyword">null</span>);</div><div class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">"Stub!"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>PathClassLoader继承自BaseDexClassLoader，实现也都在BaseDexClassLoader中。</p>
+<p>PathClassLoader的构造方法中没有参数optimizedDirectory，这是因为PathClassLoader已经默认了参数optimizedDirectory的值为：/data/dalvik-cache，很显然PathClassLoader无法定义解压的dex文件存储路径，因此PathClassLoader通常用来加载已经安装的apk的dex文件(安装的apk的dex文件会存储在/data/dalvik-cache中)。</p>
+</li>
+<li><p><strong>DexClassLoader</strong></p>
+<p>DexClassLoader可以加载dex文件以及包含dex的压缩文件（apk和jar文件），不管是加载哪种文件，最终都是要加载dex文件。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DexClassLoader</span> <span class="keyword">extends</span> <span class="title">BaseDexClassLoader</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">DexClassLoader</span><span class="params">(String dexPath, String optimizedDirectory, String librarySearchPath, ClassLoader parent)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>((String)<span class="keyword">null</span>, (File)<span class="keyword">null</span>, (String)<span class="keyword">null</span>, (ClassLoader)<span class="keyword">null</span>);</div><div class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">"Stub!"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>DexClassLoader的构造方法有四个参数：</p>
+<ul>
+<li>dexPath：dex相关文件路径集合，多个路径用文件分隔符分隔，默认文件分隔符为‘：’</li>
+<li>optimizedDirectory：解压的dex文件存储路径，这个路径必须是一个内部存储路径，一般情况下使用当前应用程序的私有路径：<code>/data/data/&lt;Package Name&gt;/...</code>。</li>
+<li>librarySearchPath：包含 C/C++ 库的路径集合，多个路径用文件分隔符分隔分割，可以为null。</li>
+<li>parent：父加载器。</li>
+</ul>
+<p>DexClassLoader 继承自BaseDexClassLoader ，方法实现都在BaseDexClassLoader中。</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/2018/02/22/java-classloader/" class="article-date">
+  <time datetime="2018-02-22T14:58:49.000Z" itemprop="datePublished">2018-02-22</time>
+</a>
+
+        </li>
+        
+        
+          <li>
+            <span class="label">Tag:</span>
+            
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+
+
+          </li>
+        
+        <hr/>
+      </ul>
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav" class="article-nav">
+  
+    <a href="/2018/03/18/sort-algorithm/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          常见排序算法总结(更新中)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/01/17/performance-optimization/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Android性能优化小结</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+
+  <section id="comments" class="comments">
+  <div id="uyan_frame"></div>
+<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2128029"></script>
+  </section>
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      <hr/>
+      <div id="footerContent" class="footer-content">
+        <p>stay hungry , stay foolish .</p>
+
+
+  
+    <span id="busuanzi_container_page_pv">
+         <i class="fa fa-flag"></i>    你是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>个阅读本文的小伙伴
+    </span>
+  
+      </div>
+  </footer>
+
+      
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+  <script src="http://cdn.bootcss.com/instantsearch.js/1.5.1/instantsearch.js"></script>
+  <script src="/js/algolia.js"></script>
+  <script src="/js/photoswipe.js"></script>
+  <script src="/js/photoswipe-ui-default.js"></script>
+
+<script src="/js/typing.js"></script>
+<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+
+
+
+
+
+
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+      <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+    </div>
+  </body>
+</html>
