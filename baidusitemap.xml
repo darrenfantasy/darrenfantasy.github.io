@@ -4,6 +4,23 @@
 
     
   <url>
+    <loc>http://yoursite.com/2016/10/17/Android-Gradle/</loc>
+    <lastmod>2018-03-25T13:47:18.551Z</lastmod>
+    <data>
+        <display>
+        <title>Android-Gradle学习</title>
+        <pubTime>2016-10-17T07:54:36.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2017/07/14/Okhttp3/</loc>
     <lastmod>2018-03-25T13:09:56.532Z</lastmod>
     <data>
@@ -321,25 +338,6 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/12/24/handler/</loc>
-    <lastmod>2017-04-13T13:08:22.000Z</lastmod>
-    <data>
-        <display>
-        <title>Android异步消息处理机制之Handler</title>
-        <pubTime>2016-12-24T08:57:23.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>Handler</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yoursite.com/2017/02/22/python_basic_knowledge_about_crawlers/</loc>
     <lastmod>2017-04-13T13:08:22.000Z</lastmod>
     <data>
@@ -350,6 +348,25 @@
         <tag>python</tag>
          
         <tag>crawler</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/12/24/handler/</loc>
+    <lastmod>2017-04-13T13:08:22.000Z</lastmod>
+    <data>
+        <display>
+        <title>Android异步消息处理机制之Handler</title>
+        <pubTime>2016-12-24T08:57:23.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>Handler</tag>
          
          
            
@@ -414,6 +431,23 @@
 
     
   <url>
+    <loc>http://yoursite.com/2016/11/08/android_event_dispatch/</loc>
+    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
+    <data>
+        <display>
+        <title>Android事件分发机制</title>
+        <pubTime>2016-11-08T08:02:42.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2016/09/27/bitmap/</loc>
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     <data>
@@ -431,31 +465,16 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/10/25/adb_command_line/</loc>
+    <loc>http://yoursite.com/2017/03/07/custom_viewgroup_tag_flow_layout/</loc>
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     <data>
         <display>
-        <title>adb命令</title>
-        <pubTime>2016-10-25T07:58:40.000Z</pubTime>
+        <title>自定义ViewGroup实现TagFlowLayout</title>
+        <pubTime>2017-03-07T08:22:25.000Z</pubTime>
         
         <tag>Android</tag>
          
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2016/11/08/android_event_dispatch/</loc>
-    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
-    <data>
-        <display>
-        <title>Android事件分发机制</title>
-        <pubTime>2016-11-08T08:02:42.000Z</pubTime>
-        
-        <tag>Android</tag>
+        <tag>customView</tag>
          
          
            
@@ -484,33 +503,14 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/10/17/Android-Gradle/</loc>
+    <loc>http://yoursite.com/2016/10/25/adb_command_line/</loc>
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     <data>
         <display>
-        <title>Android-Gradle</title>
-        <pubTime>2016-10-17T07:54:36.000Z</pubTime>
+        <title>adb命令</title>
+        <pubTime>2016-10-25T07:58:40.000Z</pubTime>
         
         <tag>Android</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/03/07/custom_viewgroup_tag_flow_layout/</loc>
-    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
-    <data>
-        <display>
-        <title>自定义ViewGroup实现TagFlowLayout</title>
-        <pubTime>2017-03-07T08:22:25.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>customView</tag>
          
          
            
