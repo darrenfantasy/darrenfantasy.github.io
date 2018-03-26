@@ -4,7 +4,7 @@
   <url>
     <loc>http://yoursite.com/2017/02/26/android-animation/</loc>
     
-    <lastmod>2018-03-26T15:27:55.800Z</lastmod>
+    <lastmod>2018-03-26T15:49:58.735Z</lastmod>
     
   </url>
   
@@ -219,14 +219,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/10/25/adb_command_line/</loc>
-    
-    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/11/03/trouble_in_develop/</loc>
+    <loc>http://yoursite.com/2016/09/27/bitmap/</loc>
     
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     
@@ -240,14 +233,21 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2017/03/07/custom_viewgroup_tag_flow_layout/</loc>
+    <loc>http://yoursite.com/2016/11/03/trouble_in_develop/</loc>
     
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/09/27/bitmap/</loc>
+    <loc>http://yoursite.com/2016/10/25/adb_command_line/</loc>
+    
+    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/03/07/custom_viewgroup_tag_flow_layout/</loc>
     
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     
@@ -261,14 +261,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2017/01/18/sdk_develop_summary/</loc>
-    
-    <lastmod>2017-02-16T14:54:52.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/10/25/git_command_line/</loc>
+    <loc>http://yoursite.com/2016/10/11/canvas/</loc>
     
     <lastmod>2017-02-16T14:54:52.000Z</lastmod>
     
@@ -282,6 +275,13 @@
   </url>
   
   <url>
+    <loc>http://yoursite.com/2017/01/18/sdk_develop_summary/</loc>
+    
+    <lastmod>2017-02-16T14:54:52.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2017/01/12/android_read_note/</loc>
     
     <lastmod>2017-02-16T14:54:52.000Z</lastmod>
@@ -289,7 +289,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/10/11/canvas/</loc>
+    <loc>http://yoursite.com/2016/10/25/git_command_line/</loc>
     
     <lastmod>2017-02-16T14:54:52.000Z</lastmod>
     
