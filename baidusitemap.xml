@@ -4,6 +4,23 @@
 
     
   <url>
+    <loc>http://yoursite.com/2017/02/26/android-animation/</loc>
+    <lastmod>2018-03-26T15:26:54.808Z</lastmod>
+    <data>
+        <display>
+        <title>android动画学习</title>
+        <pubTime>2017-02-26T06:47:00.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2017/06/13/java-thread/</loc>
     <lastmod>2018-03-26T10:59:24.547Z</lastmod>
     <data>
@@ -262,23 +279,6 @@
     </url>
 
     
-  <url>
-    <loc>http://yoursite.com/2017/02/26/android-knowledge/</loc>
-    <lastmod>2018-03-12T10:36:52.215Z</lastmod>
-    <data>
-        <display>
-        <title>android知识点整理</title>
-        <pubTime>2017-02-26T06:47:00.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
     
     
     
@@ -338,25 +338,6 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/02/22/python_basic_knowledge_about_crawlers/</loc>
-    <lastmod>2017-04-13T13:08:22.000Z</lastmod>
-    <data>
-        <display>
-        <title>Python实现爬虫要掌握的基本知识</title>
-        <pubTime>2017-02-22T06:19:14.000Z</pubTime>
-        
-        <tag>python</tag>
-         
-        <tag>crawler</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yoursite.com/2016/12/24/handler/</loc>
     <lastmod>2017-04-13T13:08:22.000Z</lastmod>
     <data>
@@ -367,6 +348,25 @@
         <tag>Android</tag>
          
         <tag>Handler</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/02/22/python_basic_knowledge_about_crawlers/</loc>
+    <lastmod>2017-04-13T13:08:22.000Z</lastmod>
+    <data>
+        <display>
+        <title>Python实现爬虫要掌握的基本知识</title>
+        <pubTime>2017-02-22T06:19:14.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+        <tag>crawler</tag>
          
          
            
@@ -431,59 +431,6 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/11/08/android_event_dispatch/</loc>
-    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
-    <data>
-        <display>
-        <title>Android事件分发机制</title>
-        <pubTime>2016-11-08T08:02:42.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2016/11/03/trouble_in_develop/</loc>
-    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
-    <data>
-        <display>
-        <title>开发中遇到的坑</title>
-        <pubTime>2016-11-03T08:00:58.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>Java</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2016/10/25/adb_command_line/</loc>
-    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
-    <data>
-        <display>
-        <title>adb命令</title>
-        <pubTime>2016-10-25T07:58:40.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yoursite.com/2016/09/27/bitmap/</loc>
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     <data>
@@ -511,6 +458,59 @@
         <tag>Android</tag>
          
         <tag>customView</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/11/08/android_event_dispatch/</loc>
+    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
+    <data>
+        <display>
+        <title>Android事件分发机制</title>
+        <pubTime>2016-11-08T08:02:42.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/10/25/adb_command_line/</loc>
+    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
+    <data>
+        <display>
+        <title>adb命令</title>
+        <pubTime>2016-10-25T07:58:40.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/11/03/trouble_in_develop/</loc>
+    <lastmod>2017-03-11T15:06:42.000Z</lastmod>
+    <data>
+        <display>
+        <title>开发中遇到的坑</title>
+        <pubTime>2016-11-03T08:00:58.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>Java</tag>
          
          
            
@@ -571,25 +571,6 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/01/18/sdk_develop_summary/</loc>
-    <lastmod>2017-02-16T14:54:52.000Z</lastmod>
-    <data>
-        <display>
-        <title>SDK开发学习小结</title>
-        <pubTime>2017-01-18T08:08:39.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>Java</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yoursite.com/2016/10/11/canvas/</loc>
     <lastmod>2017-02-16T14:54:52.000Z</lastmod>
     <data>
@@ -615,6 +596,25 @@
         <pubTime>2016-10-25T07:59:54.000Z</pubTime>
         
         <tag>git</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/01/18/sdk_develop_summary/</loc>
+    <lastmod>2017-02-16T14:54:52.000Z</lastmod>
+    <data>
+        <display>
+        <title>SDK开发学习小结</title>
+        <pubTime>2017-01-18T08:08:39.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>Java</tag>
          
          
            
