@@ -17,7 +17,7 @@
 采用实现Runnable、Callable接口的方式创见多线程时，优势是：
 线程类只是实现了Runnable接口或Callable接口，还可以继承其他类。
 在这种方式下，多个线程可以共享同一个target对象，所以非常适合多个相同线程来处理同一份资源的情况，从而可以将CPU、代码和数据分开，形成清晰">
-<meta property="og:updated_time" content="2018-03-19T09:56:21.188Z">
+<meta property="og:updated_time" content="2018-03-26T10:59:24.547Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java线程相关知识点巩固">
 <meta name="twitter:description" content="1.开启线程的方式1.继承Thread 2.实现Runnable接口 3.实现Callable接口
@@ -225,8 +225,7 @@
 <h5 id="4-newSingleThreadExecutor"><a href="#4-newSingleThreadExecutor" class="headerlink" title="4. newSingleThreadExecutor"></a>4. newSingleThreadExecutor</h5><p>通过Executors中的newSingleThreadExecutor方法来创建，<strong>在这个线程池中只有一个核心线程</strong>，对于任务队列没有大小限制，也就意味着<strong>这一个任务处于活动状态时，其他任务都会在任务队列中排队等候依次执行</strong>。</p>
 <p>newSingleThreadExecutor将所有的外界任务统一到一个线程中支持，所以在这个任务执行之间我们不需要处理线程同步的问题。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> ExecutorService <span class="title">newSingleThreadExecutor</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="keyword">return</span> <span class="keyword">new</span> FinalizableDelegatedExecutorService</div><div class="line">	(<span class="keyword">new</span> ThreadPoolExecutor(<span class="number">1</span>, <span class="number">1</span>,</div><div class="line">		<span class="number">0L</span>, TimeUnit.MILLISECONDS,</div><div class="line">		<span class="keyword">new</span> LinkedBlockingQueue&lt;Runnable&gt;()));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="4-synchronized关键字的理解"><a href="#4-synchronized关键字的理解" class="headerlink" title="4.synchronized关键字的理解"></a>4.synchronized关键字的理解</h3><p>####线程同步问题的产生及解决方案</p>
-<p>Java允许多线程并发控制，当多个线程同时操作一个可共享的资源变量时（如数据的增删改查），将会导致数据不准确，相互之间产生冲突。</p>
+<h3 id="4-synchronized关键字的理解"><a href="#4-synchronized关键字的理解" class="headerlink" title="4.synchronized关键字的理解"></a>4.synchronized关键字的理解</h3><h4 id="线程同步问题的产生及解决方案"><a href="#线程同步问题的产生及解决方案" class="headerlink" title="线程同步问题的产生及解决方案"></a>线程同步问题的产生及解决方案</h4><p>Java允许多线程并发控制，当多个线程同时操作一个可共享的资源变量时（如数据的增删改查），将会导致数据不准确，相互之间产生冲突。</p>
 <p><strong>问题的解决：</strong></p>
 <p>因此加入同步锁以避免在该线程没有完成操作之前，被其他线程的调用，从而保证了该变量的唯一性和准确性。</p>
 <h5 id="1-synchronized简介"><a href="#1-synchronized简介" class="headerlink" title="1.synchronized简介"></a>1.synchronized简介</h5><ol>
@@ -252,11 +251,10 @@
 <p><strong>⑤代码块同步</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">synchronized(o) &#123;&#125;</div></pre></td></tr></table></figure>
 <p>这里面的o可以是一个任何Object对象或数组，并不一定是它本身对象或者类，谁拥有o这个锁，谁就能够操作该块程序代码。</p>
-<p>###5.volatile关键字的理解</p>
-<p>volatile可以确保可见性和有序性。但是不能保证原子性。</p>
+<h3 id="5-volatile关键字的理解"><a href="#5-volatile关键字的理解" class="headerlink" title="5.volatile关键字的理解"></a>5.volatile关键字的理解</h3><p>volatile可以确保可见性和有序性。但是不能保证原子性。</p>
 <p>Java内存模型规定了<strong>所有的变量都存储在主内存中</strong>。<strong>每条线程中还有自己的工作内存，线程的工作内存中保存了被该线程所使用到的变量（这些变量是从主内存中拷贝而来）</strong>。<strong>线程对变量的所有操作（读取，赋值）都必须在工作内存中进行。不同线程之间也无法直接访问对方工作内存中的变量，线程间变量值的传递均需要通过主内存来完成</strong>。</p>
 <ul>
-<li>####原子性</li>
+<li><h4 id="原子性"><a href="#原子性" class="headerlink" title="原子性"></a>原子性</h4></li>
 </ul>
 <p><strong>原子性</strong>的理解：<strong>即一个操作或者多个操作，要么全部执行，并且执行的过程不会被任何因素打断，要么就都不执行。</strong></p>
 <p>在Java中，<strong>对基本数据类型的变量的读取和赋值操作是原子性操作</strong>，即这些操作是不可被中断的，要么执行，要么不执行。</p>
