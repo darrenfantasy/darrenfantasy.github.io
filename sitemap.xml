@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2018/01/27/java-gc/</loc>
+    
+    <lastmod>2018-03-27T16:06:35.808Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/02/22/java-classloader/</loc>
+    
+    <lastmod>2018-03-27T14:28:49.599Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2017/02/26/android-animation/</loc>
     
     <lastmod>2018-03-26T15:49:58.735Z</lastmod>
@@ -19,13 +33,6 @@
     <loc>http://yoursite.com/2017/05/03/reflection-java/</loc>
     
     <lastmod>2018-03-25T14:04:15.757Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2018/02/22/java-classloader/</loc>
-    
-    <lastmod>2018-03-25T13:54:58.949Z</lastmod>
     
   </url>
   
@@ -219,7 +226,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/09/27/bitmap/</loc>
+    <loc>http://yoursite.com/2016/10/25/adb_command_line/</loc>
     
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     
@@ -240,7 +247,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/10/25/adb_command_line/</loc>
+    <loc>http://yoursite.com/2016/09/27/bitmap/</loc>
     
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     
@@ -261,14 +268,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/10/11/canvas/</loc>
-    
-    <lastmod>2017-02-16T14:54:52.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/10/24/android_so_file/</loc>
+    <loc>http://yoursite.com/2016/10/25/git_command_line/</loc>
     
     <lastmod>2017-02-16T14:54:52.000Z</lastmod>
     
@@ -289,7 +289,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/10/25/git_command_line/</loc>
+    <loc>http://yoursite.com/2016/10/24/android_so_file/</loc>
+    
+    <lastmod>2017-02-16T14:54:52.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/10/11/canvas/</loc>
     
     <lastmod>2017-02-16T14:54:52.000Z</lastmod>
     

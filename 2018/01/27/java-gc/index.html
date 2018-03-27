@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="default">
+<head>
+  <meta charset="utf-8">
+  
+  <title>Java垃圾回收机制学习 | darrenfantasy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="通过这次学习，希望能掌握GC是在什么时候，对什么东西，做了什么事情？
+在学习之前，我的概念里就是GC是由系统自身决定，不可预测的。对不再使用的对象进行内存回收和清理。
+To Naive。
+先来学习下垃圾回收都有哪些算法
+垃圾回收算法1.引用计数法 2.标记清除法 3.复制算法 4.标记压缩算法 5.分代算法 6.分区算法
+1.引用计数法引用计数法是指对对于一个对象A，任何一个对象引用了A，那么A的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java垃圾回收机制学习">
+<meta property="og:url" content="http://yoursite.com/2018/01/27/java-gc/index.html">
+<meta property="og:site_name" content="darrenfantasy">
+<meta property="og:description" content="通过这次学习，希望能掌握GC是在什么时候，对什么东西，做了什么事情？
+在学习之前，我的概念里就是GC是由系统自身决定，不可预测的。对不再使用的对象进行内存回收和清理。
+To Naive。
+先来学习下垃圾回收都有哪些算法
+垃圾回收算法1.引用计数法 2.标记清除法 3.复制算法 4.标记压缩算法 5.分代算法 6.分区算法
+1.引用计数法引用计数法是指对对于一个对象A，任何一个对象引用了A，那么A的">
+<meta property="og:updated_time" content="2018-03-27T16:06:35.808Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java垃圾回收机制学习">
+<meta name="twitter:description" content="通过这次学习，希望能掌握GC是在什么时候，对什么东西，做了什么事情？
+在学习之前，我的概念里就是GC是由系统自身决定，不可预测的。对不再使用的对象进行内存回收和清理。
+To Naive。
+先来学习下垃圾回收都有哪些算法
+垃圾回收算法1.引用计数法 2.标记清除法 3.复制算法 4.标记压缩算法 5.分代算法 6.分区算法
+1.引用计数法引用计数法是指对对于一个对象A，任何一个对象引用了A，那么A的">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/typing.css">
+  <link rel="stylesheet" href="/css/algolia.css">
+  <link rel="stylesheet" href="/css/default-skin/default-skin.css">
+</head>
+
+
+<a href="https://github.com/darrenfantasy"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+
+  
+    <body>
+  
+      <div id="container" class="container">
+        <article id="post-java-gc" class="article article-type-post" itemscope itemprop="blogPost">
+  <header id="header" class="header">
+  <nav id="main-nav" class="main-nav">
+    
+      <a class="main-nav-link" href="/">Home</a>
+    
+      <a class="main-nav-link" href="/archives">Archives</a>
+    
+      <a class="main-nav-link" href="/album">Album</a>
+    
+      <a class="main-nav-link" href="/about">About</a>
+    
+      <a href="#" class="popup-trigger">Search</a>
+  </nav>
+  <nav id="sub-nav">
+    
+  </nav>
+</header>
+<div class="site-search">
+  <div class="algolia-popup popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+</div>
+  <hr/>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Java垃圾回收机制学习
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry typo" itemprop="articleBody">
+      
+        <p>通过这次学习，希望能掌握GC是在什么时候，对什么东西，做了什么事情？</p>
+<p>在学习之前，我的概念里就是GC是由系统自身决定，不可预测的。对不再使用的对象进行内存回收和清理。</p>
+<p>To Naive。</p>
+<p>先来学习下垃圾回收都有哪些算法</p>
+<h3 id="垃圾回收算法"><a href="#垃圾回收算法" class="headerlink" title="垃圾回收算法"></a>垃圾回收算法</h3><p><strong>1.引用计数法 2.标记清除法 3.复制算法 4.标记压缩算法 5.分代算法 6.分区算法</strong></p>
+<h4 id="1-引用计数法"><a href="#1-引用计数法" class="headerlink" title="1.引用计数法"></a>1.引用计数法</h4><p>引用计数法是指对对于一个对象A，任何一个对象引用了A，那么A的引用计数就+1。当A的引用计数是0的时候，那么就表示A是可以被回收的对象。</p>
+<p>但是这个算法会出现两个问题</p>
+<p>a.无法处理循环引用的问题</p>
+<p>b.引用计数在每次被引用和消除时会伴随一个加法和减法操作，会对系统性能有一定影响。</p>
+<h4 id="2-标记清除法"><a href="#2-标记清除法" class="headerlink" title="2.标记清除法"></a>2.标记清除法</h4><p>标记清除法是指<strong>从GC Root节点开始，标记所有根节点开始的可达对象。那么未被标记的对象就是未被引用的垃圾对象了。</strong></p>
+<p>标记清除算法会产生的问题就是空间碎片。回收后的内存空间不再连续。尤其是大内存的分配，不连续内存空间的工作效率要低于连续的。空间碎片太多可能会导致当程序在以后的运行过程中需要分配较大对象的时候无法找到足够的连续内存而不得不触发另一次垃圾收集动作。</p>
+<p><strong>哪些对象可以作为GC Roots？</strong><br>虚拟机栈（栈帧中的本地变量表）中的引用的对象<br>方法区中的类静态属性引用的对象<br>方法区中的常量引用的对象<br>本地方法栈中JNI（Native方法）的引用对象</p>
+<h4 id="3-复制算法"><a href="#3-复制算法" class="headerlink" title="3.复制算法"></a>3.复制算法</h4><p><strong>将原有的内存空间分为两个大小相同的存储空间，每次只使用一块，在垃圾回收时，将正在使用的内存块中存活的对象复制到另一个内存空间中。之后清理正在使用的内存块中的所有对象。</strong></p>
+<p>这个算法要求复制的存活对象比较少（适用场景）。因为是被回收到另一个内存空间里，所以可以确保不会出现空间碎片。</p>
+<p>但是这个算法的代价是系统内存空间减半，如果内存空间里的垃圾对象比较少，那么复制对象也是比较耗时的。</p>
+<p>注：复制算法比较适用于新生代。因为在新生代中，垃圾对象通常会多于存活对象，算法的效果会比较好。</p>
+<h4 id="4-标记压缩法"><a href="#4-标记压缩法" class="headerlink" title="4.标记压缩法"></a>4.标记压缩法</h4><p>和标记清除算法一样，标记压缩算法也首先从根节点开始，对所有可达的对象做一次标记。</p>
+<p>但之后，它并不是简单的清理未标记的对象，而是<strong>将所有的存活对象压缩到内存空间的一端，之后，清理边界外所有的空间。</strong></p>
+<p>这样做避免的碎片的产生，又不需要两块相同的内存空间，因此性价比高。</p>
+<h4 id="5-分代算法"><a href="#5-分代算法" class="headerlink" title="5.分代算法"></a>5.分代算法</h4><p>前几种算法都各有特点和优势，没有一种可以替代其他的算法，因此需要根据垃圾对象选择合适的回收算法。</p>
+<p>分代算法思想：<strong>将内存空间根据对象的特点不同进行划分，选择合适的垃圾回收算法，以提高垃圾回收的效率。</strong></p>
+<p>【<strong>新生代对象</strong>】：存放年轻对象的堆空间，年轻对象指刚刚创建，或者经历垃圾回收次数不多的对象。</p>
+<p>新生代的特点是：对象朝生夕灭，大约90%的对象会很快回收，因此，新生代比较适合使用复制算法。</p>
+<p>【<strong>老年代对象</strong>】：存放老年对象的堆空间。即为经历多次垃圾回收依然存活的对象。</p>
+<h4 id="6-分区算法"><a href="#6-分区算法" class="headerlink" title="6.分区算法"></a>6.分区算法</h4><p>算法思想：分区算法将整个堆空间划分为连续的不同小区间，每一个小区间都独立使用，独立回收。</p>
+<p>算法优点是：可以控制一次回收多少个小区间。</p>
+<p>通常，相同的条件下，堆空间越大，一次GC所需的时间就越长，从而产生的停顿时间就越长。为了更好的控制GC产生的停顿时间，将一块大的内存区域分割成多个小块，根据目标的停顿时间，每次合理的回收若干个小区间，而不是整个堆空间，从而减少一个GC的停顿时间。</p>
+<h3 id="JVM内存管理"><a href="#JVM内存管理" class="headerlink" title="JVM内存管理"></a>JVM内存管理</h3><p>JVM将堆分成了 二个大区  Young 和 Old。</p>
+<p>而Young 区又分为 <strong>Eden、Survivor1、Survivor2</strong>, 两个<strong>Survivor 区相对地作为为From 和 To 逻辑区域, 当Survivor1作为 From 时 ， Survivor2 就作为 To, 反之亦然。</strong></p>
+<p>为什么要这样区分Young（将Young区分为Eden、Survivor1、Survivor2以及相对的From和To ），这要牵涉到上面关于JVM的垃圾回收算法的讨论。<br>1）因为引用计数法无法解决循环引用问题，JVM并没有采用这种算法来判断对象是否存活。<br>2）JVM一般采用GCRoots的方法，只要从任何一个GCRoots的对象可达，就是不被回收的对象<br>3）标记-清除算法，先标记那些要被回收的对象，然后进行清理，简单可行，但是①标记清除效率低，因为要一个一个标记和清除②造成大量不连续的内存碎片，空间碎片太多可能会导致当程序在以后的运行过程中需要分配较大对象的时候无法找到足够的连续内存而不得不触发另一次垃圾收集动作。<br>4）采用复制收集算法：将可用内存按照容量分为大小相等的两块，每次只是使用其中的一块。当这一块的内存用完了，就将可用内存中存活的对象复制到另一块上面，然后把已使用的内存空间一次性清理掉。</p>
+<p>老年代的存活率是很高的，如果依然使用复制算法回收老年代，将需要复制大量的对象。这种做法是不可取的，根据分代的思想，对老年代的回收使用标记清除或者标记压缩算法可以提高垃圾回收效率。</p>
+<h4 id="最后再回到一开始提出的问题上，GC是在什么时候，对什么东西，做了什么事情？"><a href="#最后再回到一开始提出的问题上，GC是在什么时候，对什么东西，做了什么事情？" class="headerlink" title="最后再回到一开始提出的问题上，GC是在什么时候，对什么东西，做了什么事情？"></a>最后再回到一开始提出的问题上，GC是在什么时候，对什么东西，做了什么事情？</h4><p>目前主流的JVM（HotSpot）采用的是分代收集算法。采用的是类似于树形结构的<strong>可达性分析法</strong>来判断对象是否还存在引用。即：从gc root开始，把所有可以搜索得到的对象标记为存活对象。</p>
+<p>第一：“什么时候”即就是GC触发的条件。GC触发的条件有两种。（1）程序调用System.gc时可以触发；（2）系统自身来决定GC触发的时机。</p>
+<p>系统判断GC触发的依据：根据Eden区和From Space区的内存大小来决定。当内存大小不足时，则会启动GC线程并停止应用线程。</p>
+<p>第二：“对什么东西”笼统的认为是Java对象并没有错。但是准确来讲，GC操作的对象分为：通过可达性分析法无法搜索到的对象和可以搜索到的对象。对于搜索不到的方法进行标记。</p>
+<p>第三：“做了什么”最浅显的理解为释放对象。但是从GC的底层机制可以看出，对于可以搜索到的对象进行复制操作，对于搜索不到的对象，调用finalize()方法进行释放。</p>
+<p>具体过程：当GC线程启动时，会通过可达性分析法把Eden区和From Space区的存活对象复制到To Space区，然后把Eden Space和From Space区的对象释放掉。当GC轮训扫描To Space区一定次数后，把依然存活的对象复制到老年代，然后释放To Space区的对象。</p>
+<h4 id="Minor-GC-，Full-GC-触发条件"><a href="#Minor-GC-，Full-GC-触发条件" class="headerlink" title="Minor GC ，Full GC 触发条件"></a>Minor GC ，Full GC 触发条件</h4><p>Minor GC触发条件：当Eden区满时，触发Minor GC。</p>
+<p>Full GC触发条件：</p>
+<p>（1）调用System.gc时，系统建议执行Full GC，但是不必然执行</p>
+<p>（2）老年代空间不足</p>
+<p>（3）方法区空间不足</p>
+<p>（4）通过Minor GC后进入老年代的平均大小大于老年代的可用内存</p>
+<p>（5）由Eden区、From Space区向To Space区复制时，对象大小大于To Space可用内存，则把该对象转存到老年 代，且老年代的可用内存小于该对象大小</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/2018/01/27/java-gc/" class="article-date">
+  <time datetime="2018-01-27T14:26:18.000Z" itemprop="datePublished">2018-01-27</time>
+</a>
+
+        </li>
+        
+        
+          <li>
+            <span class="label">Tag:</span>
+            
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JVM/">JVM</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+
+
+          </li>
+        
+        <hr/>
+      </ul>
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav" class="article-nav">
+  
+    <a href="/2018/02/22/java-classloader/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          JVM类加载机制学习
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/01/17/performance-optimization/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Android性能优化小结</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+
+  <section id="comments" class="comments">
+  <div id="uyan_frame"></div>
+<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2128029"></script>
+  </section>
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      <hr/>
+      <div id="footerContent" class="footer-content">
+        <p>stay hungry , stay foolish .</p>
+
+
+  
+    <span id="busuanzi_container_page_pv">
+         <i class="fa fa-flag"></i>    你是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>个阅读本文的小伙伴
+    </span>
+  
+      </div>
+  </footer>
+
+      
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+  <script src="http://cdn.bootcss.com/instantsearch.js/1.5.1/instantsearch.js"></script>
+  <script src="/js/algolia.js"></script>
+  <script src="/js/photoswipe.js"></script>
+  <script src="/js/photoswipe-ui-default.js"></script>
+
+<script src="/js/typing.js"></script>
+<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+
+
+
+
+
+
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+      <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+    </div>
+  </body>
+</html>

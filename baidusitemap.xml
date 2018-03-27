@@ -4,6 +4,44 @@
 
     
   <url>
+    <loc>http://yoursite.com/2018/01/27/java-gc/</loc>
+    <lastmod>2018-03-27T16:06:35.808Z</lastmod>
+    <data>
+        <display>
+        <title>Java垃圾回收机制学习</title>
+        <pubTime>2018-01-27T14:26:18.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+        <tag>JVM</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/02/22/java-classloader/</loc>
+    <lastmod>2018-03-27T14:28:49.599Z</lastmod>
+    <data>
+        <display>
+        <title>JVM类加载机制学习</title>
+        <pubTime>2018-02-22T14:58:49.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+        <tag>JVM</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2017/02/26/android-animation/</loc>
     <lastmod>2018-03-26T15:49:58.735Z</lastmod>
     <data>
@@ -44,23 +82,6 @@
         <display>
         <title>Java反射理解</title>
         <pubTime>2017-05-03T14:09:05.000Z</pubTime>
-        
-        <tag>Java</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2018/02/22/java-classloader/</loc>
-    <lastmod>2018-03-25T13:54:58.949Z</lastmod>
-    <data>
-        <display>
-        <title>JVM类加载机制学习</title>
-        <pubTime>2018-02-22T14:58:49.000Z</pubTime>
         
         <tag>Java</tag>
          
@@ -431,12 +452,12 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/09/27/bitmap/</loc>
+    <loc>http://yoursite.com/2016/10/25/adb_command_line/</loc>
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     <data>
         <display>
-        <title>bitmap</title>
-        <pubTime>2016-09-27T07:44:20.000Z</pubTime>
+        <title>adb命令</title>
+        <pubTime>2016-10-25T07:58:40.000Z</pubTime>
         
         <tag>Android</tag>
          
@@ -484,12 +505,12 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/10/25/adb_command_line/</loc>
+    <loc>http://yoursite.com/2016/09/27/bitmap/</loc>
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     <data>
         <display>
-        <title>adb命令</title>
-        <pubTime>2016-10-25T07:58:40.000Z</pubTime>
+        <title>bitmap</title>
+        <pubTime>2016-09-27T07:44:20.000Z</pubTime>
         
         <tag>Android</tag>
          
@@ -537,31 +558,14 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/10/11/canvas/</loc>
+    <loc>http://yoursite.com/2016/10/25/git_command_line/</loc>
     <lastmod>2017-02-16T14:54:52.000Z</lastmod>
     <data>
         <display>
-        <title>canvas</title>
-        <pubTime>2016-10-11T07:52:11.000Z</pubTime>
+        <title>git常用命令行</title>
+        <pubTime>2016-10-25T07:59:54.000Z</pubTime>
         
-        <tag>Android</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2016/10/24/android_so_file/</loc>
-    <lastmod>2017-02-16T14:54:52.000Z</lastmod>
-    <data>
-        <display>
-        <title>so文件</title>
-        <pubTime>2016-10-24T07:56:31.000Z</pubTime>
-        
-        <tag>Android</tag>
+        <tag>git</tag>
          
          
            
@@ -607,14 +611,31 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/10/25/git_command_line/</loc>
+    <loc>http://yoursite.com/2016/10/24/android_so_file/</loc>
     <lastmod>2017-02-16T14:54:52.000Z</lastmod>
     <data>
         <display>
-        <title>git常用命令行</title>
-        <pubTime>2016-10-25T07:59:54.000Z</pubTime>
+        <title>so文件</title>
+        <pubTime>2016-10-24T07:56:31.000Z</pubTime>
         
-        <tag>git</tag>
+        <tag>Android</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/10/11/canvas/</loc>
+    <lastmod>2017-02-16T14:54:52.000Z</lastmod>
+    <data>
+        <display>
+        <title>canvas</title>
+        <pubTime>2016-10-11T07:52:11.000Z</pubTime>
+        
+        <tag>Android</tag>
          
          
            
