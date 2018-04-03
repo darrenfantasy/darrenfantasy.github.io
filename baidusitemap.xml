@@ -3,6 +3,7 @@
 
 
     
+    
   <url>
     <loc>http://yoursite.com/2018/01/27/java-gc/</loc>
     <lastmod>2018-03-28T00:50:28.984Z</lastmod>
@@ -11,9 +12,9 @@
         <title>Java垃圾回收机制学习</title>
         <pubTime>2018-01-27T14:26:18.000Z</pubTime>
         
-        <tag>Java</tag>
-         
         <tag>JVM</tag>
+         
+        <tag>Java</tag>
          
          
            
@@ -30,9 +31,9 @@
         <title>JVM类加载机制学习</title>
         <pubTime>2018-02-22T14:58:49.000Z</pubTime>
         
-        <tag>Java</tag>
-         
         <tag>JVM</tag>
+         
+        <tag>Java</tag>
          
          
            
@@ -323,7 +324,6 @@
     
     
     
-    
   <url>
     <loc>http://yoursite.com/2017/05/31/hadoop-note/</loc>
     <lastmod>2017-06-20T08:00:00.000Z</lastmod>
@@ -359,25 +359,6 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/02/22/python_basic_knowledge_about_crawlers/</loc>
-    <lastmod>2017-04-13T13:08:22.000Z</lastmod>
-    <data>
-        <display>
-        <title>Python实现爬虫要掌握的基本知识</title>
-        <pubTime>2017-02-22T06:19:14.000Z</pubTime>
-        
-        <tag>python</tag>
-         
-        <tag>crawler</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yoursite.com/2016/12/24/handler/</loc>
     <lastmod>2017-04-13T13:08:22.000Z</lastmod>
     <data>
@@ -397,12 +378,12 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/03/29/weibo_crawler/</loc>
-    <lastmod>2017-04-02T08:44:26.000Z</lastmod>
+    <loc>http://yoursite.com/2017/02/22/python_basic_knowledge_about_crawlers/</loc>
+    <lastmod>2017-04-13T13:08:22.000Z</lastmod>
     <data>
         <display>
-        <title>Python实现微博爬虫</title>
-        <pubTime>2017-03-29T05:44:58.000Z</pubTime>
+        <title>Python实现爬虫要掌握的基本知识</title>
+        <pubTime>2017-02-22T06:19:14.000Z</pubTime>
         
         <tag>python</tag>
          
@@ -422,6 +403,25 @@
         <display>
         <title>Python＋(selenium-webdriver)破解JS加密的Cookie</title>
         <pubTime>2017-03-24T03:18:46.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+        <tag>crawler</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/03/29/weibo_crawler/</loc>
+    <lastmod>2017-04-02T08:44:26.000Z</lastmod>
+    <data>
+        <display>
+        <title>Python实现微博爬虫</title>
+        <pubTime>2017-03-29T05:44:58.000Z</pubTime>
         
         <tag>python</tag>
          
@@ -471,12 +471,12 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/11/08/android_event_dispatch/</loc>
+    <loc>http://yoursite.com/2016/09/27/bitmap/</loc>
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     <data>
         <display>
-        <title>Android事件分发机制</title>
-        <pubTime>2016-11-08T08:02:42.000Z</pubTime>
+        <title>bitmap</title>
+        <pubTime>2016-09-27T07:44:20.000Z</pubTime>
         
         <tag>Android</tag>
          
@@ -488,16 +488,14 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/11/03/trouble_in_develop/</loc>
+    <loc>http://yoursite.com/2016/11/08/android_event_dispatch/</loc>
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     <data>
         <display>
-        <title>开发中遇到的坑</title>
-        <pubTime>2016-11-03T08:00:58.000Z</pubTime>
+        <title>Android事件分发机制</title>
+        <pubTime>2016-11-08T08:02:42.000Z</pubTime>
         
         <tag>Android</tag>
-         
-        <tag>Java</tag>
          
          
            
@@ -524,14 +522,16 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/09/27/bitmap/</loc>
+    <loc>http://yoursite.com/2016/11/03/trouble_in_develop/</loc>
     <lastmod>2017-03-11T15:06:42.000Z</lastmod>
     <data>
         <display>
-        <title>bitmap</title>
-        <pubTime>2016-09-27T07:44:20.000Z</pubTime>
+        <title>开发中遇到的坑</title>
+        <pubTime>2016-11-03T08:00:58.000Z</pubTime>
         
         <tag>Android</tag>
+         
+        <tag>Java</tag>
          
          
            
@@ -594,23 +594,6 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/10/24/android_so_file/</loc>
-    <lastmod>2017-02-16T14:54:52.000Z</lastmod>
-    <data>
-        <display>
-        <title>so文件</title>
-        <pubTime>2016-10-24T07:56:31.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yoursite.com/2016/10/25/git_command_line/</loc>
     <lastmod>2017-02-16T14:54:52.000Z</lastmod>
     <data>
@@ -634,6 +617,23 @@
         <display>
         <title>canvas</title>
         <pubTime>2016-10-11T07:52:11.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/10/24/android_so_file/</loc>
+    <lastmod>2017-02-16T14:54:52.000Z</lastmod>
+    <data>
+        <display>
+        <title>so文件</title>
+        <pubTime>2016-10-24T07:56:31.000Z</pubTime>
         
         <tag>Android</tag>
          
