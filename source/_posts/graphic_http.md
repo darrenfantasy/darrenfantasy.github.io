@@ -62,9 +62,13 @@ IP间的通信依赖MAC地址。在网络上，通信双方位于同一局域网
 
 **三次握手**
 
-TCP的标志：SYN(sychronize)、ACK(acknowledgement)。
+TCP的标志：SYN(synchronize)、ACK(acknowledgement)。
 
 发送端会发送一个带SYN标志的数据包给接收端，接收端收到后会回传一个带有SYN/ACK标志的数据包以示传达确认信息。最后，发送端再回传一个带ACK标志的数据包，表示“握手”结束。
+
+**四次挥手**
+
+为什么断开要4次呢，第一次客户端会发送一个
 
 **负责域名解析的DNS服务**
 

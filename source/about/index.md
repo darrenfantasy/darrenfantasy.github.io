@@ -22,7 +22,7 @@ date: 2017-02-15 17:42:51
 
 
 
-<a href="http://darrenfantasy.com/">博客</a>  –  <a href="https://github.com/darrenfantasy" target="_blank" rel="external">Github</a> –  <a href="https://www.zhihu.com/people/darren-78-24" target="_blank" rel="external">知乎</a> – <a href="http://weibo.com/Fantasy1112" target="_blank" rel="external">微博</a>  – <a href="mailto:darrenfantasy30@gmail.com" target="_blank" rel="external">Mail</a>
+<a href="http://darrenfantasy.com/">博客</a>  –  <a href="https://github.com/darrenfantasy" target="_blank" rel="external">Github</a> –  <a href="https://www.zhihu.com/people/darren-78-24" target="_blank" rel="external">知乎</a>   – <a href="mailto:darrenfantasy30@gmail.com" target="_blank" rel="external">Mail</a>
 
 
 

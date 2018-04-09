@@ -1,9 +1,65 @@
 ---
-title: Android-Gradle
+title: Android-Gradle学习
 date: 2016-10-17 15:54:36
 tags: [Android]
 ---
-Android build.gradle笔记
+我们用 Android Studio 新创建一个项目时，会自动生成 3 个 Gradle 文件
+
+**1.setting.gradle **
+
+**2.根目录下的build.gradle**
+
+**3.模块下的build.gradle**
+
+### 1. setting.gradle
+
+setting.gradle 文件在 **初始化过程中**被执行，构建器通过 setting.gradle 文件中的内容了解哪些模块将被 build，下面的内容表明当前项目中除了 app 模块还有另外一个叫做 “mylibrary” 的依赖模块：
+
+include ‘:app’, ‘:mylibrary’
+
+注意：单模块项目不一定需要有 setting 文件，但一旦有多个模块，必须要有 setting 文件，同时也要写明所有要构建的模块，否则 gradle 不会 build 不包括的模块。
+
+
+
+### 2.根目录下的 build.gradle
+
+根目录下的 build.gradle 文件是最顶层的构建文件，这里配置所有模块通用的配置信息。
+
+默认的顶层 build.gradle 文件中包括两个代码块 (buildscript 和 allprojects):
+
+```java
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    repositories {
+        jcenter()
+        google()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.0.1'
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        google()
+    }
+}
+```
+
+**buildscript** 
+从名字就可以看出来，buildscript 是所有项目的构建脚本配置，主要包括依赖的仓库和依赖的 gradle 版本。
+
+上图中 repositories 代码块将 jcenter 配置为一个仓库，jcenter 是一个很有名的 Maven 仓库。确定了依赖的仓库后，我们就可以在 dependencies 代码块中添加依赖的、在 jcenter 仓库中的包了。
+
+dependencies 代码块用于配置构建过程中的依赖包，注意，这里是用于**构建过程**，因此不能把你的应用模块中需要依赖的库添加到这里。
+
+默认情况下唯一被用于构建过程中的依赖包是 Gradle for Android 的插件。我们还可以添加一些其他用于构建的插件，比如 retrolambda, apt, freeline 等等。
+
+**allprojects** 
+allprojects 代码块用来声明将被用于所有模块的属性，注意是**所有模块**。常见的就是配置仓库地址（jcenter, 自定义 maven 仓库等），你还可以在 allprojects 中创建 tasks，这些 tasks 最终会运用到所有模块中。
+
+### 3.模块下的 build.gradle
 
 ```java
 apply plugin: 'com.android.application'
@@ -138,7 +194,13 @@ android {
        dirs 'libs'
    }
   }
-
 ```
 
 **Gradle**是一个基于Apache Ant和Apache Maven概念的项目**自动化建构**工具。它可以帮你管理项目中的差异,依赖,编译,打包,部署等,你可以定义满足自己需要的构建逻辑,写入到build.gradle中供日后复用。
+
+### ApplicationId 与 PackageName 的区别
+
+**package用于资源文件（R class）的命名控件和清单文件声明一些元素。**
+
+**applicationId是google play（国内应用市场估计也是） 和android平台识别唯一app的方法。**
+

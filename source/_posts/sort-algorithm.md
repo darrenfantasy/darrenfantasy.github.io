@@ -75,4 +75,40 @@ public static void selectSort(int[] array) {
 
 #### 4.快速排序
 
-Todo
+快排最主要的思维就是寻找一个分界值，大的放在一边，小的放在一边，然后递归分别处理大的和小的。
+
+- 最优与平均时间复杂度O(nlogn)
+- 最坏时间复杂度O(n^2)
+- 空间复杂度O(logn)
+- 快速排序是一种不稳定的排序方法
+
+```Java
+public static void quickSort(int[] a, int begin, int end) {
+    if (begin < end) {
+        int pivot = partition(a, begin, end);//将待排序数组一分为二，返回枢轴值pivot
+        quickSort(a, begin, pivot - 1);
+        quickSort(a, pivot + 1, end);
+    }
+}
+
+public static int partition(int[] a, int begin, int end) {
+    int pivot = a[begin];
+    while (begin < end) {
+        while (begin < end && a[end] >= pivot) {
+            end--;
+        }
+        swap(a, begin, end);
+        while (begin < end && a[begin] <= pivot) {
+            begin++;
+        }
+        swap(a, begin, end);
+    }
+    return begin;
+}
+
+public static void swap(int[] a, int x, int y) {
+    int temp = a[x];
+    a[x] = a[y];
+    a[y] = temp;
+}
+```
